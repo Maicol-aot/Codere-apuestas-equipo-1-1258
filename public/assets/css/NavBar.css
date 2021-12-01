@@ -1,0 +1,64 @@
+#header{
+    background-color: #79c000;
+}
+
+.logo{
+    width: 25%;
+}
+
+.d-flex a{
+    color: #333f48;
+}
+
+.nav-item span{
+    color: #333f48;  
+}
+
+.search-bar{
+    margin-left: 15%;
+}
+
+.search-form input{
+    padding: 0px 8px 0px 38px !important;
+}
+
+.header .search-form button{
+    margin: -30px !important;
+    z-index: 800;
+}
+.bi-search{
+    color: #333f48 !important; 
+}
+
+.bi-calendar3{
+    margin-left: 10px;
+    font-size: 22px;
+    color: #333f48;
+    cursor: pointer;
+}
+
+#date{
+    visibility: hidden;
+    width: 0%;
+    height: 0%;
+}
+
+.bi-person-circle{
+    font-size: 2em;
+    margin-bottom: 3px;
+    color: #333f48;
+}
+
+.dropdown-item:hover{
+    color: red;
+}
+
+.bi-currency-dollar{
+    color: #333f48;
+}
+
+.nav-link h6{
+    vertical-align: middle;
+    margin-top: 7px;
+    color: #333f48;
+}

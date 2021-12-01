@@ -346,8 +346,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .logo img {
-  max-height: 26px;
-  margin-right: 6px;
+  max-height: 40px;
+  margin-right: 50px;
 }
 .logo span {
   font-size: 26px;
@@ -373,7 +373,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #012970;
 }
 .header .search-bar {
-  min-width: 360px;
+  min-width: 40%;
   padding: 0 20px;
 }
 @media (max-width: 1199px) {
@@ -405,9 +405,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #012970;
   border: 1px solid rgba(1, 41, 112, 0.2);
   padding: 7px 38px 7px 8px;
-  border-radius: 3px;
+  border-radius: 7px;
   transition: 0.3s;
   width: 100%;
+  height: 25px;
 }
 .header .search-form input:focus, .header .search-form input:hover {
   outline: none;
