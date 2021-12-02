@@ -1,51 +1,13 @@
 import './App.css';
 import AdminNavbar from './components/AdminNavbar';
 import Footer from './components/Footer';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <div>
       <AdminNavbar />
-      {/*{/*<!-- ======= Sidebar ======= -->*/}
-      <aside id="sidebar" className="sidebar">
-
-        <ul className="sidebar-nav" id="sidebar-nav">
-
-          <li className="nav-item">
-            <a className="nav-link " href="dashboard.html">
-              <i className="bi bi-grid"></i>
-              <span>Dashboard</span>
-            </a>
-          </li>{/*{/*<!-- End Dashboard Nav -->*/}
-
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="users-profile.html">
-              <i className="bi bi-person"></i>
-              <span>Gestionar Eventos </span> {/*<!-- info del perfil -->*/}
-            </a>
-          </li>
-          {/*{/*<!-- End Profile Page Nav -->*/}
-
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="pages-faq.html">
-              <i className="bi bi-question-circle"></i>
-              <span>Gestionar Usuarios</span>
-            </a>
-          </li>
-          {/*{/*<!-- End F.A.Q Page Nav -->*/}
-
-          <li className="nav-item">
-            <a className="nav-link collapsed" href="pages-contact.html">
-              <i className="bi bi-envelope"></i>
-              <span>Recaudos</span> 
-            </a>
-          </li>
-          {/*{/*<!-- End Contact Page Nav -->*/}
-
-        </ul>
-
-      </aside>
-      {/*{/*<!-- End Sidebar-->*/}
+      <Sidebar />
       <main id="main" className="main">
 
           <div className="pagetitle">
