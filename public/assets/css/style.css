@@ -541,7 +541,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 300px;
   z-index: 996;
   transition: all 0.3s;
-  padding: 20px;
+  padding: 10px 0px 20px 0px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
@@ -626,7 +626,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .sidebar-nav .nav-link:hover {
   color: #ffffff;
-  background: #8a8888;
+  background: #0055fe;
 }
 .sidebar-nav .nav-link:hover i {
   color: #ffffff;

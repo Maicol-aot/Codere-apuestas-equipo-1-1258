@@ -17,7 +17,7 @@ const Sidebar = () =>{
 
                     <li className="nav-item">
                         <a className="nav-link collapsed" href="users-profile.html">
-                            <i className="bi bi-person"></i>
+                            <i className="bi bi-layout-text-sidebar-reverse"></i>
                             <span>Gestionar Eventos </span> {/*<!-- info del perfil -->*/}
                         </a>
                     </li>
@@ -25,7 +25,7 @@ const Sidebar = () =>{
 
                     <li className="nav-item">
                         <a className="nav-link collapsed" href="pages-faq.html">
-                            <i className="bi bi-question-circle"></i>
+                            <i className="bi bi-person"></i>
                             <span>Gestionar Usuarios</span>
                         </a>
                     </li>
@@ -33,7 +33,7 @@ const Sidebar = () =>{
 
                     <li className="nav-item">
                         <a className="nav-link collapsed" href="pages-contact.html">
-                            <i className="bi bi-envelope"></i>
+                            <i className="bi bi-cash"></i>
                             <span>Recaudos</span>
                         </a>
                     </li>
