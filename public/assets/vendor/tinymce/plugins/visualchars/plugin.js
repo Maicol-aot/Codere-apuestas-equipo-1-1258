@@ -358,7 +358,7 @@
     var nbspClass = 'mce-nbsp';
 
     var wrapCharWithSpan = function (value) {
-      return '<span data-mce-bogus="1" className="mce-' + charMap[value] + '">' + value + '</span>';
+      return '<span data-mce-bogus="1" class="mce-' + charMap[value] + '">' + value + '</span>';
     };
 
     var isMatch = function (n) {

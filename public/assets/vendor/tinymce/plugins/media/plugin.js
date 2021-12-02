@@ -1277,7 +1277,7 @@
         editor.$('span.mce-preview-object').each(function (index, elm) {
           var $elm = editor.$(elm);
           if ($elm.find('span.mce-shim').length === 0) {
-            $elm.append('<span className="mce-shim"></span>');
+            $elm.append('<span class="mce-shim"></span>');
           }
         });
       });

@@ -88,7 +88,7 @@
     };
     var generateTocHtml = function (editor) {
       var html = generateTocContentHtml(editor);
-      return '<div className="' + editor.dom.encode(getTocClass(editor)) + '" contenteditable="false">' + html + '</div>';
+      return '<div class="' + editor.dom.encode(getTocClass(editor)) + '" contenteditable="false">' + html + '</div>';
     };
     var generateTocContentHtml = function (editor) {
       var html = '';
