@@ -546,7 +546,7 @@ h1, h2, h3, h4, h5, h6 {
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #333f48;
+  background-color: #656769;
 }
 @media (max-width: 1199px) {
   .sidebar {
@@ -608,7 +608,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: #ffffff;
   transition: 0.3;
-  background: #333f48;
+  background: #656769;
   padding: 10px 15px;
   border-radius: 4px;
 }
@@ -619,14 +619,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 .sidebar-nav .nav-link.collapsed {
   color: #ffffff;
-  background: #333f48;
+  background: #656769;
 }
 .sidebar-nav .nav-link.collapsed i {
   color: #ffffff;
 }
 .sidebar-nav .nav-link:hover {
   color: #ffffff;
-  background: #1c1c1c;
+  background: #8a8888;
 }
 .sidebar-nav .nav-link:hover i {
   color: #ffffff;
