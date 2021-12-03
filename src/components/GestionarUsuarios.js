@@ -8,15 +8,15 @@ const GestionarUsuarios = () =>{
                 <div className="pagetitle">
                     <h1>Gestionar Usuarios</h1>
                     <nav>
-                        <ol class="breadcrumb">
-                            
+                        <ol className="breadcrumb">
+
                         </ol>
                     </nav>
                 </div>{/*<!-- End Page Title -->*/}
 
                 <section className="section profile">
                     <div className="row">
-                    
+
 
                         <div className="col-xl-8">
 
@@ -35,8 +35,8 @@ const GestionarUsuarios = () =>{
 
                                     </ul>
                                     <div className="tab-content pt-2">
-                                        <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                                            <h5 class="card-title">About</h5>
+                                        <div className="tab-pane fade show active profile-overview" id="profile-overview">
+                                            <h5 className="card-title">About</h5>
 
                                         </div>
 
@@ -44,109 +44,109 @@ const GestionarUsuarios = () =>{
 
                                             {/*<!-- Profile Edit Form -->*/}
                                             <form>
-                                                <div className="row mb-3">
-                                                    
+                                                <div className="row">
                                                 </div>
+                                                <div className="row">
+                                                    <label >Datos personales </label>
+                                                    <div className="col-sm-3 mb-3">
 
-                                                <div className="row mb-3">
-                                                    <label for="fullName" className="col-md-4 col-lg-3 col-form-label">Nombre</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="fullName" type="text" className="form-control" id="fullName" value="Kevin"/>
+                                                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre" required />
                                                     </div>
-                                                </div>
+                                                    <div className="col-sm-3 mb-3">
 
-                                                <div className="row mb-3">
-                                                    <label for="about" className="col-md-4 col-lg-3 col-form-label">Primer Apellido</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="about" className="form-control" id="about" value=" Anderson" />
+                                                        <input type="text" className="form-control" id="validationDefault02" placeholder="Primer apellido" required />
                                                     </div>
-                                                </div>
+                                                    <div className="col-sm-3 mb-3">
 
-                                                <div className="row mb-3">
-                                                    <label for="company" className="col-md-4 col-lg-3 col-form-label">Segundo Apellido</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="company" type="text" className="form-control" id="company" value="Lueilwitz"/>
+                                                        <input type="text" className="form-control" id="validationDefault02" placeholder="Segundo apellido" required />
                                                     </div>
-                                                </div>
-                                            
-                                                <div className="row mb-3">
-                                                    <label for="username" className="col-md-4 col-lg-3 col-form-label">Nombre de usuario</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="usernametxt" type="text" className="form-control" id="username" value="Web Designer"/>
+
+                                                    <div className="col-sm-3 mb-3">
+
+                                                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de nacimiento" required />
                                                     </div>
+
+
                                                 </div>
-                                                <div className="row mb-3">
-                                                    <label for="username" className="col-md-4 col-lg-3 col-form-label">Contraseña</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="usernametxt" type="text" className="form-control" id="username" value="password"/>
+                                                <div className="row">
+                                                    <label >Datos de identificacíon</label>
+                                                    <div className="col-sm-3 mb-3">
+                                                        <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect">
+                                                            <option selected>Tipo de documento</option>
+                                                            <option value="1">Cédula de ciudadania</option>
+                                                            <option value="2">Cédula de extranjería</option>
+                                                            <option value="3">Pasaporte</option>
+                                                        </select>
+
                                                     </div>
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <label className="col-md-4 col-lg-3 col-form-label" for="inputGroupSelect01">Tipo de Usuario</label>
-                                                    <select class="form-select" id="inputGroupSelect01">
-                                                        <option selected>Elige una opcion...</option>
-                                                        <option value="1">admin</option>
-                                                        <option value="2">intern</option>
-                                                        <option value="3">user</option>
-                                                    </select>
-                                                </div>
+                                                    <div className="col-sm-3 mb-3">
 
-                                                <div class="input-group mb-3">
-                                                    <label className="col-md-4 col-lg-3 col-form-label" for="inputGroupSelect01">Tipo de documento</label>
-                                                    <select class="form-select" id="inputGroupSelect01">
-                                                        <option selected>Elige una opcion...</option>
-                                                        <option value="1">Cédula de ciudadania</option>
-                                                        <option value="2">Cédula de extranjería</option>
-                                                        <option value="3">Pasaporte</option>
-                                                    </select>
-                                                </div>
-
-                                                <div className="row mb-3">
-                                                    <label for="Job" className="col-md-4 col-lg-3 col-form-label">Numero de documento</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="job" type="text" className="form-control" id="Job" value="11234567898"/>
+                                                        <input type="text" className="form-control" id="validationDefault02" placeholder="Numero de documento" required />
                                                     </div>
-                                                </div>
-                                                <div className="row mb-3">
-                                                    <label for="Job" className="col-md-4 col-lg-3 col-form-label">Lugar de expedicíon</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="job" type="text" className="form-control" id="Job" value="Barranquilla"/>
+                                                    <div className="col-sm-3 mb-3">
+
+                                                        <input type="text" className="form-control" id="validationDefault02" placeholder="Lugar de expedicíon" required />
                                                     </div>
-                                                </div>
 
-                                                <div className="row mb-3">
-                                                    <label for="Country" className="col-md-4 col-lg-3 col-form-label">Pais de residencia</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="country" type="text" className="form-control" id="Country" value="Colombia"/>
+                                                    <div className="col-sm-3 mb-3">
+
+                                                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de Expedicion" required />
                                                     </div>
+
+
                                                 </div>
+                                                <div className="row">
+                                                    <label>Datos de contacto</label>
+                                                    <div className="col-sm-3 mb-3">
 
-
-                                                <div className="row mb-3">
-                                                    <label for="Phone" className="col-md-4 col-lg-3 col-form-label">Teléfono</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="phone" type="text" className="form-control" id="Phone" value="(436) 486-3538 x29071"/>
+                                                        <input type="text" className="form-control" id="validationDefault01" placeholder="Correo electronico" required />
                                                     </div>
-                                                </div>
+                                                    <div className="col-sm-3 mb-3">
 
-                                                <div className="row mb-3">
-                                                    <label for="Email" className="col-md-4 col-lg-3 col-form-label">Email</label>
-                                                    <div className="col-md-8 col-lg-9">
-                                                        <input name="email" type="email" className="form-control" id="Email" value="k.anderson@example.com"/>
+                                                        <input type="text" className="form-control" id="validationDefault02" placeholder="Pais de residencia" required />
                                                     </div>
-                                                </div>
+                                                    <div className="col-sm-3 mb-3">
 
-                                            
-                                                
+                                                        <input type="text" className="form-control" id="validationDefault02" placeholder="Teléfono" required />
+                                                    </div>
 
-                                                <div className="text-center">
-                                                    <button type="submit" className="btn btn-primary">Enviar</button>
+
+
+
                                                 </div>
-                                            </form>{/*<!-- End Profile Edit Form -->*/}
+                                                <div className="row">
+                                                    <label>Datos de usuario</label>
+                                                    <div className="col-sm-3 mb-3">
+
+                                                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre de usuario" required />
+                                                    </div>
+                                                    <div className="col-sm-3 mb-3">
+
+                                                        <input type="text" className="form-control" id="validationDefault02" placeholder="contraseña" required />
+                                                    </div>
+                                                    <div className="col-sm-3 mb-3">
+
+
+                                                        <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect">
+                                                            <option selected>Tipo de usuario</option>
+                                                            <option value="1">Administrador</option>
+                                                            <option value="2">Interno</option>
+                                                            <option value="3">Usuario</option>
+                                                        </select>
+
+
+                                                    </div>
+
+
+
+
+                                                </div>
+                                                <button className="btn btn-primary" type="submit">Enviar</button>
+                                            </form>
 
                                         </div>
 
-                                        
+
 
                                     </div>{/*<!-- End Bordered Tabs -->*/}
 
@@ -158,7 +158,6 @@ const GestionarUsuarios = () =>{
                 </section>
 
             </main>
-
 
 
         </>
