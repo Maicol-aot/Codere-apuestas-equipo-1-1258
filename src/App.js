@@ -14,7 +14,7 @@ function App() {
       <AdminNavbar />
       <Sidebar />
      
-     <GestionarEventos />
+     <GestionarUsuarios />
       {/* <Dashboard /> */}
       <Footer />
     </div>
