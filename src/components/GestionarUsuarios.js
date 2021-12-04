@@ -26,51 +26,56 @@ const GestionarUsuarios = () =>{
                                     <ul className="nav nav-tabs nav-tabs-bordered">
 
                                         <li className="nav-item">
-                                            <button className="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Usuarios</button>
+                                            <button className="nav-link active" data-bs-toggle="tab" data-bs-target="#Usuarios">Usuarios</button>
                                         </li>
 
                                         <li className="nav-item">
-                                            <button className="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Crear Usuario</button>
+                                            <button className="nav-link" data-bs-toggle="tab" data-bs-target="#Crear-usuario">Crear Usuario</button>
                                         </li>
 
                                     </ul>
                                     <div className="tab-content pt-2">
-                                        <div className="tab-pane fade show active profile-overview" id="profile-overview">
-                                            <h5 className="card-title">About</h5>
+                                        <div className="tab-pane fade show active Usuarios" id="Usuarios">
+                                            <div className="search-bar">
+                                                <form className="search-form d-flex align-items-center" method="POST" action="#">
+                                                    <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+                                                    <button type="submit" title="Search"><i className="bi bi-search"></i></button>
+                                                </form>
+                                            </div>
 
                                         </div>
 
-                                        <div className="tab-pane fade profile-edit pt-3" id="profile-edit">
+                                        <div className="tab-pane fade Crear-usuario pt-3" id="Crear-usuario">
 
-                                            {/*<!-- Profile Edit Form -->*/}
+                                            {/*<!-- crear usuarios Edit Form -->*/}
                                             <form>
                                                 <div className="row">
                                                 </div>
                                                 <div className="row">
-                                                    <label >Datos personales </label>
+                                                    
                                                     <div className="col-sm-3 mb-3">
-
+                                                        <label >Datos personales </label>
                                                         <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre" required />
                                                     </div>
                                                     <div className="col-sm-3 mb-3">
-
+                                                        <label></label>
                                                         <input type="text" className="form-control" id="validationDefault02" placeholder="Primer apellido" required />
                                                     </div>
                                                     <div className="col-sm-3 mb-3">
-
+                                                        <label></label>
                                                         <input type="text" className="form-control" id="validationDefault02" placeholder="Segundo apellido" required />
                                                     </div>
 
                                                     <div className="col-sm-3 mb-3">
-
+                                                        <label>Fecha de nacimiento</label>
                                                         <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de nacimiento" required />
                                                     </div>
 
 
                                                 </div>
                                                 <div className="row">
-                                                    <label >Datos de identificacíon</label>
                                                     <div className="col-sm-3 mb-3">
+                                                        <label >Datos de identificacíon</label>
                                                         <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect">
                                                             <option selected>Tipo de documento</option>
                                                             <option value="1">Cédula de ciudadania</option>
@@ -80,16 +85,16 @@ const GestionarUsuarios = () =>{
 
                                                     </div>
                                                     <div className="col-sm-3 mb-3">
-
-                                                        <input type="text" className="form-control" id="validationDefault02" placeholder="Numero de documento" required />
+                                                        <label></label>
+                                                        <input type="text" className="form-control" id="validationDefault02" placeholder="No. de documento" required />
                                                     </div>
                                                     <div className="col-sm-3 mb-3">
-
+                                                        <label></label>
                                                         <input type="text" className="form-control" id="validationDefault02" placeholder="Lugar de expedicíon" required />
                                                     </div>
 
                                                     <div className="col-sm-3 mb-3">
-
+                                                        <label>Fecha de Expedicion</label>
                                                         <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de Expedicion" required />
                                                     </div>
 

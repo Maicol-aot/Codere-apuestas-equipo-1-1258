@@ -12,12 +12,13 @@ const AdminNavbar = () =>{
             <i className="bi bi-list toggle-sidebar-btn"></i>
             </div>{/*{/*<!-- End Logo -->*/} 
             
-            <div className="search-bar">
+            {/* <div className="search-bar">
             <form className="search-form d-flex align-items-center" method="POST" action="#">
                 <input type="text" name="query" placeholder="Search" title="Enter search keyword"/>
                 <button type="submit" title="Search"><i className="bi bi-search"></i></button>
             </form>
-            </div>{/*{/*<!-- End Search Bar -->*/}
+            </div> */}
+            {/*{/*<!-- End Search Bar -->*/}
 
             <nav className="header-nav ms-auto">
                 <ul className="d-flex align-items-center">

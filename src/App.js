@@ -4,6 +4,8 @@ import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 import GestionarUsuarios from './components/GestionarUsuarios';
 import Sidebar from './components/Sidebar';
+import GestionarEventos from './components/GestionarEventos';
+import SearchBar from './components/SearchBar';
 
 
 function App() {
@@ -11,8 +13,8 @@ function App() {
     <div>
       <AdminNavbar />
       <Sidebar />
-
-      <GestionarUsuarios />
+     
+     <GestionarEventos />
       {/* <Dashboard /> */}
       <Footer />
     </div>
