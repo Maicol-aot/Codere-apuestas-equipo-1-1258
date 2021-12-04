@@ -6,7 +6,7 @@ const GestionarEventos = () =>{
             <main id="main" className="main">
 
                 <div className="pagetitle">
-                    <h1>Gestionar Usuarios</h1>
+                    <h1>Gestionar Eventos</h1>
                     <nav>
                         <ol className="breadcrumb">
 
