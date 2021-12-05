@@ -1,5 +1,8 @@
 import React from 'react';
 import Paginator from './Paginator';
+import ListaEventosF from './ListaEventosF';
+import ListaEventosA from './ListaEventosA';
+
 
 
 const GestionarEventos = () =>{
@@ -28,11 +31,11 @@ const GestionarEventos = () =>{
                                     <ul className="nav nav-tabs nav-tabs-bordered">
 
                                         <li className="nav-item">
-                                            <button className="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Eventos Activos</button>
+                                            <button className="nav-link active" data-bs-toggle="tab" data-bs-target="#eventos-a">Eventos Activos</button>
                                         </li>
 
                                         <li className="nav-item">
-                                            <button className="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Eventos Finalizados</button>
+                                            <button className="nav-link" data-bs-toggle="tab" data-bs-target="#eventos-f">Eventos Finalizados</button>
                                         </li>
 
                                         <li className="nav-item">
@@ -41,9 +44,15 @@ const GestionarEventos = () =>{
 
                                     </ul>
                                     <div className="tab-content pt-2">
-                                        <div className="tab-pane fade show active profile-overview" id="profile-overview">
-                                            <h5 className="card-title">About</h5>
+                                        <div className="tab-pane fade show active eventos-a" id="eventos-a">
+                                            <ListaEventosA/>
                                             <Paginator />
+
+                                        </div>
+                                        <div className="tab-pane fade show active eventos-f" id="eventos-f">
+                                            <ListaEventosF/>
+                                            <Paginator />
+                                            
 
                                         </div>
 

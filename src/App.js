@@ -9,6 +9,8 @@ import SearchBar from './components/SearchBar';
 import PerfilAdmin from './pages/PerfilAdmin';
 import Paginator from './components/Paginator';
 import DetalleEvento from './components/DetalleEvento';
+import ListaEventosF from './components/ListaEventosF';
+import ListaEventosA from './components/ListaEventosA';
 
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
       <AdminNavbar />
       <Sidebar />
      
-      <DetalleEvento/>
+      <GestionarEventos/>
       {/* <Dashboard /> */}
       <Footer />
     </div>
