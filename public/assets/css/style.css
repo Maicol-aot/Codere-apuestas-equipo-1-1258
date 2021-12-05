@@ -14,8 +14,12 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
+  background: #d3d3d3;
   color: #444444;
+  width: 100%;
+  position: relative;
+  padding-bottom: 2em;
+  min-height: 100vh;
 }
 
 a {
@@ -39,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 60px;
   padding: 20px 30px;
   transition: all 0.3s;
+  height: 100%;
 }
 @media (max-width: 1199px) {
   #main {
