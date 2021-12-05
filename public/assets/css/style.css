@@ -45,6 +45,20 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
   }
 }
+/*--------------------------------------------------------------
+# Main2
+--------------------------------------------------------------*/
+/* #main2 {
+  margin-top: 60px;
+  padding: 10px 30px;
+  transition: all 0.3s;
+  left: 70%;
+}
+@media (max-width: 1199px) {
+  #main2 {
+    padding: 20px;
+  }
+} */
 
 /*--------------------------------------------------------------
 # Page Title
@@ -221,6 +235,8 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+
+
 .card-header, .card-footer {
   border-color: #ebeef4;
   background-color: #fff;
@@ -248,6 +264,44 @@ h1, h2, h3, h4, h5, h6 {
 .card-img-overlay {
   background-color: rgba(255, 255, 255, 0.6);
 }
+
+
+/*card 2 prueba*/
+.card2 {
+  margin-bottom: 0;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  overflow: hidden;
+}
+
+
+
+.card2 {
+  border-color: #000;
+  background-color: #333f48;
+  color: #fff;
+  padding: 15px 15px 0 15px;
+}
+
+.card2-title {
+  padding: 20px 0 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+.card2-title span {
+  color: #899bbd;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card2-body {
+  padding: 0 20px 20px 20px;
+}
+
+
 
 /* Alerts */
 .alert-heading {

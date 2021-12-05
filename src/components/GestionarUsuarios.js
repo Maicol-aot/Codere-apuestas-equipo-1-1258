@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
+import Paginator from './Paginator';
 
 const GestionarUsuarios = () =>{
     return(
@@ -37,8 +38,13 @@ const GestionarUsuarios = () =>{
                                     </ul>
                                     <div className="tab-content pt-2">
                                         
-                                        <div className="col-lg-6 mb-3">
+                                        <div className="tab-pane fade show active Usuarios" id="Usuarios">
+
                                             <SearchBar/>
+                                            <Paginator/>
+
+                        
+
                                         </div>
                                         
 

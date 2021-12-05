@@ -1,5 +1,7 @@
 import React from 'react';
 import Paginator from './Paginator';
+
+
 const GestionarEventos = () =>{
     return(
         <>
@@ -25,16 +27,16 @@ const GestionarEventos = () =>{
                                     {/*<!-- Bordered Tabs -->*/}
                                     <ul className="nav nav-tabs nav-tabs-bordered">
 
-                                        <li class="nav-item">
-                                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Eventos Activos</button>
+                                        <li className="nav-item">
+                                            <button className="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Eventos Activos</button>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Eventos Finalizados</button>
+                                        <li className="nav-item">
+                                            <button className="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Eventos Finalizados</button>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#new-event">Crear Evento</button>
+                                        <li className="nav-item">
+                                            <button className="nav-link" data-bs-toggle="tab" data-bs-target="#new-event">Crear Evento</button>
                                         </li>
 
                                     </ul>

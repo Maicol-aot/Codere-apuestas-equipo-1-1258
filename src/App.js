@@ -8,6 +8,7 @@ import GestionarEventos from './components/GestionarEventos';
 import SearchBar from './components/SearchBar';
 import PerfilAdmin from './pages/PerfilAdmin';
 import Paginator from './components/Paginator';
+import DetalleEvento from './components/DetalleEvento';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <AdminNavbar />
       <Sidebar />
      
-      <GestionarUsuarios/>
+      <DetalleEvento/>
       {/* <Dashboard /> */}
       <Footer />
     </div>
