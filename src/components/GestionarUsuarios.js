@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from './SearchBar';
 
 const GestionarUsuarios = () =>{
     return(
@@ -35,15 +36,11 @@ const GestionarUsuarios = () =>{
 
                                     </ul>
                                     <div className="tab-content pt-2">
-                                        <div className="tab-pane fade show active Usuarios" id="Usuarios">
-                                            <div className="search-bar">
-                                                <form className="search-form d-flex align-items-center" method="POST" action="#">
-                                                    <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
-                                                    <button type="submit" title="Search"><i className="bi bi-search"></i></button>
-                                                </form>
-                                            </div>
-
+                                        
+                                        <div className="col-lg-6 mb-3">
+                                            <SearchBar/>
                                         </div>
+                                        
 
                                         <div className="tab-pane fade Crear-usuario pt-3" id="Crear-usuario">
 

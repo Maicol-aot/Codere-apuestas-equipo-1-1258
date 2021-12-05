@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar';
 import GestionarEventos from './components/GestionarEventos';
 import SearchBar from './components/SearchBar';
 import PerfilAdmin from './pages/PerfilAdmin';
+import Paginator from './components/Paginator';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       <AdminNavbar />
       <Sidebar />
      
-     <PerfilAdmin />
+      <GestionarUsuarios/>
       {/* <Dashboard /> */}
       <Footer />
     </div>
