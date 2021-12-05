@@ -1,8 +1,10 @@
 import React from 'react';
 import IconoUsuario from './IconoUsuario';
 
+
 const NavBar = () => {
     return (
+        
         <header id="header" className="header fixed-top d-flex align-items-center">
             <link href="/assets/css/NavBar.css" rel="stylesheet"/>
 
@@ -33,8 +35,11 @@ const NavBar = () => {
                     </li>{/*{/*<!-- End Search Icon-->*/}
 
                     
-
+                    
                     <IconoUsuario />
+                    
+
+                    
 
                 </ul>
             </nav>

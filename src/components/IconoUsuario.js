@@ -1,8 +1,15 @@
 import React from 'react';
+import GestionDepositar from './GestionDepositar';
+import GestionRetirar from './GestionRetirar';
+import ListaApuestas from './ListaApuestas';
+import VerifPerUsuario from './VerifPerUsuario';
+
+
 
 const IconoUsuario=()=>{
     return (
         <>
+            
             <link href="/assets/css/NavBar.css" rel="stylesheet"/>
             
             <ul className="d-flex align-items-center">
@@ -27,49 +34,30 @@ const IconoUsuario=()=>{
                             <hr className="dropdown-divider"/>
                         </li>
 
-                        <li>
-                            <a className="dropdown-item d-flex align-items-center" href="users-profile.html">
-                            <i className="bi bi-person"></i>
-                            <span>Perfil de Usuario</span>
-                            </a>
-                        </li>
+                        <VerifPerUsuario/>
                         <li>
                             <hr className="dropdown-divider"/>
                         </li>
 
-                        <li>
-                            <a className="dropdown-item d-flex align-items-center" href="users-profile.html">
-                            <i className="bi bi-currency-dollar"></i>
-                            <span>Depositar</span>
-                            </a>
-                        </li>
+                        <GestionRetirar/>
                         <li>
                             <hr className="dropdown-divider"/>
                         </li>
 
-                        <li>
-                            <a className="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                            <i className="bi bi-dash-circle"></i>
-                            <span>Retirar</span>
-                            </a>
-                        </li>
+                       
+                        <GestionDepositar/>
                         <li>
                             <hr className="dropdown-divider"/>
                         </li>
 
-                        <li>
-                            <a className="dropdown-item d-flex align-items-center" href="">
-                            <i className="bi bi-collection"></i>
-                            <span>Mis apuestas</span>
-                            </a>
-                        </li>
-
+                       
+                        <ListaApuestas/>
                         <li>
                             <hr className="dropdown-divider"/>
                         </li>
-
+                        
                         <li>
-                            <a className="dropdown-item d-flex align-items-center" href="">
+                            <a className="dropdown-item d-flex align-items-center" href="nada">
                                 <i className="bi bi-box-arrow-right"></i>
                                 <span>Cerrar sesion</span>
                             </a>
