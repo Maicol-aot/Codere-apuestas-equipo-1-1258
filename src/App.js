@@ -1,13 +1,23 @@
 import './App.css';
+
 import VistaEventos from './pages/VistaEventos';
-import VistaUsuario from './pages/VsitaUsuarios';
+import VistaUsuarios from './pages/VsitaUsuarios';
+import VistaDashboard from './pages/VistaDashboard';
+import VistaPerfil from './pages/VistaPerfil';
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // V6 -> nuevos cambios
+
 
 
 function App() {
   return (
-    <div>
-      <VistaEventos/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<VistaDashboard />} />
+        <Route path="/GestionarEventos" element={< VistaEventos/>} />
+        <Route path="/Perfil" element={<VistaUsuarios />} />
+        <Route path="/PerfilAdmin"element={<VistaPerfil />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
