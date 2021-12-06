@@ -2,6 +2,7 @@ import React from 'react';
 import Paginator from './Paginator';
 import ListaEventosF from './ListaEventosF';
 import ListaEventosA from './ListaEventosA';
+import SearchBar from './SearchBar';
 
 
 
@@ -45,11 +46,17 @@ const GestionarEventos = () =>{
                                     </ul>
                                     <div className="tab-content pt-2">
                                         <div className="tab-pane fade show active eventos-a" id="eventos-a">
+                                            <br/>
+                                            <SearchBar/>
+                                            <br/>
                                             <ListaEventosA/>
                                             <Paginator />
 
                                         </div>
-                                        <div className="tab-pane fade show active eventos-f" id="eventos-f">
+                                        <div className="tab-pane fade eventos-f" id="eventos-f">
+                                            <br/>
+                                            <SearchBar/>
+                                            <br/>
                                             <ListaEventosF/>
                                             <Paginator />
                                             
