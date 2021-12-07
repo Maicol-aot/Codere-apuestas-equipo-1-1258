@@ -1,6 +1,21 @@
 import react from "react";
+import Usuario from "./Usuario";
 
-const ListaUsuarios = ()=>{
+
+const ListaUsuarios = (props)=>{
+    const Usuarios =props.Usuarios;
+    const ListaUsers = Usuarios.map ( p =>
+        <Usuario 
+            nombre = {p.nombre}
+            primerApellido ={p.primerApellido}
+            id = {p.id}
+            username = {p.username}
+            tipouser={p.tipouser}
+        
+        />);
+
+
+
     return(
         <>  
             <section className="section">
@@ -22,41 +37,8 @@ const ListaUsuarios = ()=>{
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>myke89</td>                                           
-                                                <td>Miguel Torres</td>
-                                                <td>Usuario</td>
-                                                <td><td><a href="#" className="btn btn-danger">Eliminar</a></td></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>alex23</td>                                             
-                                                <td>Alexander Gil</td>
-                                                <td>Administrador</td>
-                                                <td><td><a href="#" className="btn btn-danger">Eliminar</a></td></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Robert26 </td>                                    
-                                                <td>Roberto Morales</td>
-                                                <td>Interno</td>
-                                                <td><td><a href="#" className="btn btn-danger">Eliminar</a></td></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">4</th>
-                                                <td>taylors</td>                         
-                                                <td>Tatiana Suarez</td>
-                                                <td>Usuario</td>
-                                                <td><a href="#" className="btn btn-danger">Eliminar</a></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">5</th>
-                                                <td>victorv</td>
-                                                <td>Victor Vigna</td>
-                                                <td>Usuario</td>
-                                                <td><td><a href="#" className="btn btn-danger">Eliminar</a></td></td>
-                                            </tr>
+                                            {ListaUsers}
+                                            
                                         </tbody>
                                         
                                     </table>
