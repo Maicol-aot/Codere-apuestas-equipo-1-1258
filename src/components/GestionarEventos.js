@@ -6,10 +6,10 @@ import SearchBar from './SearchBar';
 
 const ListaDatosEventos = [
     { nombreEvento: "Galaxy vs Trompers", id:"15962", fechaI: "11/12/2021" , horaI:'10:25', fechaF: "11/12/2021" , horaF:'10:25'},
-    { nombreEvento: "Bots vs Ringos", id:"24896",fechaI: "13/12/2021" , horaI:'03:30', fechaF: "11/12/2021" , horaF:'05:30'},
-    { nombreEvento: "Rockets vs Miles", id:"95862", fechaI: "07/12/2021", horaI:'14:55', fechaF: "11/12/2021" , horaF:'16:25'},
-    { nombreEvento: "Beers vs Colins", id:"53268", fechaI: "01/12/2021", horaI:'18:25', fechaF: "11/12/2021" , horaF:'20:25'},
-    { nombreEvento: "Atalanta vs Dogs", id:"50025", fechaI: "06/12/2021",horaI:'20:15', fechaF: "11/12/2021" , horaF:'22:15'}
+    { nombreEvento: "Bots vs Ringos", id:"24896",fechaI: "13/12/2021" , horaI:'03:30', fechaF: "13/12/2021" , horaF:'05:30'},
+    { nombreEvento: "Rockets vs Miles", id:"95862", fechaI: "07/12/2021", horaI:'14:55', fechaF: "07/12/2021" , horaF:'16:25'},
+    { nombreEvento: "Beers vs Colins", id:"53268", fechaI: "01/12/2021", horaI:'18:25', fechaF: "01/12/2021" , horaF:'20:25'},
+    { nombreEvento: "Atalanta vs Dogs", id:"50025", fechaI: "06/12/2021",horaI:'20:15', fechaF: "06/12/2021" , horaF:'22:15'}
 
   ];
 
@@ -66,7 +66,7 @@ const GestionarEventos = () =>{
                                             <br/>
                                             <SearchBar/>
                                             <br/>
-                                            <ListaEventosF/>
+                                            <ListaEventosF  Eventos ={ListaDatosEventos}/>
                                             <Paginator />
                                             
 

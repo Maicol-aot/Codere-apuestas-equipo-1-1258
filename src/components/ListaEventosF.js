@@ -1,8 +1,22 @@
 import React  from "react";
 import Paginator from "./Paginator";
 import SearchBar from "./SearchBar";
+import EventoFinalizado from "./EventoFinalizado"
 
-const ListaEventosF =() =>{
+
+
+const ListaEventosF =(props) =>{
+
+    const Eventos =props.Eventos;
+    const ListaFinalizados = Eventos.map ( p =>
+        <EventoFinalizado 
+            nombreEventos = {p.nombreEvento}
+            id = {p.id}
+            fechaF = {p.fechaF}
+            horaF={p.horaF}
+        
+        />);
+
     return(
         <>
 
@@ -25,41 +39,7 @@ const ListaEventosF =() =>{
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Estrellas vs romers</td>
-                                                <td><td><a href="#" className="btn btn-primary">Ver Detalles</a></td></td>
-                                                <td>28562</td>
-                                                <td>2016-05-25</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Alcaide vs Persas</td>
-                                                <td><td><a href="#" className="btn btn-primary">Ver Detalles</a></td></td>
-                                                <td>35454</td>
-                                                <td>2014-12-05</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Ashton vs Dinm</td>
-                                                <td><td><a href="#" className="btn btn-primary">Ver Detalles</a></td></td>
-                                                <td>45012</td>
-                                                <td>2011-08-12</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">4</th>
-                                                <td>Angles vs Vectors</td>
-                                                <td><a href="#" className="btn btn-primary">Ver Detalles</a></td>
-                                                <td>34454</td>
-                                                <td>2012-06-11</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">5</th>
-                                                <td>Rars vs Polos</td>
-                                                <td><td><a href="#" className="btn btn-primary">Ver Detalles</a></td></td>
-                                                <td>44557</td>
-                                                <td>2011-04-19</td>
-                                            </tr>
+                                             {ListaFinalizados}
                                         </tbody>
                                         
                                     </table>
