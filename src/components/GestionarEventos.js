@@ -4,11 +4,20 @@ import ListaEventosF from './ListaEventosF';
 import ListaEventosA from './ListaEventosA';
 import SearchBar from './SearchBar';
 
+const ListaDatosEventos = [
+    { nombreEvento: "Galaxy vs Trompers", id:"15962", fechaI: "11/12/2021" , horaI:'10:25', fechaF: "11/12/2021" , horaF:'10:25'},
+    { nombreEvento: "Bots vs Ringos", id:"24896",fechaI: "13/12/2021" , horaI:'03:30', fechaF: "11/12/2021" , horaF:'05:30'},
+    { nombreEvento: "Rockets vs Miles", id:"95862", fechaI: "07/12/2021", horaI:'14:55', fechaF: "11/12/2021" , horaF:'16:25'},
+    { nombreEvento: "Beers vs Colins", id:"53268", fechaI: "01/12/2021", horaI:'18:25', fechaF: "11/12/2021" , horaF:'20:25'},
+    { nombreEvento: "Atalanta vs Dogs", id:"50025", fechaI: "06/12/2021",horaI:'20:15', fechaF: "11/12/2021" , horaF:'22:15'}
 
+  ];
 
 const GestionarEventos = () =>{
     return(
+        
         <>
+        
             <main id="main" className="main">
 
                 <div className="pagetitle">
@@ -49,7 +58,7 @@ const GestionarEventos = () =>{
                                             <br/>
                                             <SearchBar/>
                                             <br/>
-                                            <ListaEventosA/>
+                                            <ListaEventosA Eventos ={ListaDatosEventos}/>
                                             <Paginator />
 
                                         </div>
@@ -63,9 +72,9 @@ const GestionarEventos = () =>{
 
                                         </div>
 
-                                        <div className="tab-pane fade new-event pt-2" id="new-event">
+                                        <div className="tab-pane fade new-event pt-2" id="new-event">  {/*<!-- crear usuario Edit Form -->*/}
 
-                                            {/*<!-- crear usuario Edit Form -->*/}
+                                           
                                             <form>
                                                 <div className="row">
                                                 </div>

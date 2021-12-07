@@ -1,6 +1,19 @@
 import React  from "react";
+import EventoActivo from "./EventoActivo";
 
-const ListaEventosA =() =>{
+const ListaEventosA =(props) =>{
+
+    const Eventos =props.Eventos;
+    const ListaActivos = Eventos.map ( p =>
+        <EventoActivo 
+            nombreEventos = {p.nombreEvento}
+            id = {p.id}
+            fechaI = {p.fechaI}
+            horaI={p.horaI}
+        
+        />);
+
+
     return(
         <>
 
@@ -23,14 +36,8 @@ const ListaEventosA =() =>{
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Galaxy vs Trompers</td>                                           
-                                                <td>28562</td>
-                                                <td>2016/05/25 - 09:45</td>
-                                                <td><td><a href="#" className="btn btn-danger">Cerrar</a></td></td>
-                                            </tr>
-                                            <tr>
+                                            {ListaActivos}
+                                            {/* <tr>
                                                 <th scope="row">2</th>
                                                 <td>Bots vs Ringos</td>                                             
                                                 <td>36554</td>
@@ -57,7 +64,7 @@ const ListaEventosA =() =>{
                                                 <td>44575</td>
                                                 <td>2011/04/19 - 16:00</td>
                                                 <td><td><a href="#" className="btn btn-danger">Cerrar</a></td></td>
-                                            </tr>
+                                            </tr> */}
                                         </tbody>
                                         
                                     </table>
