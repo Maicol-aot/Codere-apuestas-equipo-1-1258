@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Sidebar = () =>{
     return(
@@ -9,35 +10,29 @@ const Sidebar = () =>{
                 <ul className="sidebar-nav" id="sidebar-nav">
 
                     <li className="nav-item">
-                        <a className="nav-link " href="dashboard.html">
+                        <Link to ="/" className="nav-link " href="/">
                             <i className="bi bi-grid"></i>
                             <span>Dashboard</span>
-                        </a>
+                        </Link>
                     </li>{/*{/*<!-- End Dashboard Nav -->*/}
 
                     <li className="nav-item">
-                        <a className="nav-link collapsed" href="users-profile.html">
+                        <Link to ="/GestionarEventos" className="nav-link collapsed" href="GestionarEventos">
                             <i className="bi bi-layout-text-sidebar-reverse"></i>
                             <span>Gestionar Eventos </span> {/*<!-- info del perfil -->*/}
-                        </a>
+                        </Link>
                     </li>
                     {/*{/*<!-- End Profile Page Nav -->*/}
 
                     <li className="nav-item">
-                        <a className="nav-link collapsed" href="pages-faq.html">
+                        <Link to ="/GestionarUsuarios" className="nav-link collapsed" href="GestionarUsuarios">
                             <i className="bi bi-person"></i>
                             <span>Gestionar Usuarios</span>
-                        </a>
+                        </Link>
                     </li>
                     {/*{/*<!-- End F.A.Q Page Nav -->*/}
 
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="pages-contact.html">
-                            <i className="bi bi-cash"></i>
-                            <span>Recaudos</span>
-                        </a>
-                    </li>
-                    {/*{/*<!-- End Contact Page Nav -->*/}
+
 
                 </ul>
 

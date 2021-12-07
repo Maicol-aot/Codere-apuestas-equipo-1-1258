@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<VistaDashboard />} />
         <Route path="/GestionarEventos" element={< VistaEventos/>} />
-        <Route path="/Perfil" element={<VistaUsuarios />} />
+        <Route path="/GestionarUsuarios" element={<VistaUsuarios />} />
         <Route path="/PerfilAdmin"element={<VistaPerfil />}/>
       </Routes>
     </BrowserRouter>

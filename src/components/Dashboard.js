@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () =>{
     return(
@@ -9,7 +10,7 @@ const Dashboard = () =>{
                     <h1>Dashboard</h1>
                     <nav>
                         <ol className="breadcrumb">
-                            <li className="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+                            <li className="breadcrumb-item"><Link to="/">Home</Link></li>
                             <li className="breadcrumb-item active">Dashboard</li>
                         </ol>
                     </nav>
@@ -22,57 +23,40 @@ const Dashboard = () =>{
                         <div className="col-lg-8">
                             <div className="row">
 
-                                {/*{/*<!-- Sales Card -->*/}
-                                <div className="col-xxl-6 col-md-6">
+                               
+                                <div className="col-xxl-6 col-md-6"> {/*{/*<!-- Eventos activos -->*/}
                                     <div className="card info-card sales-card">
 
-                                        <div className="filter">
-                                            <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                                            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                <li className="dropdown-header text-start">
-                                                    <h6>Filter</h6>
-                                                </li>
-
-                                                <li><a className="dropdown-item" href="#">Today</a></li>
-                                                <li><a className="dropdown-item" href="#">This Month</a></li>
-                                                <li><a className="dropdown-item" href="#">This Year</a></li>
-                                            </ul>
-                                        </div>
+                                        
 
                                         <div className="card-body">
                                             <h5 className="card-title">Eventos Activos </h5>
-
                                             <div className="d-flex align-items-center">
                                                 <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                                     <i className="bi bi-calendar4-event"></i>
                                                 </div>
                                                 <div className="ps-3">
                                                     <h6>145</h6>
-
+                                                    <div className="filter">
+                                                        <Link to="GestionarEventos" className="icon" ><i class="bi bi-cursor-fill"></i></Link>
+                                                    </div>
                                                 </div>
+
                                             </div>
                                         </div>
 
                                     </div>
-                                </div>{/*{/*<!-- End Sales Card -->*/}
+                                </div>{/*{/*<!-- final eventos activos -->*/}
                                
 
-                                {/*{/*<!-- Customers Card -->*/}
-                                <div className="col-xxl-6 col-xl-12">
+                                
+                                <div className="col-xxl-6 col-xl-12">{/*{/*<!-- Clientes Activos -->*/}
 
                                     <div className="card info-card customers-card">
 
-                                        <div className="filter">
-                                            <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                                            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                <li className="dropdown-header text-start">
-                                                    <h6>Filter</h6>
-                                                </li>
-
-                                                <li><a className="dropdown-item" href="#">Today</a></li>
-                                                <li><a className="dropdown-item" href="#">This Month</a></li>
-                                                <li><a className="dropdown-item" href="#">This Year</a></li>
-                                            </ul>
+                                         <div className="filter"> {/*goto */}
+                                            <Link to="GestionarUsuarios" className="icon" ><i class="bi bi-cursor-fill"></i></Link>
+                                            
                                         </div>
 
                                         <div className="card-body">
@@ -92,22 +76,13 @@ const Dashboard = () =>{
                                         </div>
                                     </div>
 
-                                </div>{/*{/*<!-- End Customers Card -->*/}
-                                <div className="col-xxl-6 col-xl-12">
+                                </div>{/*{/*<!-- final clientes activos -->*/}
 
+                                <div className="col-xxl-6 col-xl-12"> {/*{/*<!-- Menores ganancias-->*/}
                                     <div className="card info-card low-income">
 
                                         <div className="filter">
-                                            <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                                            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                <li className="dropdown-header text-start">
-                                                    <h6>Filter</h6>
-                                                </li>
-
-                                                <li><a className="dropdown-item" href="#">Today</a></li>
-                                                <li><a className="dropdown-item" href="#">This Month</a></li>
-                                                <li><a className="dropdown-item" href="#">This Year</a></li>
-                                            </ul>
+                                            <Link to="#" className="icon" ><i class="bi bi-cursor-fill"></i></Link>
                                         </div>
 
                                         <div className="card-body">
@@ -119,7 +94,7 @@ const Dashboard = () =>{
                                                 </div>
                                                 <div className="ps-3">
                                                     <h6>$5'862.795</h6>
-                                                    <span className="text-danger small pt-1 fw-bold">12%</span> <span className="text-muted small pt-2 ps-1">disminución</span>
+                                                    <span className="text-danger small pt-1 fw-bold">ID del Evento</span> <span className="text-muted small pt-2 ps-1">98659</span>
 
                                                 </div>
                                             </div>
@@ -128,20 +103,11 @@ const Dashboard = () =>{
                                     </div>
 
                                 </div>
-                                <div className="col-xxl-6 col-md-6">
+                                <div className="col-xxl-6 col-md-6">{/*{/*<!-- Mayores ganancias-->*/}
                                     <div className="card info-card revenue-card">
 
-                                        <div className="filter">
-                                            <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                                            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                <li className="dropdown-header text-start">
-                                                    <h6>Filter</h6>
-                                                </li>
-
-                                                <li><a className="dropdown-item" href="#">Today</a></li>
-                                                <li><a className="dropdown-item" href="#">This Month</a></li>
-                                                <li><a className="dropdown-item" href="#">This Year</a></li>
-                                            </ul>
+                                    <div className="filter">
+                                            <Link to="#" className="icon" ><i class="bi bi-cursor-fill"></i></Link>
                                         </div>
 
                                         <div className="card-body">
@@ -153,7 +119,7 @@ const Dashboard = () =>{
                                                 </div>
                                                 <div className="ps-3">
                                                     <h6>$31'562.264</h6>
-                                                    <span className="text-success small pt-1 fw-bold">8%</span> <span className="text-muted small pt-2 ps-1">aumento</span>
+                                                    <span className="text-success small pt-1 fw-bold">ID del Evento</span> <span className="text-muted small pt-2 ps-1">98592</span>
 
                                                 </div>
                                             </div>
@@ -164,71 +130,58 @@ const Dashboard = () =>{
 
             
 
-                                {/*{/*<!-- Recent Sales -->*/}
-                                <div className="col-12">
+                                
+                                <div className="col-12">{/*{/*<!-- Tabla de recaudos -->*/}
                                     <div className="card recent-sales">
 
-                                        <div className="filter">
-                                            <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                                            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                <li className="dropdown-header text-start">
-                                                    <h6>Filter</h6>
-                                                </li>
-
-                                                <li><a className="dropdown-item" href="#">Today</a></li>
-                                                <li><a className="dropdown-item" href="#">This Month</a></li>
-                                                <li><a className="dropdown-item" href="#">This Year</a></li>
-                                            </ul>
-                                        </div>
-
                                         <div className="card-body">
-                                            <h5 className="card-title">Recent Sales <span>| Today</span></h5>
+                                            <h5 className="card-title">Recaudos <span>| Today</span></h5>
 
                                             <table className="table table-borderless datatable">
                                                 <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Customer</th>
-                                                        <th scope="col">Product</th>
-                                                        <th scope="col">Price</th>
-                                                        <th scope="col">Status</th>
+                                                    <tr style={{ textAlign: "center" }}>
+                                                        <th scope="col">ID del Evento</th>
+                                                        <th scope="col">Nombre del Evento</th>
+                                                        <th scope="col">Fecha de Cierre</th>
+                                                        <th scope="col">Ganancias</th>
+                                                       
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <th scope="row"><a href="#">#2457</a></th>
-                                                        <td>Brandon Jacob</td>
-                                                        <td><a href="#" className="text-primary">At praesentium minu</a></td>
-                                                        <td>$64</td>
-                                                        <td><span className="badge bg-success">Approved</span></td>
+                                                    <tr style={{ textAlign: "center" }}>
+                                                        <th scope="row"><a href="#">#24547</a></th>
+                                                        <td>Books vs lyons</td>
+                                                        <td>06/12/21</td>
+                                                        <td>$6.234.123</td>
+                                                    
                                                     </tr>
-                                                    <tr>
-                                                        <th scope="row"><a href="#">#2147</a></th>
-                                                        <td>Bridie Kessler</td>
-                                                        <td><a href="#" className="text-primary">Blanditiis dolor omnis similique</a></td>
-                                                        <td>$47</td>
-                                                        <td><span className="badge bg-warning">Pending</span></td>
+                                                    <tr style={{ textAlign: "center" }}>
+                                                        <th scope="row"><a href="#">#21447</a></th>
+                                                        <td>Bridie vs Keflers</td> 
+                                                        <td >18/09/21</td>
+                                                        <td>$4.569.236</td>
+                                                        
                                                     </tr>
-                                                    <tr>
-                                                        <th scope="row"><a href="#">#2049</a></th>
-                                                        <td>Ashleigh Langosh</td>
-                                                        <td><a href="#" className="text-primary">At recusandae consectetur</a></td>
-                                                        <td>$147</td>
-                                                        <td><span className="badge bg-success">Approved</span></td>
+                                                    <tr style={{ textAlign: "center" }}>
+                                                        <th scope="row"><a href="#">#20449</a></th>
+                                                        <td>Ashleigh vs Langosh</td>
+                                                        <td>25/11/21</td>
+                                                        <td>$3.306.258</td>
+                                                       
                                                     </tr>
-                                                    <tr>
-                                                        <th scope="row"><a href="#">#2644</a></th>
-                                                        <td>Angus Grady</td>
-                                                        <td><a href="#" className="text-primar">Ut voluptatem id earum et</a></td>
-                                                        <td>$67</td>
-                                                        <td><span className="badge bg-danger">Rejected</span></td>
+                                                    <tr style={{ textAlign: "center" }}>
+                                                        <th scope="row"><a href="#">#26414</a></th>
+                                                        <td>Angusber vs Gradyson</td>
+                                                        <td>30/10/21</td>
+                                                        <td>$1.363.367</td>
+                                                        
                                                     </tr>
-                                                    <tr>
-                                                        <th scope="row"><a href="#">#2644</a></th>
-                                                        <td>Raheem Lehner</td>
-                                                        <td><a href="#" className="text-primary">Sunt similique distinctio</a></td>
-                                                        <td>$165</td>
-                                                        <td><span className="badge bg-success">Approved</span></td>
+                                                    <tr style={{ textAlign: "center" }}>
+                                                        <th scope="row"><a href="#">#26244</a></th>
+                                                        <td>Raheem city vs Lehner town</td>
+                                                        <td>29/11/21</td>
+                                                        <td>$10.256.896</td>
+                                                        
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -243,79 +196,6 @@ const Dashboard = () =>{
 
                         {/*{/*<!-- Right side columns -->*/}
                         <div className="col-lg-4">
-
-                            {/*{/*<!-- Recent Activity -->*/}
-                            <div className="card">
-                                <div className="filter">
-                                    <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                                    <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li className="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a className="dropdown-item" href="#">Today</a></li>
-                                        <li><a className="dropdown-item" href="#">This Month</a></li>
-                                        <li><a className="dropdown-item" href="#">This Year</a></li>
-                                    </ul>
-                                </div>
-
-                                <div className="card-body">
-                                    <h5 className="card-title">Recent Activity <span>| Today</span></h5>
-
-                                    <div className="activity">
-
-                                        <div className="activity-item d-flex">
-                                            <div className="activite-label">32 min</div>
-                                            <i className='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                                            <div className="activity-content">
-                                                Quia quae rerum <a href="#" className="fw-bold text-dark">explicabo officiis</a> beatae
-                                            </div>
-                                        </div>{/*{/*<!-- End activity item-->*/}
-
-                                        <div className="activity-item d-flex">
-                                            <div className="activite-label">56 min</div>
-                                            <i className='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                                            <div className="activity-content">
-                                                Voluptatem blanditiis blanditiis eveniet
-                                            </div>
-                                        </div>{/*{/*<!-- End activity item-->*/}
-
-                                        <div className="activity-item d-flex">
-                                            <div className="activite-label">2 hrs</div>
-                                            <i className='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                                            <div className="activity-content">
-                                                Voluptates corrupti molestias voluptatem
-                                            </div>
-                                        </div>{/*{/*<!-- End activity item-->*/}
-
-                                        <div className="activity-item d-flex">
-                                            <div className="activite-label">1 day</div>
-                                            <i className='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                                            <div className="activity-content">
-                                                Tempore autem saepe <a href="#" className="fw-bold text-dark">occaecati voluptatem</a> tempore
-                                            </div>
-                                        </div>{/*{/*<!-- End activity item-->*/}
-
-                                        <div className="activity-item d-flex">
-                                            <div className="activite-label">2 days</div>
-                                            <i className='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                                            <div className="activity-content">
-                                                Est sit eum reiciendis exercitationem
-                                            </div>
-                                        </div>{/*{/*<!-- End activity item-->*/}
-
-                                        <div className="activity-item d-flex">
-                                            <div className="activite-label">4 weeks</div>
-                                            <i className='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                                            <div className="activity-content">
-                                                Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-                                            </div>
-                                        </div>{/*{/*<!-- End activity item-->*/}
-
-                                    </div>
-
-                                </div>
-                            </div>{/*{/*<!-- End Recent Activity -->*/}
 
                             {/*{/*<!-- Budget Report -->*/}
                             <div className="card">

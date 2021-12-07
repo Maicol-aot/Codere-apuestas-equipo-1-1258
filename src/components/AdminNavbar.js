@@ -1,10 +1,13 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const AdminNavbar = () =>{
     return(
         <header id="header" className="header fixed-top d-flex align-items-center">
-
+            
             <div className="d-flex align-items-center justify-content-between">
+
+                
                 <a href="dashboard.html" className="logo d-flex align-items-center">
                     <img src="assets/img/logo.png" alt=""/>
                     <span className="d-none d-lg-block">Codere</span>
@@ -46,10 +49,10 @@ const AdminNavbar = () =>{
                             </li>
                             {/*{/*<!-- menu_usuario -->*/}
                             <li>
-                                <a className="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <Link to = "/PerfilAdmin" className="dropdown-item d-flex align-items-center">
                                     <i className="bi bi-person"></i>
                                     <span>Mi Perfil</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <hr className="dropdown-divider" />
