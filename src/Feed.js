@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import TablaFeed from './components/TablaFeed';
 import DisplayTicketApuestas from './components/DisplayTicketApuestas';
 
-function App() {
+function Feed() {
   return (
     <>
       <NavBar />
@@ -41,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default Feed;

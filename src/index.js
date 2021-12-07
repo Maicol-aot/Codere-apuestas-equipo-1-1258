@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Feed from './Feed';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router,Switch,Route, Routes, Link} from "react-router-dom"; //pendiente por utilizar la libreria en reactdDOM.
 import Registro from './pages/Registro';
@@ -15,7 +15,7 @@ ReactDOM.render(
                 <Route exact path="/" element={<LandingPage />} />
                 <Route path="/registro" element={<Registro />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/feed" element={<App />} />
+                <Route path="/feed" element={<Feed />} />
             </Routes>   
         </Router>
         

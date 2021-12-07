@@ -76,6 +76,7 @@ body{
 
 .rows{
     margin-bottom: 3%;
+    
 }
 
 .terminosCondiciones{
@@ -102,10 +103,34 @@ body{
 }
 
 ::placeholder {
-    color: #7c7c7c !important;
+    color: #7c7c7c;
 }
 
 select{
     color: #7c7c7c !important;
 }
-  
+
+.form-date{
+    width: 59%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 2%;
+    color: #7c7c7c;
+    border: #CED4DA solid 1px;
+}
+
+
+#password{
+    width: 20%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+
+#passwordConfirmation{
+    width: 20%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 2%;
+}
