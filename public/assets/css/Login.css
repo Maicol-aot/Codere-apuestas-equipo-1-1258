@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html *{
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.modalLogin{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+
+.container{
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+}
+
+.bi-x-lg{
+    font-size: 150%;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    cursor: pointer;
+}
+
+
+@media all and (max-width: 980px) {
+    .bi-x-lg{
+        font-size: 15px;
+        margin-left: 0px;
+        position: absolute;
+        right: 3%;
+        top: 1%;
+     
+    }
+}
+
+
+.container-title h5{
+    text-align: center;
+    color: #38454f;
+    font-weight: 600;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.loginForm p{
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 17px;
+}
+
+.form-inputs{
+    margin-left: 3%;
+    padding: 5px;
+    width: 94%;
+}
+
+.loginForm-password{
+    position: relative;
+}
+
+.bi-eye-fill{
+    position: absolute;
+    font-size: 150%;
+    left: 92.5%;
+    bottom: 1%;
+    cursor: pointer;
+}
+
+@media all and (max-width: 1182px) {
+    .bi-eye-fill{
+        position: absolute;
+        font-size: 150%;
+        left: 90%;
+        bottom: 1%;
+        cursor: pointer;
+     
+    }
+}
+
+@media all and (max-width: 500px) {
+    .bi-eye-fill{
+        position: absolute;
+        font-size: 150%;
+        left: 80%;
+        bottom: 1%;
+        cursor: pointer;
+     
+    }
+}
+
+.row{
+    margin-top: 2%;
+}
+
+.loginForm a{
+    font-size: 95%;
+}
+
+.recoveryPass{
+    margin-left: 3%;
+}
+
+.form-row-continuar{
+    margin-left: 3%;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+
+}
+
+.form-continuar{
+    width: 100%;
+    height: 40px;
+    background-color: #79c000;
+    border: #79c000 solid 1px;
+    color: #fff;
+}
+
+.row p{
+    text-align: center;
+    font-size: 80%;
+}
+
+
+#closeModal{
+    visibility: hidden;
+    display: none;
+}
+
+#closeModal:checked ~ .modalLogin{
+    visibility: hidden;
+    display: none;
+}
+
+.card{
+    margin-top: 4%;
+}

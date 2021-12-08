@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+html *{
+   font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+body{
+    background-color: #333f48 !important;
+}
+
+.container-fluid{
+    background-color: white;
+    margin-top: 6em;
+    width: 94%;
+    margin-bottom: 6em;
+    padding: 0px 5% 50px;
+}
+
+#container-title{
+    text-align: center;
+    padding-top: 40px;
+    font-weight: bold;
+}
+
+.registerForm{
+    margin-top: 4%;
+}
+
+#form-control{
+    width: 20%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+#select-fechas{
+    width: 25%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 4%;
+}
+
+.form-subtitles{
+    margin-bottom: 0%;
+    color: #38454F;
+}
+
+#form-subtitles{
+    margin-bottom: 10px;
+    color: #878787;
+}
+
+.form-subtitles-single{
+    margin-bottom: 30px;
+}
+
+#select-residencia{
+    width: 20%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+#movil{
+    width: 20%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 2%;
+    margin-top: 20px;
+}
+
+.cont{
+    width: 34%;
+    display: inline-block;
+}
+
+.rows{
+    margin-bottom: 3%;
+    
+}
+
+.terminosCondiciones{
+    display: inline;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.btn-success{
+    width: 70%;
+    margin-left: 15%;
+    background-color: #79c000;
+    border-color: #79c000;
+}
+
+.btn-success:hover{
+    background-color: #6ead00;
+    border-color: #6ead00;
+}
+
+.termRow{
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+::placeholder {
+    color: #7c7c7c;
+}
+
+select{
+    color: #7c7c7c !important;
+}
+
+.form-date{
+    width: 59%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 2%;
+    color: #7c7c7c;
+    border: #CED4DA solid 1px;
+}
+
+
+#password{
+    width: 20%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+
+#passwordConfirmation{
+    width: 20%;
+    height: 35px;
+    display: inline-block;
+    margin-right: 2%;
+}

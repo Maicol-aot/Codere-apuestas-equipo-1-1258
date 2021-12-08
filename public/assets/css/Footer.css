@@ -1,0 +1,16 @@
+.footer{
+    position: fixed;
+    background-color: #333f48 !important;
+    margin-left: 0px !important;
+    /*codigo adiconal*/
+    z-index: 1195;
+    text-align: center;
+    width: 100%;
+    bottom: 1px;
+    /*fin codigo adiconal*/
+}
+
+.copyright{
+    font-size: 20px;
+    color: #ffff !important;
+}

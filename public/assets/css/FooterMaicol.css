@@ -1,0 +1,13 @@
+#footer{ /*Comienza prueba*/
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333f48;
+    margin: 0;
+    padding: 28px 0px;  
+}
+
+.copyright{
+    font-size: 20px;
+    color: #ffff !important;
+}
