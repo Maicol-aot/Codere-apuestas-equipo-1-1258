@@ -5,6 +5,7 @@ const RegistroNavBar = () => {
     return (
         <header id="header" className="header fixed-top d-flex align-items-center">
             <link href="/assets/css/NavBar.css" rel="stylesheet"/>
+            <link href="/assets/css/styleMaicol.css" rel="stylesheet"/>
 
             <div className="d-flex align-items-center justify-content-between">
                 <Link to="/" className="logo d-flex align-items-center">

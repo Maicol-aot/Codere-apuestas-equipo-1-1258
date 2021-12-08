@@ -5,6 +5,12 @@
 * License: https://bootstrapmade.com/license/
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+html *{
+  font-family: 'Roboto', sans-serif !important;
+}
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -14,8 +20,9 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
+  background: #d3d3d3;
   color: #444444;
+  width: 100%;
   position: relative;
   padding-bottom: 2em;
   min-height: 100vh;
@@ -42,26 +49,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 60px;
   padding: 20px 30px;
   transition: all 0.3s;
+  height: 100%;
 }
 @media (max-width: 1199px) {
   #main {
     padding: 20px;
   }
 }
-/*--------------------------------------------------------------
-# Main2
---------------------------------------------------------------*/
-/* #main2 {
-  margin-top: 60px;
-  padding: 10px 30px;
-  transition: all 0.3s;
-  left: 70%;
-}
-@media (max-width: 1199px) {
-  #main2 {
-    padding: 20px;
-  }
-} */
 
 /*--------------------------------------------------------------
 # Page Title
@@ -238,8 +232,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
-
-
 .card-header, .card-footer {
   border-color: #ebeef4;
   background-color: #fff;
@@ -267,44 +259,6 @@ h1, h2, h3, h4, h5, h6 {
 .card-img-overlay {
   background-color: rgba(255, 255, 255, 0.6);
 }
-
-
-/*card 2 prueba*/
-.card2 {
-  margin-bottom: 0;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
-  overflow: hidden;
-}
-
-
-
-.card2 {
-  border-color: #000;
-  background-color: #333f48;
-  color: #fff;
-  padding: 15px 15px 0 15px;
-}
-
-.card2-title {
-  padding: 20px 0 15px 0;
-  font-size: 18px;
-  font-weight: 500;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-}
-.card2-title span {
-  color: #899bbd;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.card2-body {
-  padding: 0 20px 20px 20px;
-}
-
-
 
 /* Alerts */
 .alert-heading {
@@ -403,8 +357,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .logo img {
-  max-height: 26px;
-  margin-right: 6px;
+  max-height: 40px;
+  margin-right: 50px;
 }
 .logo span {
   font-size: 26px;
@@ -418,7 +372,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 997;
   height: 60px;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-  background-color: #79c000;
+  background-color: #fff;
   padding-left: 20px;
   /* Toggle Sidebar Button */
   /* Search Bar */
@@ -429,8 +383,58 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   color: #012970;
 }
-
-
+.header .search-bar {
+  min-width: 40%;
+  padding: 0 20px;
+}
+@media (max-width: 1199px) {
+  .header .search-bar {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    box-shadow: 0px 0px 15px 0px rgba(1, 41, 112, 0.1);
+    background: white;
+    z-index: 9999;
+    transition: 0.3s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .header .search-bar-show {
+    top: 60px;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.header .search-form {
+  width: 100%;
+}
+.header .search-form input {
+  border: 0;
+  font-size: 14px;
+  color: #012970;
+  border: 1px solid rgba(1, 41, 112, 0.2);
+  padding: 7px 38px 7px 8px;
+  border-radius: 7px;
+  transition: 0.3s;
+  width: 100%;
+  height: 25px;
+}
+.header .search-form input:focus, .header .search-form input:hover {
+  outline: none;
+  box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.15);
+  border: 1px solid rgba(1, 41, 112, 0.3);
+}
+.header .search-form button {
+  border: 0;
+  padding: 0;
+  margin-left: -30px;
+  background: none;
+}
+.header .search-form button i {
+  color: #012970;
+}
 
 /*--------------------------------------------------------------
 # Header Nav
@@ -549,12 +553,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 300px;
   z-index: 996;
   transition: all 0.3s;
-  padding: 10px 0px 20px 0px;
+  padding: 20px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #656769;
+  background-color: #fff;
 }
 @media (max-width: 1199px) {
   .sidebar {
@@ -609,35 +613,35 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   margin: 10px 0 5px 15px;
 }
-.sidebar-nav .nav-link {   /*boton dashboard sidebar*/
+.sidebar-nav .nav-link {
   display: flex;
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #ffffff;
+  color: #4154f1;
   transition: 0.3;
-  background: #656769;
+  background: #f6f9ff;
   padding: 10px 15px;
   border-radius: 4px;
 }
 .sidebar-nav .nav-link i {
   font-size: 16px;
   margin-right: 10px;
-  color: #ffffff;
+  color: #4154f1;
 }
 .sidebar-nav .nav-link.collapsed {
-  color: #ffffff;
-  background: #656769;
+  color: #012970;
+  background: #fff;
 }
 .sidebar-nav .nav-link.collapsed i {
-  color: #ffffff;
+  color: #899bbd;
 }
 .sidebar-nav .nav-link:hover {
-  color: #ffffff;
-  background: #0055fe;
+  color: #4154f1;
+  background: #f6f9ff;
 }
 .sidebar-nav .nav-link:hover i {
-  color: #ffffff;
+  color: #4154f1;
 }
 .sidebar-nav .nav-link .bi-chevron-down {
   margin-right: 0;
@@ -656,7 +660,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
+  color: #012970;
   transition: 0.3;
   padding: 10px 0 10px 40px;
   transition: 0.3s;
@@ -668,10 +672,10 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 .sidebar-nav .nav-content a:hover, .sidebar-nav .nav-content a.active {
-  color: #ffffff;
+  color: #4154f1;
 }
 .sidebar-nav .nav-content a.active i {
-  background-color: #ffffff;
+  background-color: #4154f1;
 }
 
 /*--------------------------------------------------------------
@@ -1077,6 +1081,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer {
   padding: 20px 0;
   font-size: 14px;
+  transition: all 0.3s;
   border-top: 1px solid #cddfff;
 }
 .footer .copyright {

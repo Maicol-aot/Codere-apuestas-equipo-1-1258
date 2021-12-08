@@ -8,6 +8,7 @@ function Feed() {
   return (
     <>
       <NavBar />
+      <link href="/assets/css/styleMaicol.css" rel="stylesheet"/>
       <link href="/assets/css/TablaFeed.css" rel="stylesheet"/>
       <main id="main" className="main">
           <div className="pagetitle">

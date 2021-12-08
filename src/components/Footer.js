@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () =>{
     return(
         <>
-            <link href="/assets/css/Footer.css" rel="stylesheet"/>
+            <link href="/assets/css/FooterMaicol.css" rel="stylesheet"/>
             <footer id="footer" className="footer">
                 {/*<!-- ======= Footer ======= -->*/}
                 <div className="copyright">

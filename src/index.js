@@ -1,27 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Feed from './Feed';
+
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router,Switch,Route, Routes, Link} from "react-router-dom"; //pendiente por utilizar la libreria en reactdDOM.
-import Registro from './pages/Registro';
-import Login from './pages/Login';
-import LandingPage from './pages/LandingPage'
+import {BrowserRouter as Router,Switch,Route,Routes,Link} from "react-router-dom"; //pendiente por utilizar la libreria en reactdDOM.
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Router>
+//       <Routes>
+//         <Route Exact path = "/" element ={<App/>} />
+//       </Routes>
+//     </Router>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// ); opcion video tutoria
+
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Router>
-            <Routes>
-                <Route exact path="/" element={<LandingPage />} />
-                <Route path="/registro" element={<Registro />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/feed" element={<Feed />} />
-            </Routes>   
-        </Router>
-        
-    </React.StrictMode>,
-    document.getElementById('root')
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -29,6 +29,7 @@ const Login = () =>{
     };
     return (
         <> 
+            <link href="/assets/css/styleMaicol.css" rel="stylesheet"/>
             <link href="/assets/css/Login.css" rel="stylesheet"/>
             
             <Feed />

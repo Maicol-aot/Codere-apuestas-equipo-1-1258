@@ -5,7 +5,7 @@ html *{
 }
 
 body{
-    background-color: #333f48;
+    background-color: #333f48 !important;
 }
 
 .container-fluid{
