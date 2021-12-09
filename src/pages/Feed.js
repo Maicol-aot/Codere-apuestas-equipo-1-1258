@@ -1,8 +1,8 @@
-import './App.css';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
-import TablaFeed from './components/TablaFeed';
-import DisplayTicketApuestas from './components/DisplayTicketApuestas';
+import '../App.css';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
+import TablaFeed from '../components/TablaFeed';
+import DisplayTicketApuestas from '../components/DisplayTicketApuestas';
 
 function Feed() {
   return (

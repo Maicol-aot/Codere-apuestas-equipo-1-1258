@@ -1,5 +1,5 @@
 import React from 'react';
-import Feed from '../Feed';
+import LandingPage from './LandingPage';
 import {BrowserRouter as Router,Switch,Route, Routes, useNavigate} from "react-router-dom";
 import {Link} from "react-router-dom";
 
@@ -32,7 +32,7 @@ const Login = () =>{
             <link href="/assets/css/styleMaicol.css" rel="stylesheet"/>
             <link href="/assets/css/Login.css" rel="stylesheet"/>
             
-            <Feed />
+            <LandingPage />
             <input id="closeModal" type="checkbox"/>
             <div className="modalLogin">
                 <div className="container">

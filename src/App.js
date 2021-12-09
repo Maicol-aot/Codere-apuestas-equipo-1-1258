@@ -6,7 +6,7 @@ import VistaDashboard from './pages/VistaDashboard';
 import VistaPerfil from './pages/VistaPerfil';
 import { BrowserRouter, Routes, Route } from "react-router-dom"; // V6 -> nuevos cambios
 
-import Feed from './Feed';
+import Feed from './pages/Feed';
 import Registro from './pages/Registro';
 import Login from './pages/Login';
 import LandingPage from './pages/LandingPage'
