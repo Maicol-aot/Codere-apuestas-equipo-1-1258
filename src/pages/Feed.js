@@ -4,7 +4,19 @@ import Footer from '../components/Footer';
 import TablaFeed from '../components/TablaFeed';
 import DisplayTicketApuestas from '../components/DisplayTicketApuestas';
 
-function Feed() {
+function Feed(props) {
+
+  const eventos = props.eventos;
+  const listaEventos = eventos.map( p =>
+    <TablaFeed 
+      id = {p.id}
+      equipo1 = {p.equipo1}
+      equipo2 = {p.equipo2}
+      liga = {p.liga}
+      estado = {p.estado}
+    />
+  );
+
   return (
     <>
       <NavBar />
@@ -25,7 +37,7 @@ function Feed() {
               {/*{/*<!-- Left side columns -->*/}
               <div className="col-lg-8">
                 <div className="row">  
-                  <TablaFeed />
+                  { listaEventos }
                 </div>
               </div>{/*{/*<!-- End Left side columns -->*/}
 

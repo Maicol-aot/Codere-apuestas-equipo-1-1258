@@ -15,6 +15,15 @@ import LandingPage from './pages/LandingPage'
 
 function App() {
 
+  const lista_datos = [
+    {id:"1", equipo1:"Galaxy", equipo2:"Trompers", liga:"Liga diamante", estado:"Activo"},
+    {id:"2", equipo1:"Monties", equipo2:"Atlanta", liga:"Liga de oro", estado:"Activo"},
+    {id:"3", equipo1:"Growls", equipo2:"Rockets", liga:"Liga alemana", estado:"Cerrado"},
+    {id:"4", equipo1:"Greenland", equipo2:"Sky", liga:"Liga alemana", estado:"Activo"},
+    {id:"5", equipo1:"Deportivo tapitas", equipo2:"Galaxy", liga:"Liga Codere", estado:"Activo"}
+
+  ];
+
   return (
     <BrowserRouter>
       <Routes>
@@ -25,7 +34,7 @@ function App() {
         <Route path="/perfilAdmin"element={<VistaPerfil />}/>
         <Route path="/registro" element={<Registro />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/feed" element={<Feed />} />
+        <Route path="/feed" element={<Feed eventos = { lista_datos }/>} />
       </Routes>
     </BrowserRouter>
   );
