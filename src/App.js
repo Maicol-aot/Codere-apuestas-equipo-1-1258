@@ -19,10 +19,10 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route exact path="/" element={<LandingPage />} />
-        <Route path="/Dashboard" element={<VistaDashboard />} />
-        <Route path="/GestionarEventos" element={< VistaEventos/>} />
-        <Route path="/GestionarUsuarios" element={<VistaUsuarios />} />
-        <Route path="/PerfilAdmin"element={<VistaPerfil />}/>
+        <Route path="/dashboard" element={<VistaDashboard />} />
+        <Route path="/gestionarEventos" element={< VistaEventos/>} />
+        <Route path="/gestionarUsuarios" element={<VistaUsuarios />} />
+        <Route path="/perfilAdmin"element={<VistaPerfil />}/>
         <Route path="/registro" element={<Registro />} />
         <Route path="/login" element={<Login />} />
         <Route path="/feed" element={<Feed />} />

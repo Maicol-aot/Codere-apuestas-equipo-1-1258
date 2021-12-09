@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 #main {
   margin-top: 60px;
   padding: 20px 30px;
-  transition: all 0.3s;
+  
 }
 @media (max-width: 1199px) {
   #main {
@@ -414,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  transition: all 0.5s;
+  
   z-index: 997;
   height: 60px;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);

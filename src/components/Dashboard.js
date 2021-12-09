@@ -10,7 +10,7 @@ const Dashboard = () =>{
                     <h1>Dashboard</h1>
                     <nav>
                         <ol className="breadcrumb">
-                            <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                            <li className="breadcrumb-item"><Link to="/dashboard">Home</Link></li>
                             <li className="breadcrumb-item active">Dashboard</li>
                         </ol>
                     </nav>

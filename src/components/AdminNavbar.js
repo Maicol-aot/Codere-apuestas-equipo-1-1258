@@ -8,10 +8,10 @@ const AdminNavbar = () =>{
             <div className="d-flex align-items-center justify-content-between">
 
                 
-                <a href="dashboard.html" className="logo d-flex align-items-center">
+                <Link to ="/dashboard" className="logo d-flex align-items-center">
                     <img src="assets/img/logo.png" alt=""/>
                     <span className="d-none d-lg-block">Codere</span>
-                </a>
+                </Link>
             <i className="bi bi-list toggle-sidebar-btn"></i>
             </div>{/*{/*<!-- End Logo -->*/} 
             

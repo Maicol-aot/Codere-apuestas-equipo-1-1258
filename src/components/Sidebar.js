@@ -10,14 +10,14 @@ const Sidebar = () =>{
                 <ul className="sidebar-nav" id="sidebar-nav">
 
                     <li className="nav-item">
-                        <Link to ="/" className="nav-link " href="/">
+                        <Link to ="/dashboard" className="nav-link " href="/">
                             <i className="bi bi-grid"></i>
                             <span>Dashboard</span>
                         </Link>
                     </li>{/*{/*<!-- End Dashboard Nav -->*/}
 
                     <li className="nav-item">
-                        <Link to ="/GestionarEventos" className="nav-link collapsed" href="GestionarEventos">
+                        <Link to ="/GestionarEventos" className="nav-link collapsed">
                             <i className="bi bi-layout-text-sidebar-reverse"></i>
                             <span>Gestionar Eventos </span> {/*<!-- info del perfil -->*/}
                         </Link>
@@ -25,7 +25,7 @@ const Sidebar = () =>{
                     {/*{/*<!-- End Profile Page Nav -->*/}
 
                     <li className="nav-item">
-                        <Link to ="/GestionarUsuarios" className="nav-link collapsed" href="GestionarUsuarios">
+                        <Link to ="/GestionarUsuarios" className="nav-link collapsed" >
                             <i className="bi bi-person"></i>
                             <span>Gestionar Usuarios</span>
                         </Link>
