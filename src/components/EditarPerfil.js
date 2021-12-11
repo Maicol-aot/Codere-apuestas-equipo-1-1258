@@ -1,6 +1,7 @@
 import react from 'react';
 
 
+
 const EditarPerfil = () =>{
     return(
         <>

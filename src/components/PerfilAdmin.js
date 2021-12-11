@@ -1,7 +1,13 @@
 import React from 'react';
 import CambiarClave from './CambiarClave';
 import EditarPerfil from './EditarPerfil';
+import InfoAdmin from './InfoAdmin';
 
+
+const DatosUsuario = [
+    { nombre: "Victor", primerApellido: "Vigna", segundoApellido:"Roa", fechaNacimiento:"16/09/1996", id:"004", numeroDocumento:"1336986",lugarExpdicion:"Bogotá",fechaExpedicion:"21/09/2014",email:"vicvig@gmail.com",pais:"Colombia",telefono:"3012569856",username:"victorvv",tipouser:"user"}
+    
+  ];
 const PerfilAdmin = () =>{
     return(
         <>
@@ -19,7 +25,7 @@ const PerfilAdmin = () =>{
                                 <div className="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
                                     <img src="assets/img/super_admin.png" alt="Profile" className="rounded-circle"/>
-                                    <h2>Kevin Anderson</h2>
+                                    <h2> kevin algo</h2>
                                     <h3>Administrador</h3>
                                     
                                 </div>
@@ -49,46 +55,7 @@ const PerfilAdmin = () =>{
                                     </ul>
                                     <div className="tab-content pt-2">
 
-                                        <div className="tab-pane fade show active profile-overview" id="profile-overview">
-
-                                            <h5 className="card-title">Detalles</h5>
-
-                                            <div className="row">
-                                                <div className="col-lg-3 col-md-4 label ">Nombre completo</div>
-                                                <div className="col-lg-9 col-md-8">Kevin Anderson</div>
-                                            </div>
-
-                                            <div className="row">
-                                                <div className="col-lg-3 col-md-4 label">Usuario</div>
-                                                <div className="col-lg-9 col-md-8">k_anderson</div>
-                                            </div>
-
-                                            <div className="row">
-                                                <div className="col-lg-3 col-md-4 label">Codigo de empleado</div>
-                                                <div className="col-lg-9 col-md-8">535022</div>
-                                            </div>
-
-                                            <div className="row">
-                                                <div className="col-lg-3 col-md-4 label">Tipo de usuario</div>
-                                                <div className="col-lg-9 col-md-8">Administrador</div>
-                                            </div>
-
-                                            <div className="row">
-                                                <div className="col-lg-3 col-md-4 label">Pais de residencia</div>
-                                                <div className="col-lg-9 col-md-8">Colombia</div>
-                                            </div>
-
-                                            <div className="row">
-                                                <div className="col-lg-3 col-md-4 label">Telefono</div>
-                                                <div className="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
-                                            </div>
-
-                                            <div className="row">
-                                                <div className="col-lg-3 col-md-4 label">Email</div>
-                                                <div className="col-lg-9 col-md-8">k.anderson@example.com</div>
-                                            </div>
-
-                                        </div>
+                                        <InfoAdmin Datos ={DatosUsuario}/>
 
                                         <div className="tab-pane fade profile-edit pt-3" id="profile-edit">
 
