@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchBar from '../SearchBar';
-import Paginator from '../Paginator';
+import SearchBar from '../General/SearchBar';
+import Paginator from '../General/Paginator';
 import ListaUsuarios from './ListaUsuarios';
 import CrearUsuario from '../../forms/CrearUsuario' //"../../" para entrar a otra subcarpeta.
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RegistroNavBar from '../components/RegistroNavBar';
+import RegistroNavBar from '../components/General/RegistroNavBar';
 
 const Registro = () => {
 

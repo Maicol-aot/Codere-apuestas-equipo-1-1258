@@ -1,8 +1,8 @@
 import React from 'react';
-import Paginator from '../Paginator';
+import Paginator from '../General/Paginator';
 import ListaEventosF from './ListaEventosF';
 import ListaEventosA from './ListaEventosA';
-import SearchBar from '../SearchBar';
+import SearchBar from '../General/SearchBar';
 import CrearEvento from '../../forms/CrearEvento';
 
 const ListaDatosEventos = [

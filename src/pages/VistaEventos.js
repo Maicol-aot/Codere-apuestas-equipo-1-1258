@@ -1,8 +1,8 @@
 import react from "react";
-import AdminNavbar from "../components/AdminNavbar";
-import Sidebar from "../components/Sidebar";
+import AdminNavbar from "../components/General/AdminNavbar";
+import Sidebar from "../components/General/Sidebar";
 import GestionarEventos from "../components/Eventos/GestionarEventos";
-import Footer from "../components/Footer";
+import Footer from "../components/General/Footer";
 
 
 

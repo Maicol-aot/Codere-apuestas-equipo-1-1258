@@ -1,6 +1,6 @@
 import React  from "react";
-import Paginator from "../Paginator";
-import SearchBar from "../SearchBar";
+import Paginator from "../General/Paginator";
+import SearchBar from "../General/SearchBar";
 import EventoFinalizado from "./EventoFinalizado"
 
 
