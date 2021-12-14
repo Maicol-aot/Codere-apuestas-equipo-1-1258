@@ -2083,7 +2083,7 @@
   }
 
   // import { isHTMLElement } from './instanceOf';
-  function getBoundingClientRect(element, // eslint-disable-next-line unused-imports/no-unused-vars
+  function getBoundingClientRect(element, 
   includeScale) {
 
     var rect = element.getBoundingClientRect();
