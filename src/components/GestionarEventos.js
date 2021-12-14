@@ -3,7 +3,7 @@ import Paginator from './Paginator';
 import ListaEventosF from './ListaEventosF';
 import ListaEventosA from './ListaEventosA';
 import SearchBar from './SearchBar';
-import CrearEvento from './CrearEvento';
+import CrearEvento from '../forms/CrearEvento';
 
 const ListaDatosEventos = [
     { nombreEvento: "Galaxy vs Trompers", id:"15962", fechaI: "11/12/2021" , horaI:'10:25', fechaF: "11/12/2021" , horaF:'10:25'},
