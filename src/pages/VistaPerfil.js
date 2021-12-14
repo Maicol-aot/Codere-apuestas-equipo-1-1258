@@ -2,7 +2,7 @@ import React from "react";
 import AdminNavbar from "../components/AdminNavbar";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
-import PerfilAdmin from "../components/PerfilAdmin";
+import PerfilAdmin from "../components/Perfil/PerfilAdmin";
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import CambiarClave from './CambiarClave';
-import EditarPerfil from './EditarPerfil';
+import CambiarClave from '../../forms/CambiarClave';
+import EditarPerfil from '../../forms/EditarPerfil';
 import InfoAdmin from './InfoAdmin';
 
 

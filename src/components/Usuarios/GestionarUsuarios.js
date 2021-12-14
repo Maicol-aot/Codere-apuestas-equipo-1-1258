@@ -1,8 +1,8 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-import Paginator from './Paginator';
+import SearchBar from '../SearchBar';
+import Paginator from '../Paginator';
 import ListaUsuarios from './ListaUsuarios';
-import CrearUsuario from '../forms/CrearUsuario'
+import CrearUsuario from '../../forms/CrearUsuario' //"../../" para entrar a otra subcarpeta.
 
 const ListaDatosUsuarios = [
     { nombre: "Victor", primerApellido: "Vigna", segundoApellido:"Roa", fechaNacimiento:"16/09/1996", id:"004", numeroDocumento:"1336986",lugarExpdicion:"Bogotá",fechaExpedicion:"21/09/2014",email:"vicvig@gmail.com",pais:"Colombia",telefono:"3012569856",username:"victorvv",tipouser:"user"},
