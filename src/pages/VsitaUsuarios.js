@@ -1,7 +1,7 @@
 import React from "react";
 import AdminNavbar from "../components/AdminNavbar";
 import Sidebar from "../components/Sidebar";
-import GestionarUsuarios from "../components/GestionarUsuarios";
+import GestionarUsuarios from "../components/Usuarios/GestionarUsuarios";
 import Footer from "../components/Footer";
 
 
