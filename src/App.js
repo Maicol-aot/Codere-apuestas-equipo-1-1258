@@ -1,6 +1,7 @@
 
 
 import VistaEventos from './pages/VistaEventos';
+import VistaEvento from './pages/VistaEvento';
 import VistaUsuarios from './pages/VsitaUsuarios';
 import VistaDashboard from './pages/VistaDashboard';
 import VistaPerfil from './pages/VistaPerfil';
@@ -13,6 +14,7 @@ import LandingPage from './pages/LandingPage'
 
 
 
+
 function App() {
 
   return (
@@ -21,6 +23,7 @@ function App() {
       <Route exact path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<VistaDashboard />} />
         <Route path="/gestionarEventos" element={< VistaEventos/>} />
+        <Route path="/evento" element={< VistaEvento/>} />
         <Route path="/gestionarUsuarios" element={<VistaUsuarios />} />
         <Route path="/perfilAdmin"element={<VistaPerfil />}/>
         <Route path="/registro" element={<Registro />} />
