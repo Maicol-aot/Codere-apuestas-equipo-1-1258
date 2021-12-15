@@ -14,6 +14,25 @@ const RegistroForm = () => {
         console.log(conPassword);
         if (conPassword !== password) return alert('Las contraseñas no son iguales'); 
     };
+
+    const validarEmail = () =>{
+        let infoEmail = document.getElementById('email2').value;
+        let formato_email = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+
+        if (!infoEmail.match(formato_email)) {
+            return alert('Por favor escriba un correo electronico válido.');
+        }
+    };
+     
+    const validarEdad = () =>{
+        let infoEdad = document.getElementById('nacimiento').value;
+        let limiteEdad = 2003-12-15;
+        console.log(infoEdad);
+        if (parseInt(infoEdad) > limiteEdad) {
+            return alert('Tienes que ser mayor de 18 años para  registrarte'); //cambiar el alert por una validacion de errores general porque envia los datoss
+        }
+    };
+
     
     return(
         <>
@@ -28,7 +47,7 @@ const RegistroForm = () => {
                             <input className="form-control" id="form-control" type="text" placeholder="Segundo apellido" name="segundoApellido" required="true"/>
                             <div className="cont">
                                 <h6 id="form-subtitles">Fecha nacimiento</h6>
-                                <input type="date" class="form-date" id="fechaNacimiento" required="true"/>
+                                <input type="date" class="form-date" id="fechaNacimiento" required="true" onBlur={validarEdad}/>
                             </div>
                         
                         </div>
@@ -87,7 +106,7 @@ const RegistroForm = () => {
                             </select> 
                             <input type="text" className="form-control" id="select-residencia" formcontrolname="diaNacimiento" required="true" placeholder="Muncipio de residencia"/> 
                             <input className="form-control" id="form-control" type="text" placeholder="Direccion de residencia" name="direccion" required="true"/>
-                            <input className="form-control" id="form-control" type="email" placeholder="Correo electronico" name="email" required="true"/>
+                            <input className="form-control" id="form-control" type="email" placeholder="Correo electronico" name="email" required="true" onBlur={validarEmail}/>
                             <input className="form-control" id="movil" type="text" placeholder="Movil" name="nombre" /> 
                         </div>
                         <div className="rows">

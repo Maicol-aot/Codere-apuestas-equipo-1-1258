@@ -10,6 +10,16 @@ const CrearUsuario = () =>{
                 return alert('Por favor escriba un correo electronico válido.');
             }
         };
+         
+        const validarEdad = () =>{
+            let infoEdad = document.getElementById('nacimiento').value;
+            let limiteEdad = 2003-12-15;
+            console.log(infoEdad);
+            if (parseInt(infoEdad) > limiteEdad) {
+                return alert('Tienes que ser mayor de 18 años para  registrarte'); //cambiar el alert por una validacion de errores general porque envia los datoss
+            }
+        };
+
     return(
         <>
             
@@ -33,7 +43,7 @@ const CrearUsuario = () =>{
 
                     <div className="col-sm-3 mb-3">
                         <label>Fecha de nacimiento</label>
-                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de nacimiento" required={true} />
+                        <input type="date" className="form-control" id="nacimiento" placeholder="Fecha de nacimiento"  required={true} onBlur={validarEdad}/>
                     </div>
 
 
