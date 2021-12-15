@@ -44,8 +44,7 @@ const CrearEvento = () =>{
                         <input type="date" className="form-control" id="validationDefault01" placeholder="Nombre de usuario" required />
                     </div>
                     <div className="col-sm-3 mb-3">
-                        <label>Hora de inicio</label>
-                        <input type="time" className="form-control" id="validationDefault02" placeholder="contraseña" required />
+                        
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label >Cuota "Empate" </label>
@@ -58,10 +57,7 @@ const CrearEvento = () =>{
                         <label>Fecha limite de cancelación</label>
                         <input type="date" className="form-control" id="validationDefault01" placeholder="Nombre de usuario" required />
                     </div>
-                    <div className="col-sm-3 mb-3">
-                        <label>Hora limite de cancelación</label>
-                        <input type="time" className="form-control" id="validationDefault02" placeholder="contraseña" required />
-                    </div>
+                    
 
                 </div>
 
