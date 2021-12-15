@@ -2,6 +2,14 @@ import react from 'react';
 
 const CrearUsuario = () =>{
 
+        const validarEmail = () =>{
+            let infoEmail = document.getElementById('email2').value;
+            let formato_email = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+
+            if (!infoEmail.match(formato_email)) {
+                return alert('Por favor escriba un correo electronico válido.');
+            }
+        };
     return(
         <>
             
@@ -12,20 +20,20 @@ const CrearUsuario = () =>{
 
                     <div className="col-sm-3 mb-3">
                         <label >Datos personales </label>
-                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre" required />
+                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre" required={true} />
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Primer apellido" required />
+                        <input type="text" className="form-control" id="validationDefault02" placeholder="Primer apellido" required={true} />
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Segundo apellido" required />
+                        <input type="text" className="form-control" id="validationDefault02" placeholder="Segundo apellido" required={true} />
                     </div>
 
                     <div className="col-sm-3 mb-3">
                         <label>Fecha de nacimiento</label>
-                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de nacimiento" required />
+                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de nacimiento" required={true} />
                     </div>
 
 
@@ -43,16 +51,16 @@ const CrearUsuario = () =>{
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="No. de documento" required />
+                        <input type="text" className="form-control" id="validationDefault02" placeholder="No. de documento" required={true} />
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Lugar de expedicíon" required />
+                        <input type="text" className="form-control" id="validationDefault02" placeholder="Lugar de expedicíon" required={true} />
                     </div>
 
                     <div className="col-sm-3 mb-3">
                         <label>Fecha de Expedicion</label>
-                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de Expedicion" required />
+                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de Expedicion" required={true} />
                     </div>
 
 
@@ -61,10 +69,10 @@ const CrearUsuario = () =>{
                     <label>Datos de contacto</label>
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault01" placeholder="Correo electronico" required />
+                        <input type="text" className="form-control" id="email2" placeholder="Correo electronico" required={true} onBlur={validarEmail}/>
                     </div>
                     <div className="col-sm-3 mb-3">
-                    <select className="form-select" id="select-residencia" formcontrolname="diaNacimiento" aria-label="Default select example" required="true">
+                    <select className="form-select" id="select-residencia" formcontrolname="diaNacimiento" aria-label="Default select example" required={true}>
                                 <option selected>Departamento</option>
                                 <option value="1">Amazonas</option>
                                 <option value="2">Antioquia</option>
@@ -105,20 +113,20 @@ const CrearUsuario = () =>{
 
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Ciudad" required />
+                        <input type="text" className="form-control" id="validationDefault02" placeholder="Ciudad" required={true} />
                         
                     </div>
 
                     <div className="col-sm-3 mb-3">
 
-                    <input className="form-control" id="form-control" type="text" placeholder="Direccion" name="direccion" required="true"/>
+                    <input className="form-control" id="form-control" type="text" placeholder="Direccion de residencia" name="direccion" required={true}/>
                         
                     </div>
                     
 
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Teléfono" required />
+                        <input type="text" className="form-control" id="validationDefault02" placeholder="Teléfono" required={true} />
                     </div>
 
 
@@ -130,11 +138,11 @@ const CrearUsuario = () =>{
                     <label>Datos de usuario</label>
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre de usuario" required />
+                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre de usuario" required={true} />
                     </div>
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="contraseña" required />
+                        <input type="text" className="form-control" id="validationDefault02" placeholder="contraseña" required={true} />
                     </div>
                     <div className="col-sm-3 mb-3">
 
