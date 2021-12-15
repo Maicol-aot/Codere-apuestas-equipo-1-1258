@@ -1,12 +1,11 @@
 import react from 'react';
 
 const CrearUsuario = () =>{
-
+        // validaciones minimas
         const validarEmail = () =>{
             let infoEmail = document.getElementById('email2').value;
             let formato_email = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
-            let fomrato_texto = /^[A-Za-z]*/;
-            let formato_numero =  /^[0-9]*/;
+           
 
             if (!infoEmail.match(formato_email)) {
                 return alert('Por favor escriba un correo electronico válido.');
@@ -85,7 +84,7 @@ const CrearUsuario = () =>{
                 return alert('ingresa un numero de telefono valido en el campo "Teléfono"'); //cambiar el alert por una validacion de errores general porque envia los datoss
             }
         };
-
+        //validaciones minimas
 
 
 
