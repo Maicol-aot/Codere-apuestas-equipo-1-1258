@@ -5,6 +5,8 @@ const CrearUsuario = () =>{
         const validarEmail = () =>{
             let infoEmail = document.getElementById('email2').value;
             let formato_email = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+            let fomrato_texto = /^[A-Za-z]*/;
+            let formato_numero =  /^[0-9]*/;
 
             if (!infoEmail.match(formato_email)) {
                 return alert('Por favor escriba un correo electronico válido.');
@@ -20,6 +22,74 @@ const CrearUsuario = () =>{
             }
         };
 
+        const validarNombre = () =>{
+            let infoNombre = document.getElementById('nombre').value;
+            let fomrato_texto = /([a-zA-Z]{3,30}\s*)+/;
+            if (!infoNombre.match(fomrato_texto)) {
+                return alert('Por favor ingresa un dato valido en la casilla "Nombre" '); //cambiar el alert por una validacion de errores general porque envia los datoss
+            }
+        };
+
+        const validarApellido1 = () =>{
+            let infoApellido1 = document.getElementById('apellido1').value;
+            let fomrato_texto = /([a-zA-Z]{3,30}\s*)+/;
+            if (!infoApellido1.match(fomrato_texto)) {
+                return alert('Por favor ingresa un dato valido en la casilla "Primer Apellido" ');
+
+            }
+        };
+        
+        const validarApellido2 = () =>{
+            let infoApellido2 = document.getElementById('apellido2').value;
+            let fomrato_texto = /([a-zA-Z]{3,30}\s*)+/;
+            if (!infoApellido2.match(fomrato_texto)) {
+                return alert('Por favor ingresa un dato valido en la casilla "Segundo Apellido" ');
+
+            }
+        };
+
+        const validarNdoc = () =>{
+            let ndoc = document.getElementById('ndoc').value;
+            let formato_numero = /^([0-9])*$/;
+            if (!ndoc.match(formato_numero)){
+                return alert('Solo puedes ingresar numeros en el campo "No. de documento"'); //cambiar el alert por una validacion de errores general porque envia los datoss
+            }
+        };
+
+        const validarLugarExp = () =>{
+            let lugarExp = document.getElementById('lugarExp').value;
+            let fomrato_texto = /^[a-z ,.'-]+$/i;
+            
+            
+            if (!lugarExp.match(fomrato_texto)) {
+                return alert('Por favor ingresa un dato valido en la casilla "Lugar de expedicón" ');
+
+            }
+        };
+
+        const validarCiudad = () =>{
+            let ciudad = document.getElementById('ciudad').value;
+            let fomrato_texto = /^[a-z ,.'-]+$/i;
+            
+            
+            if (!ciudad.match(fomrato_texto)) {
+                return alert('Por favor ingresa un dato valido en la casilla "Ciudad" ');
+
+            }
+        };
+
+        const validarTel = () =>{
+            let nTel = document.getElementById('tel').value;
+            let formato_numero = /^([0-9]{0,10})*$/;
+            if (!nTel.match(formato_numero)){
+                return alert('ingresa un numero de telefono valido en el campo "Teléfono"'); //cambiar el alert por una validacion de errores general porque envia los datoss
+            }
+        };
+
+
+
+
+
     return(
         <>
             
@@ -30,15 +100,15 @@ const CrearUsuario = () =>{
 
                     <div className="col-sm-3 mb-3">
                         <label >Datos personales </label>
-                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre" required={true} />
+                        <input type="text" className="form-control" id="nombre" placeholder="Nombre" required={true} onBlur={validarNombre}/>
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Primer apellido" required={true} />
+                        <input type="text" className="form-control" id="apellido1" placeholder="Primer apellido" required={true} onBlur={validarApellido1}/>
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Segundo apellido" required={true} />
+                        <input type="text" className="form-control" id="apellido2" placeholder="Segundo apellido" onBlur={validarApellido2} required={true} />
                     </div>
 
                     <div className="col-sm-3 mb-3">
@@ -61,11 +131,11 @@ const CrearUsuario = () =>{
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="No. de documento" required={true} />
+                        <input type="text" className="form-control" id="ndoc" placeholder="No. de documento" required={true} onBlur={validarNdoc} />
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Lugar de expedicíon" required={true} />
+                        <input type="text" className="form-control" id="lugarExp" placeholder="Lugar de expedicíon" required={true} onBlur={validarLugarExp}/>
                     </div>
 
                     <div className="col-sm-3 mb-3">
@@ -123,7 +193,7 @@ const CrearUsuario = () =>{
 
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Ciudad" required={true} />
+                        <input type="text" className="form-control" id="ciudad" placeholder="Ciudad" required={true} onBlur={validarCiudad}/>
                         
                     </div>
 
@@ -136,7 +206,7 @@ const CrearUsuario = () =>{
 
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="Teléfono" required={true} />
+                        <input type="text" className="form-control" id="tel" placeholder="Teléfono" required={true} onBlur={validarTel}/>
                     </div>
 
 
