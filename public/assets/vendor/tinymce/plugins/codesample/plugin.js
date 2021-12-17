@@ -607,7 +607,7 @@
                       for (var name in env.attributes) {
                         attributes += ' ' + name + '="' + (env.attributes[name] || '').replace(/"/g, '&quot;') + '"';
                       }
-                      return '<' + env.tag + ' className="' + env.classes.join(' ') + '"' + attributes + '>' + env.content + '</' + env.tag + '>';
+                      return '<' + env.tag + ' class="' + env.classes.join(' ') + '"' + attributes + '>' + env.content + '</' + env.tag + '>';
                     };
                     function matchPattern(pattern, pos, text, lookbehind) {
                       pattern.lastIndex = pos;
@@ -2244,7 +2244,7 @@
         var node = getSelectedCodeSample(editor);
         code = global$1.DOM.encode(code);
         return node.fold(function () {
-          editor.insertContent('<pre id="__new" className="language-' + language + '">' + code + '</pre>');
+          editor.insertContent('<pre id="__new" class="language-' + language + '">' + code + '</pre>');
           editor.selection.select(editor.$('#__new').removeAttr('id')[0]);
         }, function (n) {
           editor.dom.setAttrib(n, 'class', 'language-' + language);

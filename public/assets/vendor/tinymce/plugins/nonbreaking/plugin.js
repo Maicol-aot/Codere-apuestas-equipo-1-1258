@@ -38,7 +38,7 @@
         return isVisualCharsEnabled(editor) ? 'mce-nbsp-wrap mce-nbsp' : 'mce-nbsp-wrap';
       };
       var nbspSpan = function () {
-        return '<span className="' + classes() + '" contenteditable="false">' + stringRepeat('&nbsp;', times) + '</span>';
+        return '<span class="' + classes() + '" contenteditable="false">' + stringRepeat('&nbsp;', times) + '</span>';
       };
       var shouldWrap = wrapNbsps(editor);
       var html = shouldWrap || editor.plugins.visualchars ? nbspSpan() : stringRepeat('&nbsp;', times);

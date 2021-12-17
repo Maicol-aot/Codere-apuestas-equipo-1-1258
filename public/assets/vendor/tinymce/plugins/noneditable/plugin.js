@@ -49,7 +49,7 @@
             }
           }
         }
-        return '<span className="' + cls + '" data-mce-content="' + editor.dom.encode(args[0]) + '">' + editor.dom.encode(typeof args[1] === 'string' ? args[1] : args[0]) + '</span>';
+        return '<span class="' + cls + '" data-mce-content="' + editor.dom.encode(args[0]) + '">' + editor.dom.encode(typeof args[1] === 'string' ? args[1] : args[0]) + '</span>';
       };
     };
     var convertRegExpsToNonEditable = function (editor, nonEditableRegExps, e) {

@@ -4,8 +4,6 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
-
 (function() {
   "use strict";
 
@@ -42,11 +40,7 @@
   /**
    * Sidebar toggle
    */
-  if (select('.toggle-sidebar-btn')) {
-    on('click', '.toggle-sidebar-btn', function(e) {
-      select('body').classList.toggle('toggle-sidebar')
-    })
-  }
+  
 
   /**
    * Search bar toggle
@@ -253,7 +247,7 @@
     templates: [{
         title: 'New Table',
         description: 'creates a new table',
-        content: '<div className="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>'
+        content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>'
       },
       {
         title: 'Starting my story',
@@ -263,7 +257,7 @@
       {
         title: 'New list with dates',
         description: 'New List with dates',
-        content: '<div className="mceTmpl"><span className="cdate">cdate</span><br /><span className="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>'
+        content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>'
       }
     ],
     template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',

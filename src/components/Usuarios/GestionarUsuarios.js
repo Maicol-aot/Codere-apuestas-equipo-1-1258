@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import SearchBar from '../General/SearchBar';
 import Paginator from '../General/Paginator';
 import ListaUsuarios from './ListaUsuarios';
@@ -11,12 +12,27 @@ const ListaDatosUsuarios = [
     { nombre: "Juan", primerApellido: "Perez", segundoApellido:"Rois", fechaNacimiento:"06/07/1999", id:"003", numeroDocumento:"36598625",lugarExpdicion:"Cali",fechaExpedicion:"15/06/2018",email:"juanpe",pais:"Colombia",telefono:"3014569632",username:"Jperez",tipouser:"interno"},
     { nombre: "kevin", primerApellido: "Anderson", segundoApellido:"Felix", fechaNacimiento:"19/02/1990", id:"001", numeroDocumento:"1140369568",lugarExpdicion:"Barranquilla",fechaExpedicion:"15/09/2015",email:"kevanderson@email.com",pais:"Colombia",telefono:"3163652598",username:"kanderson",tipouser:"admin"},
 
-  ];
+  ]; //codigo original
+
+
 
 
 
 
 const GestionarUsuarios = () =>{
+
+    const [allData, setAllData] =  useState(null);  //prueba con fetch- no sirve
+
+    useEffect(() =>{
+        fetch('http://localhost:9000/users/lista')
+            .then(res => res.json())
+            .catch(error=> console.log(error))
+            .then(res =>{ setAllData(res); console.log(res)})
+
+    }, []);
+
+
+
     return(
         <>
             <main id="main" className="main">
@@ -56,7 +72,7 @@ const GestionarUsuarios = () =>{
                                             <br/>
                                             <SearchBar/>
                                             <br/>
-                                            <ListaUsuarios Usuarios ={ListaDatosUsuarios}/>
+                                            <ListaUsuarios Usuarios ={allData}/>
                                             <Paginator/>
 
                         

@@ -5096,9 +5096,9 @@
       var icons = editor.ui.registry.getAll().icons;
       var optOxideIcon = Optional.from(icons[clazz]);
       return optOxideIcon.fold(function () {
-        return dom$1('<span className="${prefix}-toolbar-button ${prefix}-toolbar-group-item ${prefix}-icon-' + clazz + ' ${prefix}-icon"></span>');
+        return dom$1('<span class="${prefix}-toolbar-button ${prefix}-toolbar-group-item ${prefix}-icon-' + clazz + ' ${prefix}-icon"></span>');
       }, function (icon) {
-        return dom$1('<span className="${prefix}-toolbar-button ${prefix}-toolbar-group-item">' + icon + '</span>');
+        return dom$1('<span class="${prefix}-toolbar-button ${prefix}-toolbar-group-item">' + icon + '</span>');
       });
     };
     var forToolbar = function (clazz, action, extraBehaviours, editor) {
@@ -6295,17 +6295,17 @@
         spec$1.onChange(slider, thumb, color);
       };
       return Slider.sketch({
-        dom: dom$1('<div className="${prefix}-slider ${prefix}-hue-slider-container"></div>'),
+        dom: dom$1('<div class="${prefix}-slider ${prefix}-hue-slider-container"></div>'),
         components: [
-          Slider.parts['left-edge'](spec('<div className="${prefix}-hue-slider-black"></div>')),
+          Slider.parts['left-edge'](spec('<div class="${prefix}-hue-slider-black"></div>')),
           Slider.parts.spectrum({
-            dom: dom$1('<div className="${prefix}-slider-gradient-container"></div>'),
-            components: [spec('<div className="${prefix}-slider-gradient"></div>')],
+            dom: dom$1('<div class="${prefix}-slider-gradient-container"></div>'),
+            components: [spec('<div class="${prefix}-slider-gradient"></div>')],
             behaviours: derive$2([Toggling.config({ toggleClass: resolve('thumb-active') })])
           }),
-          Slider.parts['right-edge'](spec('<div className="${prefix}-hue-slider-white"></div>')),
+          Slider.parts['right-edge'](spec('<div class="${prefix}-hue-slider-white"></div>')),
           Slider.parts.thumb({
-            dom: dom$1('<div className="${prefix}-slider-thumb"></div>'),
+            dom: dom$1('<div class="${prefix}-slider-thumb"></div>'),
             behaviours: derive$2([Toggling.config({ toggleClass: resolve('thumb-active') })])
           })
         ],
@@ -6458,11 +6458,11 @@
         sliderBehaviours: derive$2([orientation(Slider.refresh)]),
         components: [
           Slider.parts.spectrum({
-            dom: dom$1('<div className="${prefix}-slider-size-container"></div>'),
-            components: [spec('<div className="${prefix}-slider-size-line"></div>')]
+            dom: dom$1('<div class="${prefix}-slider-size-container"></div>'),
+            components: [spec('<div class="${prefix}-slider-size-line"></div>')]
           }),
           Slider.parts.thumb({
-            dom: dom$1('<div className="${prefix}-slider-thumb"></div>'),
+            dom: dom$1('<div class="${prefix}-slider-thumb"></div>'),
             behaviours: derive$2([Toggling.config({ toggleClass: resolve('thumb-active') })])
           })
         ]
@@ -6480,9 +6480,9 @@
     };
     var makeItems = function (spec$1) {
       return [
-        spec('<span className="${prefix}-toolbar-button ${prefix}-icon-small-font ${prefix}-icon"></span>'),
+        spec('<span class="${prefix}-toolbar-button ${prefix}-icon-small-font ${prefix}-icon"></span>'),
         makeSlider(spec$1),
-        spec('<span className="${prefix}-toolbar-button ${prefix}-icon-large-font ${prefix}-icon"></span>')
+        spec('<span class="${prefix}-toolbar-button ${prefix}-icon-large-font ${prefix}-icon"></span>')
       ];
     };
     var sketch$6 = function (realm, editor) {
@@ -7084,7 +7084,7 @@
         selectOnFocus: false
       }));
       var buttonSpec = record(Button.sketch({
-        dom: dom$1('<button className="${prefix}-input-container-x ${prefix}-icon-cancel-circle ${prefix}-icon"></button>'),
+        dom: dom$1('<button class="${prefix}-input-container-x ${prefix}-icon-cancel-circle ${prefix}-icon"></button>'),
         action: function (button) {
           var input = inputSpec.get(button);
           Representing.setValue(input, '');
@@ -7093,7 +7093,7 @@
       return {
         name: name,
         spec: Container.sketch({
-          dom: dom$1('<div className="${prefix}-input-container"></div>'),
+          dom: dom$1('<div class="${prefix}-input-container"></div>'),
           components: [
             inputSpec.asSpec(),
             buttonSpec.asSpec()
@@ -7361,7 +7361,7 @@
       var spec$1 = asRawOrDie$1('SerialisedDialog', schema, rawSpec);
       var navigationButton = function (direction, directionName, enabled) {
         return Button.sketch({
-          dom: dom$1('<span className="${prefix}-icon-' + directionName + ' ${prefix}-icon"></span>'),
+          dom: dom$1('<span class="${prefix}-icon-' + directionName + ' ${prefix}-icon"></span>'),
           action: function (button) {
             emitWith(button, navigateEvent, { direction: direction });
           },
@@ -7408,12 +7408,12 @@
       };
       var memForm = record(Form.sketch(function (parts) {
         return {
-          dom: dom$1('<div className="${prefix}-serialised-dialog"></div>'),
+          dom: dom$1('<div class="${prefix}-serialised-dialog"></div>'),
           components: [Container.sketch({
-              dom: dom$1('<div className="${prefix}-serialised-dialog-chain" style="left: 0px; position: absolute;"></div>'),
+              dom: dom$1('<div class="${prefix}-serialised-dialog-chain" style="left: 0px; position: absolute;"></div>'),
               components: map$2(spec$1.fields, function (field, i) {
                 return i <= spec$1.maxFieldIndex ? Container.sketch({
-                  dom: dom$1('<div className="${prefix}-serialised-dialog-screen"></div>'),
+                  dom: dom$1('<div class="${prefix}-serialised-dialog-screen"></div>'),
                   components: [
                     navigationButton(-1, 'previous', i > 0),
                     parts.field(field.name, field.spec),
@@ -7466,17 +7466,17 @@
         };
       }));
       var memDots = record({
-        dom: dom$1('<div className="${prefix}-dot-container"></div>'),
+        dom: dom$1('<div class="${prefix}-dot-container"></div>'),
         behaviours: derive$2([Highlighting.config({
             highlightClass: resolve('dot-active'),
             itemClass: resolve('dot-item')
           })]),
         components: bind$3(spec$1.fields, function (_f, i) {
-          return i <= spec$1.maxFieldIndex ? [spec('<div className="${prefix}-dot-item ${prefix}-icon-full-dot ${prefix}-icon"></div>')] : [];
+          return i <= spec$1.maxFieldIndex ? [spec('<div class="${prefix}-dot-item ${prefix}-icon-full-dot ${prefix}-icon"></div>')] : [];
         })
       });
       return {
-        dom: dom$1('<div className="${prefix}-serializer-wrapper"></div>'),
+        dom: dom$1('<div class="${prefix}-serializer-wrapper"></div>'),
         components: [
           memForm.asSpec(),
           memDots.asSpec()
@@ -10643,7 +10643,7 @@
 
     var sketch = function (onView, _translate) {
       var memIcon = record(Container.sketch({
-        dom: dom$1('<div aria-hidden="true" className="${prefix}-mask-tap-icon"></div>'),
+        dom: dom$1('<div aria-hidden="true" class="${prefix}-mask-tap-icon"></div>'),
         containerBehaviours: derive$2([Toggling.config({
             toggleClass: resolve('mask-tap-icon-selected'),
             toggleOnExecute: false
@@ -10651,11 +10651,11 @@
       }));
       var onViewThrottle = first(onView, 200);
       return Container.sketch({
-        dom: dom$1('<div className="${prefix}-disabled-mask"></div>'),
+        dom: dom$1('<div class="${prefix}-disabled-mask"></div>'),
         components: [Container.sketch({
-            dom: dom$1('<div className="${prefix}-content-container"></div>'),
+            dom: dom$1('<div class="${prefix}-content-container"></div>'),
             components: [Button.sketch({
-                dom: dom$1('<div className="${prefix}-content-tap-section"></div>'),
+                dom: dom$1('<div class="${prefix}-content-tap-section"></div>'),
                 components: [memIcon.asSpec()],
                 action: function (_button) {
                   onViewThrottle.throttle();
@@ -10854,7 +10854,7 @@
       var makeGroup = function (gSpec) {
         var scrollClass = gSpec.scrollable === true ? '${prefix}-toolbar-scrollable-group' : '';
         return {
-          dom: dom$1('<div aria-label="' + gSpec.label + '" className="${prefix}-toolbar-group ' + scrollClass + '"></div>'),
+          dom: dom$1('<div aria-label="' + gSpec.label + '" class="${prefix}-toolbar-group ' + scrollClass + '"></div>'),
           tgroupBehaviours: derive$2([config('adhoc-scrollable-toolbar', gSpec.scrollable === true ? [runOnInit(function (component, _simulatedEvent) {
                 set$5(component.element, 'overflow-x', 'auto');
                 markAsHorizontal(component.element);
@@ -10866,7 +10866,7 @@
         };
       };
       var toolbar = build$1(Toolbar.sketch({
-        dom: dom$1('<div className="${prefix}-toolbar"></div>'),
+        dom: dom$1('<div class="${prefix}-toolbar"></div>'),
         components: [Toolbar.parts.groups({})],
         toolbarBehaviours: derive$2([
           Toggling.config({
@@ -10926,7 +10926,7 @@
 
     var makeEditSwitch = function (webapp) {
       return build$1(Button.sketch({
-        dom: dom$1('<div className="${prefix}-mask-edit-icon ${prefix}-icon"></div>'),
+        dom: dom$1('<div class="${prefix}-mask-edit-icon ${prefix}-icon"></div>'),
         action: function () {
           webapp.run(function (w) {
             w.setReadOnly(false);
@@ -10936,7 +10936,7 @@
     };
     var makeSocket = function () {
       return build$1(Container.sketch({
-        dom: dom$1('<div className="${prefix}-editor-socket"></div>'),
+        dom: dom$1('<div class="${prefix}-editor-socket"></div>'),
         components: [],
         containerBehaviours: derive$2([Replacing.config({})])
       }));
