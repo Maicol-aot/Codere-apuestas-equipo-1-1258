@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import React from 'react';
+
 
 const RegistroForm = () => {
     
@@ -101,6 +103,41 @@ const RegistroForm = () => {
         }
     };
    
+
+    const [datos,setDatos] = useState({ //con llaves se crea un objeto
+        nombre: "",
+        primerApellido: "",
+        segundoApellido: "",
+        fechaNacimiento: "",
+        tipoDoc: "",
+        nDoc: "",
+        lugarExpedicion: "",
+        fechaExpedicio: "",
+        departamento: "",
+        municipio: "",
+        direccion: "",
+        email: "",
+        movil: "",
+        password: "",
+        rol: "user",
+        saldo: "0.00",
+        usrname: ""
+    })
+
+    
+
+    const handleInputChange = (event) =>{
+         // console.log(event.target.value) permite ir copiando cada caracter inngresdo en el input
+        setDatos({
+            ...datos, //aqui se crea una pseudo copia d ecada valor para que no se borre el anterior
+            [event.target.name] : event.target.value // se relaciona lo que hay en el input con su name y el valor de la estructura en estado
+        })
+    }
+
+    const enviarDatosUsers = (event) =>{
+        event.preventDefault();
+        console.log(datos)
+    }
         
 
     
@@ -109,35 +146,41 @@ const RegistroForm = () => {
             <div id="box-bod">
                 <div className="container-fluid">
                     <h4 id="container-title">Registrarse</h4>
-                    <form className="registerForm">
+                    <form className="registerForm" onSubmit={enviarDatosUsers}>
                         <div className="rows">
                             <h6 className="form-subtitles">Datos personales</h6>
-                            <input className="form-control" id="nombre" type="text" placeholder="Nombre" name="nombre" required="true" onBlur={validarNombre}/>
-                            <input className="form-control" id="apellido1"  type="text" placeholder="Primer apellido" name="PrimerApellido" required="true" onBlur={validarApellido1}/>
-                            <input className="form-control" id="apellido2" type="text" placeholder="Segundo apellido" name="segundoApellido" required="true" onBlur={validarApellido2}/>
+                            <input className="form-control" id="nombre" type="text" placeholder="Nombre" name="nombre" required="true" onChange={handleInputChange}/>
+                            {/* onBlur={validarNombre} */}
+                            <input className="form-control" id="apellido1"  type="text" placeholder="Primer apellido" name="primerApellido" required="true" onChange={handleInputChange}/>
+                            {/* onBlur={validarApellido1} */}
+                            <input className="form-control" id="apellido2" type="text" placeholder="Segundo apellido" name="segundoApellido" required="true"  onChange={handleInputChange}/>
+                            {/* onBlur={validarApellido2} */}
                             <div className="cont">
                                 <h6 id="form-subtitles">Fecha nacimiento</h6>
-                                <input type="date" className="form-date" id="nacimiento" required="true" onBlur={validarEdad} />
+                                <input type="date" className="form-date" id="nacimiento" required="true"  onChange={handleInputChange}/>
+                                {/* onBlur={validarEdad} */}
                             </div>
                         
                         </div>
                         <div className="rows">
                             <h6 className="form-subtitles">Datos identificacion</h6>
-                            <select className="form-select" id="select-residencia" formcontrolname="documentoID" aria-label="Default select example" required="true">
+                            <select className="form-select" id="select-residencia" formcontrolname="documentoID" aria-label="Default select example" required="true" name="tipoDoc" onChange={handleInputChange}>
                                 <option selected value="Cedula de ciudadania">Cedula de ciudadania</option>
                                 <option value="Cedula de extranjeria">Cedula de extranjeria</option>
                             </select> 
-                            <input className="form-control" id="ndoc" type="text" placeholder="Numero de documento" name="numeroDocumento" required="true" onBlur={validarNdoc}/>
-                            <input className="form-control" id="lugarExp" type="text" placeholder="Lugar de expedicion" name="sitioExpedicion" required="true" onBlur={validarLugarExp} />
+                            <input className="form-control" id="ndoc" type="text" placeholder="Numero de documento" required="true" name="nDoc" onChange={handleInputChange}/>
+                            {/* onBlur={validarNdoc} */}
+                            <input className="form-control" id="lugarExp" type="text" placeholder="Lugar de expedicion"  required="true"  name ="lugarExpedicion" onChange={handleInputChange}/>
+                            {/* onBlur={validarLugarExp} */}
                             <div className="cont">
                                 <h6 id="form-subtitles">Fecha expedicion</h6>
-                                <input type="date" class="form-date" required="true"/>
+                                <input type="date" class="form-date" required="true" name ="fechaExpedicio" />
                             </div>
                         
                         </div>
                         <div className="rows">
                             <h6 className="form-subtitles-single">Datos de contacto</h6>
-                            <select className="form-select" id="select-residencia" formcontrolname="diaNacimiento" aria-label="Default select example" required="true">
+                            <select className="form-select" id="select-residencia" formcontrolname="diaNacimiento" aria-label="Default select example" required="true" name="departamento" onChange={handleInputChange}>
                                 <option selected>Departamento de residencia</option>
                                 <option value="1">Amazonas</option>
                                 <option value="2">Antioquia</option>
@@ -174,15 +217,18 @@ const RegistroForm = () => {
                                 <option value="33">Vichada</option>
                             
                             </select> 
-                            <input type="text" className="form-control" id="ciudad" formcontrolname="diaNacimiento" required="true" placeholder="Muncipio de residencia" onBlur={validarCiudad}/> 
-                            <input className="form-control" id="form-control" type="text" placeholder="Direccion de residencia" name="direccion" required="true"/>
-                            <input className="form-control" id="email2" type="email" placeholder="Correo electronico" name="email" required="true" onBlur={validarEmail}/>
-                            <input className="form-control" id="tel" type="text" placeholder="Movil" name="nombre" onBlur={validarTel}/> 
+                            <input type="text" className="form-control" id="ciudad" formcontrolname="diaNacimiento" required="true" placeholder="Muncipio de residencia" name="municipio" onChange={handleInputChange}/> 
+                            {/* onBlur={validarCiudad} */}
+                            <input className="form-control" id="form-control" type="text" placeholder="Direccion de residencia" name="direccion" required="true" onChange={handleInputChange}/>
+                            <input className="form-control" id="email2" type="email" placeholder="Correo electronico" name="email" required="true"  onChange={handleInputChange} />
+                            {/* onBlur={validarEmail} */}
+                            <input className="form-control" id="tel" type="text" placeholder="Movil" name="movil" onChange={handleInputChange}/>
+                             {/* onBlur={validarTel}  */}
                         </div>
                         <div className="rows">
                             <h6 className="form-subtitles-single">Datos usuario</h6>
-                            <input className="form-control" id="form-control" type="text" placeholder="Usuario" name="usrname" required="true"/>
-                            <input className="form-control" id="password" type="password" placeholder="Contraseña" name="password" required="true" onBlur={validPassword}/>
+                            <input className="form-control" id="form-control" type="text" placeholder="Usuario" name="usrname" required="true" onChange={handleInputChange}/>
+                            <input className="form-control" id="password" type="password" placeholder="Contraseña" name="password" required="true" onBlur={validPassword} onChange={handleInputChange}/>
                             <input className="form-control" id="passwordConfirmation" type="password" placeholder="Confirmar contraseña"  name="validatePass" required="true" onBlur={confirmationPassword}/>
                             
                         </div>

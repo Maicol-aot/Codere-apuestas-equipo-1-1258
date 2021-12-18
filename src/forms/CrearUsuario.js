@@ -269,9 +269,9 @@ const CrearUsuario = () =>{
 
                         <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect" name ="rol" onChange={handleInputChange}>
                             <option selected>Tipo de usuario</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Interno</option>
-                            <option value="3">Usuario</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Intern</option>
+                            <option value="3">User</option>
                         </select>
 
 
