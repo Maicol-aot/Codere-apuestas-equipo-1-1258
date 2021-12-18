@@ -4,10 +4,10 @@ const Usuario = (props) =>{
     return(
         <>
             <tr>
-                <th scope="row">{props.id_usuario}</th>
-                <td>{props.usrname}</td>
+                <th scope="row">{props.id}</th>
+                <td>{props.username}</td>
                 <td>{props.nombre}  {props.primerApellido}</td>
-                <td>{props.rol}</td>
+                <td>{props.tipouser}</td>
                 <td><td><a href="#" className="btn btn-danger">Eliminar</a></td></td>
             </tr>
         </>

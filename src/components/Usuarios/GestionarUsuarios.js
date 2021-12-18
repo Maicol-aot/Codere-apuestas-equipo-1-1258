@@ -20,8 +20,6 @@ const GestionarUsuarios = () =>{
         setAllData(users)
         
     }
-
-
    
     return(
         <>
