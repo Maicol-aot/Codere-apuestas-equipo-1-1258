@@ -1,4 +1,4 @@
-import react from 'react';
+import react, { useState } from 'react';
 
 const CrearUsuario = () =>{
         // validaciones minimas
@@ -86,33 +86,69 @@ const CrearUsuario = () =>{
         };
         //validaciones minimas
 
+        const [datos,setDatos] = useState({ //con llaves se crea un objeto
+            nombre: "",
+            primerApellido: "",
+            segundoApellido: "",
+            fechaNacimiento: "",
+            tipoDoc: "",
+            nDoc: "",
+            lugarExpedicion: "",
+            fechaExpedicio: "",
+            departamento: "",
+            municipio: "",
+            direccion: "",
+            email: "",
+            movil: "",
+            password: "",
+            rol: "",
+            saldo: "0.00",
+            usrname: ""
+        })
 
-
+        
+    
+        const handleInputChange = (event) =>{
+             // console.log(event.target.value) permite ir copiando cada caracter inngresdo en el input
+            setDatos({
+                ...datos, //aqui se crea una pseudo copia d ecada valor para que no se borre el anterior
+                [event.target.name] : event.target.value // se relaciona lo que hay en el input con su name y el valor de la estructura en estado
+            })
+        }
+    
+        const enviarDatosUsers = (event) =>{
+            event.preventDefault();
+            console.log(datos)
+        }
 
     return(
         <>
             
-            <form> {/*  id mixtos, verificar validacions */}
+            <form onSubmit={enviarDatosUsers}> {/*  id mixtos, verificar validacions */}
                 <div className="row">
                 </div>
                 <div className="row">
 
                     <div className="col-sm-3 mb-3">
                         <label >Datos personales </label>
-                        <input type="text" className="form-control" id="nombre" placeholder="Nombre" required={true} onBlur={validarNombre}/>
+                        <input type="text" className="form-control" id="nombre" placeholder="Nombre" name = "nombre "required={true} onChange={handleInputChange}/> 
+                        {/* onBlur={validarNombre} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="apellido1" placeholder="Primer apellido" required={true} onBlur={validarApellido1}/>
+                        <input type="text" className="form-control" id="apellido1" placeholder="Primer apellido" name="primerApellido" required={true} onChange={handleInputChange}/>
+                        {/* onBlur={validarApellido1} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="apellido2" placeholder="Segundo apellido" onBlur={validarApellido2} required={true} />
+                        <input type="text" className="form-control" id="apellido2" placeholder="Segundo apellido" name ="segundoApellido" required={true} onChange={handleInputChange}/>  
+                        {/* onBlur={validarApellido2} */}
                     </div>
 
                     <div className="col-sm-3 mb-3">
                         <label>Fecha de nacimiento</label>
-                        <input type="date" className="form-control" id="nacimiento" placeholder="Fecha de nacimiento"  required={true} onBlur={validarEdad}/>
+                        <input type="date" className="form-control" id="nacimiento" placeholder="Fecha de nacimiento" name="fechaNacimiento" required={true} onChange={handleInputChange}/> 
+                        {/* onBlur={validarEdad} */}
                     </div>
 
 
@@ -120,7 +156,7 @@ const CrearUsuario = () =>{
                 <div className="row">
                     <div className="col-sm-3 mb-3">
                         <label >Datos de identificacíon</label>
-                        <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect">
+                        <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect" name = "tipoDoc" onChange={handleInputChange}>
                             <option selected>Tipo de documento</option>
                             <option value="1">Cédula de ciudadania</option>
                             <option value="2">Cédula de extranjería</option>
@@ -130,16 +166,18 @@ const CrearUsuario = () =>{
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="ndoc" placeholder="No. de documento" required={true} onBlur={validarNdoc} />
+                        <input type="text" className="form-control" id="ndoc" placeholder="No. de documento" name="nDoc" required={true}  onChange={handleInputChange}/> 
+                        {/* onBlur={validarNdoc} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="lugarExp" placeholder="Lugar de expedicíon" required={true} onBlur={validarLugarExp}/>
+                        <input type="text" className="form-control" id="lugarExp" placeholder="Lugar de expedicíon" name ="LugarExpedicion"  required={true} onChange={handleInputChange}/>
+                         {/* onBlur={validarLugarExp} */}
                     </div>
 
                     <div className="col-sm-3 mb-3">
                         <label>Fecha de Expedicion</label>
-                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de Expedicion" required={true} />
+                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de Expedicion" name="fechaExpedicio" required={true} onChange={handleInputChange} />
                     </div>
 
 
@@ -148,10 +186,11 @@ const CrearUsuario = () =>{
                     <label>Datos de contacto</label>
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="email2" placeholder="Correo electronico" required={true} onBlur={validarEmail}/>
+                        <input type="text" className="form-control" id="email2" placeholder="Correo electronico" name="email" required={true} onChange={handleInputChange} />
+                         {/* onBlur={validarEmail} */}
                     </div>
                     <div className="col-sm-3 mb-3">
-                    <select className="form-select" id="select-residencia" formcontrolname="diaNacimiento" aria-label="Default select example" required={true}>
+                    <select className="form-select" id="select-residencia" formcontrolname="diaNacimiento" aria-label="Default select example" name ="departamento" required={true} onChange={handleInputChange}>
                                 <option selected>Departamento</option>
                                 <option value="1">Amazonas</option>
                                 <option value="2">Antioquia</option>
@@ -192,20 +231,22 @@ const CrearUsuario = () =>{
 
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="ciudad" placeholder="Ciudad" required={true} onBlur={validarCiudad}/>
+                        <input type="text" className="form-control" id="ciudad" placeholder="Ciudad" name="municipio" required={true}  onChange={handleInputChange} /> 
+                        {/* onBlur={validarCiudad} */}
                         
                     </div>
 
                     <div className="col-sm-3 mb-3">
 
-                    <input className="form-control" id="form-control" type="text" placeholder="Direccion de residencia" name="direccion" required={true}/>
+                    <input className="form-control" id="form-control" type="text" placeholder="Direccion de residencia" name="direccion" required={true} onChange={handleInputChange}/>
                         
                     </div>
                     
 
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="tel" placeholder="Teléfono" required={true} onBlur={validarTel}/>
+                        <input type="text" className="form-control" id="tel" placeholder="Teléfono" name ="movil" required={true} onChange={handleInputChange}/>
+                         {/* onBlur={validarTel} */}
                     </div>
 
 
@@ -217,16 +258,16 @@ const CrearUsuario = () =>{
                     <label>Datos de usuario</label>
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre de usuario" required={true} />
+                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre de usuario" name="usrname" required={true} onChange={handleInputChange} />
                     </div>
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="contraseña" required={true} />
+                        <input type="text" className="form-control" id="validationDefault02" placeholder="contraseña" name="password" required={true}  onChange={handleInputChange}/>
                     </div>
                     <div className="col-sm-3 mb-3">
 
 
-                        <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect">
+                        <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect" name ="rol" onChange={handleInputChange}>
                             <option selected>Tipo de usuario</option>
                             <option value="1">Administrador</option>
                             <option value="2">Interno</option>
