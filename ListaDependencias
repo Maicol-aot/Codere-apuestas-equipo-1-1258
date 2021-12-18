@@ -1,5 +1,8 @@
-axios
-bootstrap
+
+
+
+
+backend: 
 express
 mongoose
 socket.io 
@@ -9,3 +12,8 @@ bcrypt
 cookie-parser
 body-parser
 cors 
+jsonwebtokens
+dotenv
+
+frontend: bootstrap
+react-bootstrap

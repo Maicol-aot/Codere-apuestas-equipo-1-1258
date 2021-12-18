@@ -16,7 +16,7 @@ const GestionarUsuarios = () =>{
     }, [])
 
     const obtenerUsuarios = async () =>{
-        const data = await fetch('http://localhost:9000/users/lista')
+        const data = await fetch('http://localhost:9000/listaUsuarios')
         const users = await data.json()
         console.log(users)
         setAllData(users)
