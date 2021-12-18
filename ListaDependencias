@@ -1,0 +1,11 @@
+axios
+bootstrap
+express
+mongoose
+socket.io 
+compression
+nodemon
+bcrypt
+cookie-parser
+body-parser
+cors 

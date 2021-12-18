@@ -11509,7 +11509,7 @@
       if (matchText.length > 0) {
         var escapedMatchRegex = new RegExp(escape(matchText), 'gi');
         return encoded.replace(escapedMatchRegex, function (match) {
-          return '<span className="tox-autocompleter-highlight">' + match + '</span>';
+          return '<span class="tox-autocompleter-highlight">' + match + '</span>';
         });
       } else {
         return encoded;
@@ -13748,8 +13748,8 @@
       var setContents = function (comp, items) {
         var htmlLines = map$2(items, function (item) {
           var itemText = global$f.translate(item.text);
-          var textContent = spec.columns === 1 ? '<div className="tox-collection__item-label">' + itemText + '</div>' : '';
-          var iconContent = '<div className="tox-collection__item-icon">' + item.icon + '</div>';
+          var textContent = spec.columns === 1 ? '<div class="tox-collection__item-label">' + itemText + '</div>' : '';
+          var iconContent = '<div class="tox-collection__item-icon">' + item.icon + '</div>';
           var mapItemName = {
             '_': ' ',
             ' - ': ' ',
@@ -13759,11 +13759,11 @@
             return mapItemName[match];
           });
           var disabledClass = providersBackstage.isDisabled() ? ' tox-collection__item--state-disabled' : '';
-          return '<div className="tox-collection__item' + disabledClass + '" tabindex="-1" data-collection-item-value="' + global$8.encodeAllRaw(item.value) + '" title="' + ariaLabel + '" aria-label="' + ariaLabel + '">' + iconContent + textContent + '</div>';
+          return '<div class="tox-collection__item' + disabledClass + '" tabindex="-1" data-collection-item-value="' + global$8.encodeAllRaw(item.value) + '" title="' + ariaLabel + '" aria-label="' + ariaLabel + '">' + iconContent + textContent + '</div>';
         });
         var chunks = spec.columns !== 'auto' && spec.columns > 1 ? chunk$1(htmlLines, spec.columns) : [htmlLines];
         var html = map$2(chunks, function (ch) {
-          return '<div className="tox-collection__group">' + ch.join('') + '</div>';
+          return '<div class="tox-collection__group">' + ch.join('') + '</div>';
         });
         set$8(comp.element, html.join(''));
       };
@@ -16537,7 +16537,7 @@
           tag: 'div',
           attributes: { role: 'presentation' },
           classes: [getClass('sv-palette-thumb')],
-          innerHtml: '<div className=' + getClass('sv-palette-inner-thumb') + ' role="presentation"></div>'
+          innerHtml: '<div class=' + getClass('sv-palette-inner-thumb') + ' role="presentation"></div>'
         }
       });
       var setColour = function (canvas, rgba) {
@@ -19604,12 +19604,12 @@
             }
           });
         };
-        global$4('<div id="' + id + '" className="' + prefix + 'croprect-container"' + ' role="grid" aria-dropeffect="execute">').appendTo(containerElm);
+        global$4('<div id="' + id + '" class="' + prefix + 'croprect-container"' + ' role="grid" aria-dropeffect="execute">').appendTo(containerElm);
         global$6.each(blockers, function (blocker) {
-          global$4('#' + id, containerElm).append('<div id="' + id + '-' + blocker + '"className="' + prefix + 'croprect-block" style="display: none" data-mce-bogus="all">');
+          global$4('#' + id, containerElm).append('<div id="' + id + '-' + blocker + '"class="' + prefix + 'croprect-block" style="display: none" data-mce-bogus="all">');
         });
         global$6.each(handles, function (handle) {
-          global$4('#' + id, containerElm).append('<div id="' + id + '-' + handle.name + '" className="' + prefix + 'croprect-handle ' + prefix + 'croprect-handle-' + handle.name + '"' + 'style="display: none" data-mce-bogus="all" role="gridcell" tabindex="-1"' + ' aria-label="' + handle.label + '" aria-grabbed="false" title="' + handle.label + '">');
+          global$4('#' + id, containerElm).append('<div id="' + id + '-' + handle.name + '" class="' + prefix + 'croprect-handle ' + prefix + 'croprect-handle-' + handle.name + '"' + 'style="display: none" data-mce-bogus="all" role="gridcell" tabindex="-1"' + ' aria-label="' + handle.label + '" aria-grabbed="false" title="' + handle.label + '">');
         });
         dragHelpers = global$6.map(handles, createDragHelper);
         repaint(currentRect);
@@ -24155,7 +24155,7 @@
             },
             classes: ['tox-throbber__busy-spinner']
           },
-          components: [{ dom: fromHtml('<div className="tox-spinner"><div></div><div></div><div></div></div>') }]
+          components: [{ dom: fromHtml('<div class="tox-spinner"><div></div><div></div><div></div></div>') }]
         };
       };
     };
@@ -31826,7 +31826,7 @@
         ], spec.footer.toArray()),
         parts: {
           blocker: {
-            dom: fromHtml('<div className="' + blockerClass + '"></div>'),
+            dom: fromHtml('<div class="' + blockerClass + '"></div>'),
             components: [{
                 dom: {
                   tag: 'div',
@@ -31909,11 +31909,11 @@
       };
     };
     var renderDragHandle = function () {
-      return { dom: fromHtml('<div className="tox-dialog__draghandle"></div>') };
+      return { dom: fromHtml('<div class="tox-dialog__draghandle"></div>') };
     };
     var renderInlineHeader = function (spec, titleId, providersBackstage) {
       return Container.sketch({
-        dom: fromHtml('<div className="tox-dialog__header"></div>'),
+        dom: fromHtml('<div class="tox-dialog__header"></div>'),
         components: [
           renderTitle(spec, Optional.some(titleId), providersBackstage),
           renderDragHandle(),
@@ -31941,7 +31941,7 @@
       var pClose = ModalDialog.parts.close(renderClose(providersBackstage));
       var components = [pTitle].concat(spec.draggable ? [pHandle] : []).concat([pClose]);
       return Container.sketch({
-        dom: fromHtml('<div className="tox-dialog__header"></div>'),
+        dom: fromHtml('<div class="tox-dialog__header"></div>'),
         components: components
       });
     };
@@ -31967,7 +31967,7 @@
           }
         },
         behaviours: bs,
-        components: [{ dom: fromHtml('<div className="tox-spinner"><div></div><div></div><div></div></div>') }]
+        components: [{ dom: fromHtml('<div class="tox-spinner"><div></div><div></div><div></div></div>') }]
       };
     };
     var getEventExtras = function (lazyDialog, providers, extra) {
@@ -32206,7 +32206,7 @@
         });
       };
       return {
-        dom: fromHtml('<div className="tox-dialog__footer"></div>'),
+        dom: fromHtml('<div class="tox-dialog__footer"></div>'),
         components: [],
         behaviours: derive$1([Reflecting.config({
             channel: footerChannel,

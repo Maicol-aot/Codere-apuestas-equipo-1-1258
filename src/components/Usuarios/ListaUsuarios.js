@@ -8,11 +8,13 @@ const ListaUsuarios = (props)=>{
         <Usuario 
             nombre = {p.nombre}
             primerApellido ={p.primerApellido}
-            id = {p.id}
-            username = {p.username}
-            tipouser={p.tipouser}
+            id = {p.id_usuario}
+            username = {p.usrname}
+            tipouser={p.rol}
         
         />);
+
+        
 
 
 

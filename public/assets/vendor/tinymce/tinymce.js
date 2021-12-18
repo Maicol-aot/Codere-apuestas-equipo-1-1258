@@ -9815,7 +9815,7 @@
           caretContainerNode = insertBlock$1(caretBlock, element, before);
           var clientRect = getAbsoluteClientRect(root, element, before);
           DomQuery(caretContainerNode).css('top', clientRect.top);
-          var caret = DomQuery('<div className="mce-visual-caret" data-mce-bogus="all"></div>').css(__assign({}, clientRect)).appendTo(root)[0];
+          var caret = DomQuery('<div class="mce-visual-caret" data-mce-bogus="all"></div>').css(__assign({}, clientRect)).appendTo(root)[0];
           lastVisualCaret.set({
             caret: caret,
             element: element,
@@ -26046,7 +26046,7 @@
           return $([elm.dom]);
         });
         if ($realSelectionContainer.length === 0) {
-          $realSelectionContainer = $('<div data-mce-bogus="all" className="mce-offscreen-selection"></div>').attr('id', realSelectionId);
+          $realSelectionContainer = $('<div data-mce-bogus="all" class="mce-offscreen-selection"></div>').attr('id', realSelectionId);
           $realSelectionContainer.appendTo(editor.getBody());
         }
         var newRange = dom.createRng();
@@ -26997,7 +26997,7 @@
       if (getContentSecurityPolicy(editor)) {
         iframeHTML += '<meta http-equiv="Content-Security-Policy" content="' + getContentSecurityPolicy(editor) + '" />';
       }
-      iframeHTML += '</head><body id="' + bodyId + '" className="mce-content-body ' + bodyClass + '" data-id="' + editor.id + '"><br></body></html>';
+      iframeHTML += '</head><body id="' + bodyId + '" class="mce-content-body ' + bodyClass + '" data-id="' + editor.id + '"><br></body></html>';
       return iframeHTML;
     };
     var createIframe = function (editor, o) {
