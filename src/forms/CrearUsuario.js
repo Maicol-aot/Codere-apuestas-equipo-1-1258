@@ -1,4 +1,6 @@
 import react, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+
 
 const CrearUsuario = () =>{
         // validaciones minimas
@@ -131,23 +133,46 @@ const CrearUsuario = () =>{
 
                     <div className="col-sm-3 mb-3">
                         <label >Datos personales </label>
-                        <input type="text" className="form-control" id="nombre" placeholder="Nombre" name = "nombre "required={true} onChange={handleInputChange}/> 
+                        <input type="text" className="form-control" 
+                            id="nombre" placeholder="Nombre" 
+                            name = "nombre "
+                            required={true} 
+                            onChange={handleInputChange}
+                        />
+
                         {/* onBlur={validarNombre} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="apellido1" placeholder="Primer apellido" name="primerApellido" required={true} onChange={handleInputChange}/>
+                        <input type="text" className="form-control" 
+                            id="apellido1" placeholder="Primer apellido" 
+                            name="primerApellido" 
+                            required={true} 
+                            onChange={handleInputChange}
+                
+                        />
                         {/* onBlur={validarApellido1} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="apellido2" placeholder="Segundo apellido" name ="segundoApellido" required={true} onChange={handleInputChange}/>  
+                        <input type="text" className="form-control" 
+                            id="apellido2" placeholder="Segundo apellido" 
+                            name ="segundoApellido" 
+                            required={true} 
+                            onChange={handleInputChange}  
+                        />  
                         {/* onBlur={validarApellido2} */}
                     </div>
 
                     <div className="col-sm-3 mb-3">
                         <label>Fecha de nacimiento</label>
-                        <input type="date" className="form-control" id="nacimiento" placeholder="Fecha de nacimiento" name="fechaNacimiento" required={true} onChange={handleInputChange}/> 
+                        <input type="date" className="form-control"
+                            id="nacimiento" placeholder="Fecha de nacimiento" 
+                            name="fechaNacimiento" 
+                            required={true} 
+                            onChange={handleInputChange}
+    
+                        /> 
                         {/* onBlur={validarEdad} */}
                     </div>
 
@@ -156,7 +181,11 @@ const CrearUsuario = () =>{
                 <div className="row">
                     <div className="col-sm-3 mb-3">
                         <label >Datos de identificacíon</label>
-                        <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect" name = "tipoDoc" onChange={handleInputChange}>
+                        <select className="custom-select mr-sm-2 form-control " 
+                            id="inlineFormCustomSelect" 
+                            name = "tipoDoc" 
+                            onChange={handleInputChange}
+                        >
                             <option selected>Tipo de documento</option>
                             <option value="1">Cédula de ciudadania</option>
                             <option value="2">Cédula de extranjería</option>
@@ -166,18 +195,34 @@ const CrearUsuario = () =>{
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="ndoc" placeholder="No. de documento" name="nDoc" required={true}  onChange={handleInputChange}/> 
+                        <input type="text" className="form-control" 
+                            id="ndoc" placeholder="No. de documento" 
+                            name="nDoc" required={true} 
+                            onChange={handleInputChange}
+                        
+                        /> 
                         {/* onBlur={validarNdoc} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="lugarExp" placeholder="Lugar de expedicíon" name ="LugarExpedicion"  required={true} onChange={handleInputChange}/>
+                        <input type="text" className="form-control" 
+                            id="lugarExp" placeholder="Lugar de expedicíon" 
+                            name ="LugarExpedicion"  
+                            required={true} 
+                            onChange={handleInputChange}
+                            
+                        />
                          {/* onBlur={validarLugarExp} */}
                     </div>
 
                     <div className="col-sm-3 mb-3">
                         <label>Fecha de Expedicion</label>
-                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de Expedicion" name="fechaExpedicio" required={true} onChange={handleInputChange} />
+                        <input type="date" className="form-control"
+                            id="validationDefault02" placeholder="Fecha de Expedicion" 
+                            name="fechaExpedicio" 
+                            required={true} 
+                            onChange={handleInputChange} 
+                        />
                     </div>
 
 
@@ -185,12 +230,22 @@ const CrearUsuario = () =>{
                 <div className="row">
                     <label>Datos de contacto</label>
                     <div className="col-sm-3 mb-3">
-
-                        <input type="text" className="form-control" id="email2" placeholder="Correo electronico" name="email" required={true} onChange={handleInputChange} />
+                        <input type="text" className="form-control" 
+                            id="email2" placeholder="Correo electronico" 
+                            name="email" 
+                            required={true} 
+                            onChange={handleInputChange} 
+                        />
                          {/* onBlur={validarEmail} */}
                     </div>
+
                     <div className="col-sm-3 mb-3">
-                    <select className="form-select" id="select-residencia" formcontrolname="diaNacimiento" aria-label="Default select example" name ="departamento" required={true} onChange={handleInputChange}>
+                    <select className="form-select" id="select-residencia" 
+                        formcontrolname="diaNacimiento" aria-label="Default select example" 
+                        name ="departamento"
+                        required={true} 
+                        onChange={handleInputChange}
+                    >
                                 <option selected>Departamento</option>
                                 <option value="1">Amazonas</option>
                                 <option value="2">Antioquia</option>

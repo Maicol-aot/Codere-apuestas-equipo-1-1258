@@ -1,0 +1,41 @@
+const [allData, setAllData] =  useState(null);  
+        useEffect(()  =>{
+             fetch('http://localhost:9000/users/lista')
+                .then(res => res.json())
+                .catch(error=> console.log(error))
+                .then(res =>{ setAllData(res); })
+                
+    
+        }, []); // los corchetes al final evitan un bucle infinito
+    
+        console.log(allData)
+
+
+
+codigo 2 
+
+    const onNuevoProyecto = async function (nuevoProyecto) {
+        setShowLoading(true);
+        const responseData = await CrearProyecto(nuevoProyecto);
+        if (responseData) {
+            setEsError(false);
+            setMensaje('Se guardó el proyecto exitosamente.');
+            setRefrescar(!refrescar);
+        } else {
+            setEsError(true);
+            setMensaje('Ocurrió un error al intentar guardar el proyecto. Intente nuevamente o contacte a soporte técnico.');
+        }
+        setShowLoading(false);
+    }
+
+
+const CrearProyecto = async (data) => {
+    const url = '';
+    try {
+        const responseCrear = await fetch.post(url, data, { headers: { authorization: `Bearer ${ getToken() }` } });
+        return responseCrear.data;
+    } catch (e) {
+        console.log(e);
+    }
+         
+}
