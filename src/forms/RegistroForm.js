@@ -171,6 +171,8 @@ const RegistroForm = () => {
                             <h6 className="form-subtitles">Datos personales</h6>
                             <input className="form-control" id="nombre"
                                 type="text" placeholder="Nombre" name="nombre" 
+                                pattern="^[A-Za-z]{2,15}$"
+                                title="Nombre no valido"
                                 required="true" 
                                 onChange={handleInputChange}
                                        
@@ -181,6 +183,8 @@ const RegistroForm = () => {
                             <input className="form-control" id="apellido1"  
                                 type="text" placeholder="Primer apellido"
                                 name="primerApellido" 
+                                pattern="^[A-Za-z]{2,15}$"
+                                title="Nombre no valido"
                                 required="true" 
                                 onChange={handleInputChange}
                             />
@@ -188,6 +192,8 @@ const RegistroForm = () => {
                             <input className="form-control" id="apellido2"
                                 type="text" placeholder="Segundo apellido"
                                 name="segundoApellido" 
+                                pattern="^[A-Za-z]{2,15}$"
+                                title="Nombre no valido"
                                 required="true"  
                                 onChange={handleInputChange}
                             
@@ -198,6 +204,7 @@ const RegistroForm = () => {
                                 <input type="date" className="form-date"
                                 name="fechaNacimiento"
                                 id="nacimiento"
+                                title=""
                                 required="true"  
                                 onChange={handleInputChange}
 
@@ -212,6 +219,7 @@ const RegistroForm = () => {
                                 formcontrolname="documentoID" aria-label="Default select example" 
                                 required="true" 
                                 name="tipoDoc" 
+                                title=""
                                 onChange={handleInputChange}
 
                             >
@@ -219,18 +227,28 @@ const RegistroForm = () => {
                                 <option value="Cedula de extranjeria">Cedula de extranjeria</option>
                             </select> 
                             <input className="form-control" id="ndoc" 
-                            type="text" placeholder="Numero de documento" 
-                            required="true" 
-                            name="nDoc" 
-                            onChange={handleInputChange}
+                                type="text" placeholder="Numero de documento" 
+                                title=""
+                                required="true" 
+                                name="nDoc" 
+                                onChange={handleInputChange}
                             
                             />
                             {/* onBlur={validarNdoc} */}
-                            <input className="form-control" id="lugarExp" type="text" placeholder="Lugar de expedicion"  required="true"  name ="lugarExpedicion" onChange={handleInputChange}/>
+                            <input className="form-control" id="lugarExp" 
+                                type="text" placeholder="Lugar de expedicion"  
+                                required="true"  
+                                name ="lugarExpedicion" 
+                                title=""
+                                onChange={handleInputChange}/>
                             {/* onBlur={validarLugarExp} */}
                             <div className="cont">
                                 <h6 id="form-subtitles">Fecha expedicion</h6>
-                                <input type="date" class="form-date" required="true" name ="fechaExpedicion" onChange={handleInputChange}/>
+                                <input type="date" class="form-date" 
+                                    required="true" 
+                                    name ="fechaExpedicion" 
+                                    title=""
+                                    onChange={handleInputChange}/>
                             </div>
                         
                         </div>
@@ -238,6 +256,7 @@ const RegistroForm = () => {
                             <h6 className="form-subtitles-single">Datos de contacto</h6>
                             <select className="form-select" id="select-residencia" 
                                 formcontrolname="diaNacimiento" aria-label="Default select example" 
+                                title=""
                                 required="true" 
                                 name="departamento" 
                                 onChange={handleInputChange}
@@ -283,6 +302,7 @@ const RegistroForm = () => {
                                 id="ciudad" formcontrolname="diaNacimiento"
                                 required="true" 
                                 placeholder="Muncipio de residencia" 
+                                title=""
                                 name="municipio" 
                                 onChange={handleInputChange}
                             /> 
@@ -292,6 +312,7 @@ const RegistroForm = () => {
                             <input className="form-control" id="form-control" 
                                 type="text" placeholder="Direccion de residencia" 
                                 name="direccion" 
+                                title=""
                                 required="true" 
                                 onChange={handleInputChange}
                             
@@ -299,6 +320,7 @@ const RegistroForm = () => {
                             <input className="form-control" id="email2" 
                                 type="email" placeholder="Correo electronico" 
                                 name="email" 
+                                title=""
                                 required="true"  
                                 onChange={handleInputChange} 
                             />
@@ -307,7 +329,10 @@ const RegistroForm = () => {
                             <input className="form-control" id="tel"
                                 type="text" placeholder="Movil" 
                                 name="movil" 
+                                pattern="^[0-9]{10,17}$"
+                                title="Telefono no valido"
                                 onChange={handleInputChange}
+                                required="true"
                             
                             />
                              {/* onBlur={validarTel}  */}
@@ -317,6 +342,7 @@ const RegistroForm = () => {
                             <input className="form-control" id="form-control" 
                                 type="text" placeholder="Usuario" 
                                 name="usrname" 
+                                title=""
                                 required="true"
                                 onChange={handleInputChange}
                                 
@@ -326,13 +352,15 @@ const RegistroForm = () => {
                             <input className="form-control" id="password" 
                                 type="password" placeholder="Contraseña"
                                 name="password" 
+                                title=""
                                 required="true" 
                                 // onBlur={validPassword} 
                                 onChange={handleInputChange}
                             />
                             <input className="form-control" id="passwordConfirmation" 
                             type="password" placeholder="Confirmar contraseña"  
-                            name="validatePass" 
+                            name="validatePass"
+                            title="" 
                             required="true" 
                             // onBlur={confirmationPassword}
                             />
