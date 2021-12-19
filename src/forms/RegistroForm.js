@@ -262,7 +262,7 @@ const RegistroForm = () => {
                                 <option value="Guainia">Guainía</option>
                                 <option value="Guaviare">Guaviare</option>
                                 <option value="Huila">Huila</option>
-                                <option value="La Guahira">La Guajira</option>
+                                <option value="La Guajira">La Guajira</option>
                                 <option value="Magdalena">Magdalena</option>
                                 <option value="Meta">Meta</option>
                                 <option value="Narinio">Nariño</option>
