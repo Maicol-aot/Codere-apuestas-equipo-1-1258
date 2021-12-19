@@ -17,3 +17,4 @@ dotenv
 
 frontend: bootstrap
 react-bootstrap
+react-hook-form

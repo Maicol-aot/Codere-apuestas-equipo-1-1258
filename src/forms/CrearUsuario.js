@@ -1,4 +1,6 @@
-import react from 'react';
+import react, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+
 
 const CrearUsuario = () =>{
         // validaciones minimas
@@ -86,33 +88,111 @@ const CrearUsuario = () =>{
         };
         //validaciones minimas
 
+        const [datos,setDatos] = useState({ //con llaves se crea un objeto
+            nombre: "",
+            primerApellido: "",
+            segundoApellido: "",
+            fechaNacimiento: "",
+            tipoDoc: "",
+            nDoc: "",
+            lugarExpedicion: "",
+            fechaExpedicion: "",
+            departamento: "",
+            municipio: "",
+            direccion: "",
+            email: "",
+            movil: "",
+            password: "",
+            rol: "",
+            saldo: "0.00",
+            usrname: ""
+        })
 
+        
+    
+        const handleInputChange = (event) =>{
+             // console.log(event.target.value) permite ir copiando cada caracter inngresdo en el input
+            setDatos({
+                ...datos, //aqui se crea una pseudo copia d ecada valor para que no se borre el anterior
+                [event.target.name] : event.target.value // se relaciona lo que hay en el input con su name y el valor de la estructura en estado
+            })
+        }
+    
+        const enviarDatosUsers = async (event) =>{
+            event.preventDefault();
+            console.log(datos)
 
+            try {
+            
+                const newData = await fetch('http://localhost:9000/registro',{
+                    method :'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(datos)})
+                    console.log(datos);
+    
+    
+                
+            } catch (error) {
+                console.log("hubo un error al enviar los datos")
+                console.log(error);
+                
+            }
+        }
 
     return(
         <>
             
-            <form> {/*  id mixtos, verificar validacions */}
+            <form onSubmit={enviarDatosUsers}> {/*  id mixtos, verificar validacions */}
                 <div className="row">
                 </div>
                 <div className="row">
 
                     <div className="col-sm-3 mb-3">
                         <label >Datos personales </label>
-                        <input type="text" className="form-control" id="nombre" placeholder="Nombre" required={true} onBlur={validarNombre}/>
+                        <input type="text" className="form-control" 
+                            id="nombre" placeholder="Nombre" 
+                            name = "nombre"
+                            required={true} 
+                            onChange={handleInputChange}
+                        />
+
+                        {/* onBlur={validarNombre} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="apellido1" placeholder="Primer apellido" required={true} onBlur={validarApellido1}/>
+                        <input type="text" className="form-control" 
+                            id="apellido1" placeholder="Primer apellido" 
+                            name="primerApellido" 
+                            required={true} 
+                            onChange={handleInputChange}
+                
+                        />
+                        {/* onBlur={validarApellido1} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="apellido2" placeholder="Segundo apellido" onBlur={validarApellido2} required={true} />
+                        <input type="text" className="form-control" 
+                            id="apellido2" placeholder="Segundo apellido" 
+                            name ="segundoApellido" 
+                            required={true} 
+                            onChange={handleInputChange}  
+                        />  
+                        {/* onBlur={validarApellido2} */}
                     </div>
 
                     <div className="col-sm-3 mb-3">
                         <label>Fecha de nacimiento</label>
-                        <input type="date" className="form-control" id="nacimiento" placeholder="Fecha de nacimiento"  required={true} onBlur={validarEdad}/>
+                        <input type="date" className="form-control"
+                            id="nacimiento" placeholder="Fecha de nacimiento" 
+                            name="fechaNacimiento" 
+                            required={true} 
+                            onChange={handleInputChange}
+    
+                        /> 
+                        {/* onBlur={validarEdad} */}
                     </div>
 
 
@@ -120,26 +200,48 @@ const CrearUsuario = () =>{
                 <div className="row">
                     <div className="col-sm-3 mb-3">
                         <label >Datos de identificacíon</label>
-                        <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect">
+                        <select className="custom-select mr-sm-2 form-control " 
+                            id="inlineFormCustomSelect" 
+                            name = "tipoDoc" 
+                            onChange={handleInputChange}
+                        >
                             <option selected>Tipo de documento</option>
-                            <option value="1">Cédula de ciudadania</option>
-                            <option value="2">Cédula de extranjería</option>
+                            <option value="cedula de ciudadania">Cédula de extranjería</option>
+                            <option value="cedula de extranjeria">Cédula de extranjería</option>
                             
                         </select>
 
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="ndoc" placeholder="No. de documento" required={true} onBlur={validarNdoc} />
+                        <input type="text" className="form-control" 
+                            id="ndoc" placeholder="No. de documento" 
+                            name="nDoc" required={true} 
+                            onChange={handleInputChange}
+                        
+                        /> 
+                        {/* onBlur={validarNdoc} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
-                        <input type="text" className="form-control" id="lugarExp" placeholder="Lugar de expedicíon" required={true} onBlur={validarLugarExp}/>
+                        <input type="text" className="form-control" 
+                            id="lugarExp" placeholder="Lugar de expedicíon" 
+                            name ="lugarExpedicion"  
+                            required={true} 
+                            onChange={handleInputChange}
+                            
+                        />
+                         {/* onBlur={validarLugarExp} */}
                     </div>
 
                     <div className="col-sm-3 mb-3">
                         <label>Fecha de Expedicion</label>
-                        <input type="date" className="form-control" id="validationDefault02" placeholder="Fecha de Expedicion" required={true} />
+                        <input type="date" className="form-control"
+                            id="validationDefault02" placeholder="Fecha de Expedicion" 
+                            name="fechaExpedicion" 
+                            required={true} 
+                            onChange={handleInputChange} 
+                        />
                     </div>
 
 
@@ -147,65 +249,90 @@ const CrearUsuario = () =>{
                 <div className="row">
                     <label>Datos de contacto</label>
                     <div className="col-sm-3 mb-3">
-
-                        <input type="text" className="form-control" id="email2" placeholder="Correo electronico" required={true} onBlur={validarEmail}/>
+                        <input type="text" className="form-control" 
+                            id="email2" placeholder="Correo electronico" 
+                            name="email" 
+                            required={true} 
+                            onChange={handleInputChange} 
+                        />
+                         {/* onBlur={validarEmail} */}
                     </div>
+
                     <div className="col-sm-3 mb-3">
-                    <select className="form-select" id="select-residencia" formcontrolname="diaNacimiento" aria-label="Default select example" required={true}>
+                    <select className="form-select" id="select-residencia" 
+                        formcontrolname="diaNacimiento" aria-label="Default select example" 
+                        name ="departamento"
+                        required={true} 
+                        onChange={handleInputChange}
+                    >
                                 <option selected>Departamento</option>
-                                <option value="1">Amazonas</option>
-                                <option value="2">Antioquia</option>
-                                <option value="3">Arauca</option>
-                                <option value="4">Atlántico</option>
-                                <option value="5">Bogotá</option>
-                                <option value="6">Bolívar</option>
-                                <option value="7">Boyacá</option>
-                                <option value="8">Caldas</option>
-                                <option value="9">Caquetá</option>
-                                <option value="10">Casanare</option>
-                                <option value="11">Cauca</option>
-                                <option value="12">Cesar</option>
-                                <option value="13">Chocó</option>
-                                <option value="14">Córdoba</option>
-                                <option value="15">Cundinamarca</option>
-                                <option value="16">Guainía</option>
-                                <option value="17">Guaviare</option>
-                                <option value="18">Huila</option>
-                                <option value="19">La Guajira</option>
-                                <option value="20">Magdalena</option>
-                                <option value="21">Meta</option>
-                                <option value="22">Nariño</option>
-                                <option value="23">Norte de Santander</option>
-                                <option value="24">Putumayo</option>
-                                <option value="25">Quindío</option>
-                                <option value="26">Risaralda</option>
-                                <option value="27">San Andrés y Providencia</option>
-                                <option value="28">Santander</option>
-                                <option value="29">Sucre</option>
-                                <option value="30">Tolima</option>
-                                <option value="31">Valle del Cauca</option>
-                                <option value="32">Vaupés</option>
-                                <option value="33">Vichada</option>
+                                <option value="Amazonas">Amazonas</option>
+                                <option value="Antioquia">Antioquia</option>
+                                <option value="Arauca">Arauca</option>
+                                <option value="Atlantico">Atlántico</option>
+                                <option value="Bogota">Bogotá</option>
+                                <option value="Bolivar">Bolívar</option>
+                                <option value="Boyaca">Boyacá</option>
+                                <option value="Caldas">Caldas</option>
+                                <option value="Caqueta">Caquetá</option>
+                                <option value="Casanare">Casanare</option>
+                                <option value="Cauca">Cauca</option>
+                                <option value="Cesar">Cesar</option>
+                                <option value="Choco">Chocó</option>
+                                <option value="Cordoba">Córdoba</option>
+                                <option value="Cundinamarca">Cundinamarca</option>
+                                <option value="Guainia">Guainía</option>
+                                <option value="Guaviare">Guaviare</option>
+                                <option value="Huila">Huila</option>
+                                <option value="La Guahira">La Guajira</option>
+                                <option value="Magdalena">Magdalena</option>
+                                <option value="Meta">Meta</option>
+                                <option value="Narinio">Nariño</option>
+                                <option value="Norte de Santander">Norte de Santander</option>
+                                <option value="Putumayo">Putumayo</option>
+                                <option value="Quindio">Quindío</option>
+                                <option value="Risaralda">Risaralda</option>
+                                <option value="San Andres">San Andrés y Providencia</option>
+                                <option value="Santander">Santander</option>
+                                <option value="Sucre">Sucre</option>
+                                <option value="Tolima">Tolima</option>
+                                <option value="Valle del Cauca">Valle del Cauca</option>
+                                <option value="Vaupes">Vaupés</option>
+                                <option value="Vichada">Vichada</option>
                             
                             </select> 
                     </div>
 
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="ciudad" placeholder="Ciudad" required={true} onBlur={validarCiudad}/>
+                        <input type="text" className="form-control" 
+                            id="ciudad" placeholder="Ciudad" 
+                            name="municipio" 
+                            required={true}  
+                            onChange={handleInputChange} /> 
+                        {/* onBlur={validarCiudad} */}
                         
                     </div>
 
                     <div className="col-sm-3 mb-3">
 
-                    <input className="form-control" id="form-control" type="text" placeholder="Direccion de residencia" name="direccion" required={true}/>
+                    <input className="form-control" id="form-control" 
+                        type="text" placeholder="Direccion" 
+                        name="direccion" 
+                        required={true} 
+                        onChange={handleInputChange}/>
                         
                     </div>
                     
 
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="tel" placeholder="Teléfono" required={true} onBlur={validarTel}/>
+                        <input type="text" className="form-control" 
+                            id="tel" placeholder="Teléfono" 
+                            name ="movil" 
+                            required={true} 
+                            onChange={handleInputChange}/>
+                         {/* onBlur={validarTel} */}
                     </div>
 
 
@@ -216,21 +343,32 @@ const CrearUsuario = () =>{
                 <div className="row">
                     <label>Datos de usuario</label>
                     <div className="col-sm-3 mb-3">
-
-                        <input type="text" className="form-control" id="validationDefault01" placeholder="Nombre de usuario" required={true} />
+                        <input type="text" className="form-control"
+                            id="validationDefault01" placeholder="Nombre de usuario" 
+                            name="usrname" 
+                            required={true} 
+                            onChange={handleInputChange} />
                     </div>
                     <div className="col-sm-3 mb-3">
 
-                        <input type="text" className="form-control" id="validationDefault02" placeholder="contraseña" required={true} />
+                        <input type="password" className="form-control" 
+                            id="validationDefault02" placeholder="contraseña" 
+                            name="password" 
+                            required={true}  
+                            onChange={handleInputChange}/>
                     </div>
                     <div className="col-sm-3 mb-3">
 
 
-                        <select className="custom-select mr-sm-2 form-control " id="inlineFormCustomSelect">
+                        <select className="custom-select mr-sm-2 form-control " 
+                            id="inlineFormCustomSelect" 
+                            name ="rol" 
+                            onChange={handleInputChange}>
                             <option selected>Tipo de usuario</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Interno</option>
-                            <option value="3">Usuario</option>
+                            <option value="admin">administrador</option>
+                            <option value="intern">interno</option>
+                            <option value="user">usuario</option>
+                            
                         </select>
 
 
