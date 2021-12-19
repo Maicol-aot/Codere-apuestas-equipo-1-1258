@@ -96,7 +96,7 @@ const CrearUsuario = () =>{
             tipoDoc: "",
             nDoc: "",
             lugarExpedicion: "",
-            fechaExpedicio: "",
+            fechaExpedicion: "",
             departamento: "",
             municipio: "",
             direccion: "",
@@ -219,7 +219,7 @@ const CrearUsuario = () =>{
                         <label>Fecha de Expedicion</label>
                         <input type="date" className="form-control"
                             id="validationDefault02" placeholder="Fecha de Expedicion" 
-                            name="fechaExpedicio" 
+                            name="fechaExpedicion" 
                             required={true} 
                             onChange={handleInputChange} 
                         />

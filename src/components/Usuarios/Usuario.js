@@ -4,7 +4,7 @@ const Usuario = (props) =>{
     return(
         <>
             <tr>
-                <th scope="row">{props.id}</th>
+                
                 <td>{props.username}</td>
                 <td>{props.nombre}  {props.primerApellido}</td>
                 <td>{props.tipouser}</td>

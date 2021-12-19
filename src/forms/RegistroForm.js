@@ -113,7 +113,7 @@ const RegistroForm = () => {
         tipoDoc: "",
         nDoc: "",
         lugarExpedicion: "",
-        fechaExpedicio: "",
+        fechaExpedicion: "",
         departamento: "",
         municipio: "",
         direccion: "",
@@ -135,18 +135,39 @@ const RegistroForm = () => {
         })
     }
 
-    const enviarDatosUsers = (event) =>{
+    const enviarDatosUsers = async (event) =>{
         event.preventDefault();
-        console.log(datos)
+        console.log(datos);
+        
+
+        try {
+            
+            const newData = await fetch('http://localhost:9000/registro',{
+                method :'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(
+                    datos
+
+                )})
+                console.log(datos);
+
+
+            
+        } catch (error) {
+            console.log("hubo un error al enviar los datos")
+            console.log(error);
+            
+        }
+
+
+
+        
     }
     
-    //validaciones hook-fomrs 
-    const {register ,errors, handleSubmit} = useForm();
-
-    const onSubmit = (data) =>{
-        console.log(data)
-    }
-
+   
     
     return(
         <>
@@ -159,8 +180,10 @@ const RegistroForm = () => {
                             <input className="form-control" id="nombre"
                                 type="text" placeholder="Nombre" name="nombre" 
                                 required="true" 
-                                onChange={handleInputChange}   
+                                onChange={handleInputChange}
+                                       
                             />
+
                             {/* onBlur={validarNombre} */}
 
                             <input className="form-control" id="apellido1"  
@@ -181,6 +204,7 @@ const RegistroForm = () => {
                             <div className="cont">
                                 <h6 id="form-subtitles">Fecha nacimiento</h6>
                                 <input type="date" className="form-date"
+                                name="fechaNacimiento"
                                 id="nacimiento"
                                 required="true"  
                                 onChange={handleInputChange}
@@ -214,7 +238,7 @@ const RegistroForm = () => {
                             {/* onBlur={validarLugarExp} */}
                             <div className="cont">
                                 <h6 id="form-subtitles">Fecha expedicion</h6>
-                                <input type="date" class="form-date" required="true" name ="fechaExpedicio" />
+                                <input type="date" class="form-date" required="true" name ="fechaExpedicion" onChange={handleInputChange}/>
                             </div>
                         
                         </div>
@@ -303,6 +327,7 @@ const RegistroForm = () => {
                                 name="usrname" 
                                 required="true"
                                 onChange={handleInputChange}
+                                
                     
                             />
 
@@ -310,14 +335,14 @@ const RegistroForm = () => {
                                 type="password" placeholder="Contraseña"
                                 name="password" 
                                 required="true" 
-                                onBlur={validPassword} 
+                                // onBlur={validPassword} 
                                 onChange={handleInputChange}
                             />
                             <input className="form-control" id="passwordConfirmation" 
                             type="password" placeholder="Confirmar contraseña"  
                             name="validatePass" 
                             required="true" 
-                            onBlur={confirmationPassword}
+                            // onBlur={confirmationPassword}
                             />
                             
                         </div>
