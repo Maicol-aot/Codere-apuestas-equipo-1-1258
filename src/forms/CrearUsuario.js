@@ -206,7 +206,7 @@ const CrearUsuario = () =>{
                             onChange={handleInputChange}
                         >
                             <option selected>Tipo de documento</option>
-                            <option value="cedula de ciudadania">Cédula de extranjería</option>
+                            <option value="cedula de ciudadania">Cédula de ciudadania</option>
                             <option value="cedula de extranjeria">Cédula de extranjería</option>
                             
                         </select>

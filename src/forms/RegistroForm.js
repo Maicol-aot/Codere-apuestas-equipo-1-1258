@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import React from 'react';
+import { useForm } from "react-hook-form";
 
 
 
@@ -55,11 +56,9 @@ const RegistroForm = () => {
         })
     }
     
-    const resetDatos = ()=>{
+    const {handleSubmit} = useForm();
+    const onSubmit = async (event,e) =>{
         
-    }
-    const enviarDatosUsers = async (event) =>{
-        event.preventDefault();
         console.log(datos);
         
 
@@ -73,7 +72,7 @@ const RegistroForm = () => {
                 },
                 body: JSON.stringify(datos)})
                 console.log(datos);
-                setMensaje('Usuario registrado exitosamente');
+                setMensaje('Usuario registrado exitosamente. Ya puedes iniciar sesion.');
             
             
         } catch (error) {
@@ -82,6 +81,7 @@ const RegistroForm = () => {
             console.log(error);
             
         }
+        e.target.reset();
     }
     
 
@@ -91,7 +91,7 @@ const RegistroForm = () => {
             <div id="box-bod">
                 <div className="container-fluid">
                     <h4 id="container-title">Registrarse</h4>
-                    <form className="registerForm" onSubmit={enviarDatosUsers}>
+                    <form className="registerForm" onSubmit={handleSubmit(onSubmit)}>
                         <div className="rows">
                             <h6 className="form-subtitles">Datos personales</h6>
                             <input className="form-control" id="nombre"
@@ -148,12 +148,13 @@ const RegistroForm = () => {
                                 onChange={handleInputChange}
 
                             >
-                                <option selected value="Cedula de ciudadania">Cedula de ciudadania</option>
-                                <option value="Cedula de extranjeria">Cedula de extranjeria</option>
+                                <option selected>Tipo de documento</option>
+                                <option value="cedula de ciudadania">Cédula de ciudadania</option>
+                                <option value="cedula de extranjeria">Cédula de extranjería</option>
                             </select> 
                             <input className="form-control" id="ndoc" 
                                 type="text" placeholder="Numero de documento" 
-                                tpattern="^[0-9]{8,12}$" //numero de 0 a 9 que se repiten entre 8 12 caracteres
+                                pattern="^[0-9]{8,12}$" //numero de 0 a 9 que se repiten entre 8 12 caracteres
                                 title="Cedula no valida"
                                 name="nDoc" 
                                 onChange={handleInputChange}
