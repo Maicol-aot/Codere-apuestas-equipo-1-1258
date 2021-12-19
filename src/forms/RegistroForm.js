@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
 import React from 'react';
+import { useForm } from "react-hook-form";
+
 
 
 const RegistroForm = () => {
@@ -19,93 +20,11 @@ const RegistroForm = () => {
         if (conPassword !== password) return alert('Las contraseñas no son iguales'); 
     };
 
-
-    const validarNombre = () =>{
-            let infoNombre = document.getElementById('nombre').value;
-            let fomrato_texto = /([a-zA-Z]{3,30}\s*)+/;
-            if (!infoNombre.match(fomrato_texto)) {
-                return alert('Por favor ingresa un dato valido en la casilla "Nombre" '); //cambiar el alert por una validacion de errores general porque envia los datoss
-            }
-        };
-
     
 
-    const validarEmail = () =>{
-        let infoEmail = document.getElementById('email2').value;
-        let formato_email = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
-        if (!infoEmail.match(formato_email)) {
-            return alert('Por favor escriba un correo electronico válido.');
-        }
-    };
-     
-    const validarEdad = () =>{
-        let infoEdad = document.getElementById('nacimiento').value;
-        let limiteEdad = 2003-12-15;
-        console.log(infoEdad);
-        if (parseInt(infoEdad) > limiteEdad) {
-            return alert('Tienes que ser mayor de 18 años para  registrarte'); //cambiar el alert por una validacion de errores general porque envia los datoss
-        }
-    };
-
-
-    const validarApellido1 = () =>{
-        let infoApellido1 = document.getElementById('apellido1').value;
-        let fomrato_texto = /([a-zA-Z]{3,30}\s*)+/;
-        if (!infoApellido1.match(fomrato_texto)) {
-            return alert('Por favor ingresa un dato valido en la casilla "Primer Apellido" ');
-
-        }
-    };
-    
-    const validarApellido2 = () =>{
-        let infoApellido2 = document.getElementById('apellido2').value;
-        let fomrato_texto = /([a-zA-Z]{3,30}\s*)+/;
-        if (!infoApellido2.match(fomrato_texto)) {
-            return alert('Por favor ingresa un dato valido en la casilla "Segundo Apellido" ');
-
-        }
-    };
-
-    const validarNdoc = () =>{
-        let ndoc = document.getElementById('ndoc').value;
-        let formato_numero = /^([0-9])*$/;
-        if (!ndoc.match(formato_numero)){
-            return alert('Solo puedes ingresar numeros en el campo "No. de documento"'); //cambiar el alert por una validacion de errores general porque envia los datoss
-        }
-    };
-
-    const validarLugarExp = () =>{
-        let lugarExp = document.getElementById('lugarExp').value;
-        let fomrato_texto = /^[a-z ,.'-]+$/i;
-        
-        
-        if (!lugarExp.match(fomrato_texto)) {
-            return alert('Por favor ingresa un dato valido en la casilla "Lugar de expedicón" ');
-
-        }
-    };
-
-    const validarCiudad = () =>{
-        let ciudad = document.getElementById('ciudad').value;
-        let fomrato_texto = /^[a-z ,.'-]+$/i;
-        
-        
-        if (!ciudad.match(fomrato_texto)) {
-            return alert('Por favor ingresa un dato valido en la casilla "Ciudad" ');
-
-        }
-    };
-
-    const validarTel = () =>{
-        let nTel = document.getElementById('tel').value;
-        let formato_numero = /^([0-9]{0,10})*$/;
-        if (!nTel.match(formato_numero)){
-            return alert('ingresa un numero de telefono valido en el campo "Teléfono"'); //cambiar el alert por una validacion de errores general porque envia los datoss
-        }
-    };
    
 
-    const [datos,setDatos] = useState({ //con llaves se crea un objeto
+    const [datos,setDatos] = useState({ // dentro del estado con llaves se crea un objeto a los que se les asiganara un valor dependiendo del value del name del imput
         nombre: "",
         primerApellido: "",
         segundoApellido: "",
@@ -125,21 +44,21 @@ const RegistroForm = () => {
         usrname: ""
     })
 
+    const [mensaje, setMensaje] = useState('')
     
+
 
     const handleInputChange = (event) =>{
          // console.log(event.target.value) permite ir copiando cada caracter inngresdo en el input
         setDatos({
-            ...datos, //aqui se crea una pseudo copia d ecada valor para que no se borre el anterior
+            ...datos, //aqui se crea una pseudo copia de cada valor para que no se borre el anterior
             [event.target.name] : event.target.value // se relaciona lo que hay en el input con su name y el valor de la estructura en estado
         })
     }
-
-    const enviarDatosUsers = async (event) =>{
-        event.preventDefault();
+    
+    const {handleSubmit} = useForm();
+    const onSubmit = async (event,e) =>{
         console.log(datos);
-        
-
         try {
             
             const newData = await fetch('http://localhost:9000/registro',{
@@ -150,59 +69,68 @@ const RegistroForm = () => {
                 },
                 body: JSON.stringify(datos)})
                 console.log(datos);
-
-
+                setMensaje('Usuario registrado exitosamente. Ya puedes iniciar sesion.');
+            
             
         } catch (error) {
+            setMensaje('Llena los campos del formulario correctamente')
             console.log("hubo un error al enviar los datos")
             console.log(error);
             
         }
+        e.target.reset();
     }
     
 
     return(
         <>
+            
             <div id="box-bod">
                 <div className="container-fluid">
                     <h4 id="container-title">Registrarse</h4>
-                    <form className="registerForm" onSubmit={enviarDatosUsers}>
+                    <form className="registerForm" onSubmit={handleSubmit(onSubmit)}>
                         <div className="rows">
                             <h6 className="form-subtitles">Datos personales</h6>
                             <input className="form-control" id="nombre"
                                 type="text" placeholder="Nombre" name="nombre" 
+                                pattern="^[A-Za-z]{2,15}$"
+                                title="Nombre no valido"
                                 required="true" 
                                 onChange={handleInputChange}
                                        
                             />
 
-                            {/* onBlur={validarNombre} */}
-
                             <input className="form-control" id="apellido1"  
                                 type="text" placeholder="Primer apellido"
                                 name="primerApellido" 
+                                pattern="^[A-Za-z]{2,15}$"
+                                title="Apellido no valido"
                                 required="true" 
                                 onChange={handleInputChange}
                             />
-                            {/* onBlur={validarApellido1} */}
+                           
                             <input className="form-control" id="apellido2"
                                 type="text" placeholder="Segundo apellido"
                                 name="segundoApellido" 
+                                pattern="^[A-Za-z]{2,15}$"
+                                title="Apellido no valido"
                                 required="true"  
                                 onChange={handleInputChange}
-                            
                             />
                             {/* onBlur={validarApellido2} */}
+
                             <div className="cont">
                                 <h6 id="form-subtitles">Fecha nacimiento</h6>
                                 <input type="date" className="form-date"
                                 name="fechaNacimiento"
                                 id="nacimiento"
-                                required="true"  
+                                required="true" 
+                                // onBlur={validarEdad} 
                                 onChange={handleInputChange}
+                                
 
                                 />
-                                {/* onBlur={validarEdad} */}
+                                {/*  */}
                             </div>
                         
                         </div>
@@ -215,22 +143,31 @@ const RegistroForm = () => {
                                 onChange={handleInputChange}
 
                             >
-                                <option selected value="Cedula de ciudadania">Cedula de ciudadania</option>
-                                <option value="Cedula de extranjeria">Cedula de extranjeria</option>
+                                <option selected>Tipo de documento</option>
+                                <option value="cedula de ciudadania">Cédula de ciudadania</option>
+                                <option value="cedula de extranjeria">Cédula de extranjería</option>
                             </select> 
                             <input className="form-control" id="ndoc" 
-                            type="text" placeholder="Numero de documento" 
-                            required="true" 
-                            name="nDoc" 
-                            onChange={handleInputChange}
+                                type="text" placeholder="Numero de documento" 
+                                pattern="^[0-9]{8,12}$" //numero de 0 a 9 que se repiten entre 8 12 caracteres
+                                title="Cedula no valida"
+                                name="nDoc" 
+                                onChange={handleInputChange}
                             
                             />
-                            {/* onBlur={validarNdoc} */}
-                            <input className="form-control" id="lugarExp" type="text" placeholder="Lugar de expedicion"  required="true"  name ="lugarExpedicion" onChange={handleInputChange}/>
-                            {/* onBlur={validarLugarExp} */}
+
+                            <input className="form-control" id="lugarExp" 
+                                type="text" placeholder="Lugar de expedicion"  
+                                required="true"  
+                                name ="lugarExpedicion" 
+                                onChange={handleInputChange}/>
+
                             <div className="cont">
                                 <h6 id="form-subtitles">Fecha expedicion</h6>
-                                <input type="date" class="form-date" required="true" name ="fechaExpedicion" onChange={handleInputChange}/>
+                                <input type="date" class="form-date" 
+                                    required="true" 
+                                    name ="fechaExpedicion" 
+                                    onChange={handleInputChange}/>
                             </div>
                         
                         </div>
@@ -238,6 +175,7 @@ const RegistroForm = () => {
                             <h6 className="form-subtitles-single">Datos de contacto</h6>
                             <select className="form-select" id="select-residencia" 
                                 formcontrolname="diaNacimiento" aria-label="Default select example" 
+                                title=""
                                 required="true" 
                                 name="departamento" 
                                 onChange={handleInputChange}
@@ -283,15 +221,16 @@ const RegistroForm = () => {
                                 id="ciudad" formcontrolname="diaNacimiento"
                                 required="true" 
                                 placeholder="Muncipio de residencia" 
+                                title=""
                                 name="municipio" 
                                 onChange={handleInputChange}
                             /> 
-                            {/* onBlur={validarCiudad} */}
-
 
                             <input className="form-control" id="form-control" 
                                 type="text" placeholder="Direccion de residencia" 
                                 name="direccion" 
+                                pattern="^[#.0-9a-zA-Z\s,-]+$"
+                                title="Direccion no valida"
                                 required="true" 
                                 onChange={handleInputChange}
                             
@@ -299,24 +238,27 @@ const RegistroForm = () => {
                             <input className="form-control" id="email2" 
                                 type="email" placeholder="Correo electronico" 
                                 name="email" 
+                                title=""
                                 required="true"  
                                 onChange={handleInputChange} 
                             />
-                            {/* onBlur={validarEmail} */}
 
                             <input className="form-control" id="tel"
                                 type="text" placeholder="Movil" 
                                 name="movil" 
+                                pattern="^[0-9]{10,17}$"
+                                title="Telefono no valido"
                                 onChange={handleInputChange}
-                            
+                                required="true"
                             />
-                             {/* onBlur={validarTel}  */}
+
                         </div>
                         <div className="rows">
                             <h6 className="form-subtitles-single">Datos usuario</h6>
                             <input className="form-control" id="form-control" 
                                 type="text" placeholder="Usuario" 
                                 name="usrname" 
+                                title=""
                                 required="true"
                                 onChange={handleInputChange}
                                 
@@ -327,14 +269,15 @@ const RegistroForm = () => {
                                 type="password" placeholder="Contraseña"
                                 name="password" 
                                 required="true" 
-                                // onBlur={validPassword} 
+                                onBlur={validPassword} 
                                 onChange={handleInputChange}
                             />
                             <input className="form-control" id="passwordConfirmation" 
                             type="password" placeholder="Confirmar contraseña"  
-                            name="validatePass" 
+                            name="validatePass"
+                            title="" 
                             required="true" 
-                            // onBlur={confirmationPassword}
+                            onBlur={confirmationPassword}
                             />
                             
                         </div>
@@ -346,6 +289,9 @@ const RegistroForm = () => {
 
                         </div>
                         <button class="btn btn btn-success" type="submit" >Continuar</button>
+                        <div className="row mt-2">
+                            <div className="col-12 text-center">{mensaje}</div>
+                        </div>  
                     </form>
                     
                 </div>
