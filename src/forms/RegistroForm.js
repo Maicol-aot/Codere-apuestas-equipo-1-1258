@@ -148,10 +148,7 @@ const RegistroForm = () => {
                     'Accept': 'application/json',
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(
-                    datos
-
-                )})
+                body: JSON.stringify(datos)})
                 console.log(datos);
 
 
@@ -161,14 +158,9 @@ const RegistroForm = () => {
             console.log(error);
             
         }
-
-
-
-        
     }
     
-   
-    
+
     return(
         <>
             <div id="box-bod">
@@ -251,40 +243,40 @@ const RegistroForm = () => {
                                 onChange={handleInputChange}
                             
                             >
-                                <option selected>Departamento de residencia</option>
-                                <option value="1">Amazonas</option>
-                                <option value="2">Antioquia</option>
-                                <option value="3">Arauca</option>
-                                <option value="4">Atlántico</option>
-                                <option value="5">Bogotá</option>
-                                <option value="6">Bolívar</option>
-                                <option value="7">Boyacá</option>
-                                <option value="8">Caldas</option>
-                                <option value="9">Caquetá</option>
-                                <option value="10">Casanare</option>
-                                <option value="11">Cauca</option>
-                                <option value="12">Cesar</option>
-                                <option value="13">Chocó</option>
-                                <option value="14">Córdoba</option>
-                                <option value="15">Cundinamarca</option>
-                                <option value="16">Guainía</option>
-                                <option value="17">Guaviare</option>
-                                <option value="18">Huila</option>
-                                <option value="19">La Guajira</option>
-                                <option value="20">Magdalena</option>
-                                <option value="21">Meta</option>
-                                <option value="22">Nariño</option>
-                                <option value="23">Norte de Santander</option>
-                                <option value="24">Putumayo</option>
-                                <option value="25">Quindío</option>
-                                <option value="26">Risaralda</option>
-                                <option value="27">San Andrés y Providencia</option>
-                                <option value="28">Santander</option>
-                                <option value="29">Sucre</option>
-                                <option value="30">Tolima</option>
-                                <option value="31">Valle del Cauca</option>
-                                <option value="32">Vaupés</option>
-                                <option value="33">Vichada</option>
+                                <option selected>Departamento</option>
+                                <option value="Amazonas">Amazonas</option>
+                                <option value="Antioquia">Antioquia</option>
+                                <option value="Arauca">Arauca</option>
+                                <option value="Atlantico">Atlántico</option>
+                                <option value="Bogota">Bogotá</option>
+                                <option value="Bolivar">Bolívar</option>
+                                <option value="Boyaca">Boyacá</option>
+                                <option value="Caldas">Caldas</option>
+                                <option value="Caqueta">Caquetá</option>
+                                <option value="Casanare">Casanare</option>
+                                <option value="Cauca">Cauca</option>
+                                <option value="Cesar">Cesar</option>
+                                <option value="Choco">Chocó</option>
+                                <option value="Cordoba">Córdoba</option>
+                                <option value="Cundinamarca">Cundinamarca</option>
+                                <option value="Guainia">Guainía</option>
+                                <option value="Guaviare">Guaviare</option>
+                                <option value="Huila">Huila</option>
+                                <option value="La Guahira">La Guajira</option>
+                                <option value="Magdalena">Magdalena</option>
+                                <option value="Meta">Meta</option>
+                                <option value="Narinio">Nariño</option>
+                                <option value="Norte de Santander">Norte de Santander</option>
+                                <option value="Putumayo">Putumayo</option>
+                                <option value="Quindio">Quindío</option>
+                                <option value="Risaralda">Risaralda</option>
+                                <option value="San Andres">San Andrés y Providencia</option>
+                                <option value="Santander">Santander</option>
+                                <option value="Sucre">Sucre</option>
+                                <option value="Tolima">Tolima</option>
+                                <option value="Valle del Cauca">Valle del Cauca</option>
+                                <option value="Vaupes">Vaupés</option>
+                                <option value="Vichada">Vichada</option>
                             
                             </select> 
                             <input type="text" className="form-control" 
@@ -353,7 +345,7 @@ const RegistroForm = () => {
                             </p>
 
                         </div>
-                        <button class="btn btn btn-success" type="submit" href="#r">Continuar</button>
+                        <button class="btn btn btn-success" type="submit" >Continuar</button>
                     </form>
                     
                 </div>
