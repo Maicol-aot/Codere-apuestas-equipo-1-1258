@@ -58,10 +58,7 @@ const RegistroForm = () => {
     
     const {handleSubmit} = useForm();
     const onSubmit = async (event,e) =>{
-        
         console.log(datos);
-        
-
         try {
             
             const newData = await fetch('http://localhost:9000/registro',{
@@ -103,8 +100,6 @@ const RegistroForm = () => {
                                        
                             />
 
-                            {/* onBlur={validarNombre} */}
-
                             <input className="form-control" id="apellido1"  
                                 type="text" placeholder="Primer apellido"
                                 name="primerApellido" 
@@ -113,7 +108,7 @@ const RegistroForm = () => {
                                 required="true" 
                                 onChange={handleInputChange}
                             />
-                            {/* onBlur={validarApellido1} */}
+                           
                             <input className="form-control" id="apellido2"
                                 type="text" placeholder="Segundo apellido"
                                 name="segundoApellido" 
@@ -160,13 +155,12 @@ const RegistroForm = () => {
                                 onChange={handleInputChange}
                             
                             />
-                            {/* onBlur={validarNdoc} */}
+
                             <input className="form-control" id="lugarExp" 
                                 type="text" placeholder="Lugar de expedicion"  
                                 required="true"  
                                 name ="lugarExpedicion" 
                                 onChange={handleInputChange}/>
-                            {/* onBlur={validarLugarExp} */}
 
                             <div className="cont">
                                 <h6 id="form-subtitles">Fecha expedicion</h6>
