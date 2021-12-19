@@ -24,7 +24,7 @@ const RegistroForm = () => {
 
    
 
-    const [datos,setDatos] = useState({ //con llaves se crea un objeto
+    const [datos,setDatos] = useState({ // dentro del estado con llaves se crea un objeto a los que se les asiganara un valor dependiendo del value del name del imput
         nombre: "",
         primerApellido: "",
         segundoApellido: "",
@@ -51,7 +51,7 @@ const RegistroForm = () => {
     const handleInputChange = (event) =>{
          // console.log(event.target.value) permite ir copiando cada caracter inngresdo en el input
         setDatos({
-            ...datos, //aqui se crea una pseudo copia d ecada valor para que no se borre el anterior
+            ...datos, //aqui se crea una pseudo copia de cada valor para que no se borre el anterior
             [event.target.name] : event.target.value // se relaciona lo que hay en el input con su name y el valor de la estructura en estado
         })
     }
@@ -225,8 +225,6 @@ const RegistroForm = () => {
                                 name="municipio" 
                                 onChange={handleInputChange}
                             /> 
-                            {/* onBlur={validarCiudad} */}
-
 
                             <input className="form-control" id="form-control" 
                                 type="text" placeholder="Direccion de residencia" 
@@ -244,7 +242,6 @@ const RegistroForm = () => {
                                 required="true"  
                                 onChange={handleInputChange} 
                             />
-                            {/* onBlur={validarEmail} */}
 
                             <input className="form-control" id="tel"
                                 type="text" placeholder="Movil" 
@@ -253,9 +250,8 @@ const RegistroForm = () => {
                                 title="Telefono no valido"
                                 onChange={handleInputChange}
                                 required="true"
-                            
                             />
-                             {/* onBlur={validarTel}  */}
+
                         </div>
                         <div className="rows">
                             <h6 className="form-subtitles-single">Datos usuario</h6>

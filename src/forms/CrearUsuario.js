@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 const CrearUsuario = () =>{
         
 
-        const [datos,setDatos] = useState({ //con llaves se crea un objeto
+        const [datos,setDatos] = useState({ 
             nombre: "",
             primerApellido: "",
             segundoApellido: "",
@@ -28,10 +28,9 @@ const CrearUsuario = () =>{
         const [mensaje, setMensaje] = useState('')
     
         const handleInputChange = (event) =>{
-             // console.log(event.target.value) permite ir copiando cada caracter inngresdo en el input
             setDatos({
-                ...datos, //aqui se crea una pseudo copia d ecada valor para que no se borre el anterior
-                [event.target.name] : event.target.value // se relaciona lo que hay en el input con su name y el valor de la estructura en estado
+                ...datos, 
+                [event.target.name] : event.target.value 
             })
         }
         const {handleSubmit} = useForm();
@@ -63,7 +62,7 @@ const CrearUsuario = () =>{
     return(
         <>
             
-            <form onSubmit={handleSubmit(onSubmit)}> {/*  id mixtos, verificar validacions */}
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="row">
                 </div>
                 <div className="row">
@@ -143,7 +142,6 @@ const CrearUsuario = () =>{
                             onChange={handleInputChange}
                         
                         /> 
-                        {/* onBlur={validarNdoc} */}
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label></label>
@@ -177,7 +175,6 @@ const CrearUsuario = () =>{
                             required={true} 
                             onChange={handleInputChange} 
                         />
-                         {/* onBlur={validarEmail} */}
                     </div>
 
                     <div className="col-sm-3 mb-3">
@@ -256,7 +253,6 @@ const CrearUsuario = () =>{
                             title="Telefono no valido"
                             required={true} 
                             onChange={handleInputChange}/>
-                         {/* onBlur={validarTel} */}
                     </div>
 
 
@@ -294,14 +290,10 @@ const CrearUsuario = () =>{
                             <option value="user">usuario</option>
                             
                         </select>
-
-
                     </div>
 
-
-
-
                 </div>
+                
                 <button className="btn btn-primary" type="submit">Enviar</button>
                 <div className="row mt-2">
                     <div className="col-12 text-center">{mensaje}</div>
