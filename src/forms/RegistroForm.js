@@ -284,7 +284,10 @@ const RegistroForm = () => {
                         <div className="termRow">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" required="true"/>
                             <p className="terminosCondiciones"> 
-                            Confirmo que tengo más de 18 años que no padezco ninguna enfermedad mental que haya sido declarada interdicta judicialmentey que he leido, entendido y acepto los términos y condiciones 
+                            
+                            Confirmo que tengo más de 18 años que no padezco ninguna enfermedad mental que haya sido declarada interdicta judicialmentey que he leido, entendido y acepto los 
+                            <a href="https://m.codere.com.co/csbgonline/condicionesgenerales/ContratoColombia.pdf" target="_blank"> Términos y Condiciones </a> y la 
+                            <a href="https://m.codere.com.co/csbgonline/condicionesgenerales/politicaPrivacidadColombiaV1_2.pdf" target="_blank"> Politica de tratamiento de datos</a> de Codere.
                             </p>
 
                         </div>

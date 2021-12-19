@@ -11,6 +11,7 @@ import Feed from './pages/Feed';
 import Registro from './pages/Registro';
 import Login from './pages/Login';
 import LandingPage from './pages/LandingPage'
+import TyC from './pages/VistaContacto.js';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/registro" element={<Registro />} />
         <Route path="/login" element={<Login />} />
         <Route path="/feed" element={<Feed />} />
+        <Route path="/contactanos" element={<TyC/>}/>
       </Routes>
     </BrowserRouter>
   );
