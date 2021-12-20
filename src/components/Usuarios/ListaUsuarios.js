@@ -7,8 +7,7 @@ const ListaUsuarios = (props)=>{
     const ListaUsers = Usuarios.map ( p =>
         <Usuario 
             nombre = {p.nombre}
-            primerApellido ={p.primerApellido}
-            id = {p.id_usuario}
+            primerApellido ={p.primerApellido} 
             username = {p.usrname}
             tipouser={p.rol}
         
@@ -31,7 +30,7 @@ const ListaUsuarios = (props)=>{
                                     <table className="table datatable">
                                         <thead>
                                             <tr>
-                                                <th scope="col">ID</th>
+                                                
                                                 <th scope="col">Nombre de Usuario</th>
                                                 <th scope="col">Nombre Completo</th>
                                                 <th scope="col">Tipo de Usuario</th>

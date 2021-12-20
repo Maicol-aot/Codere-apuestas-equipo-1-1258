@@ -11,6 +11,7 @@ import Feed from './pages/Feed';
 import Registro from './pages/Registro';
 import Login from './pages/Login';
 import LandingPage from './pages/LandingPage'
+import VistaContacto from './pages/VistaContacto.js';
 
 import { useEffect, useState } from 'react';
 
@@ -51,8 +52,9 @@ function App() {
         <Route path="/evento" element={< VistaEvento/>} />
         <Route path="/gestionarUsuarios" element={<VistaUsuarios />} />
         <Route path="/perfilAdmin"element={<VistaPerfil />}/>
-        <Route path="/registro" element={<Registro />} />
-        
+        <Route path="/registro" element={<Registro />} />      
+        <Route path="/contactanos" element={<VistaContacto/>}/>
+
       </Routes>
     </BrowserRouter>
   );

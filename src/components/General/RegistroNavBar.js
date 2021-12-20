@@ -11,7 +11,7 @@ const RegistroNavBar = () => {
                 <Link to="/" className="logo d-flex align-items-center">
                 <img src="assets/img/SponsorsLogo.png" alt="Codere logo"/>
                 </Link>
-                <Link to="/" href="https://github.com/Maicol-aot/Codere-apuestas-equipo-1-1258"><span class="d-none d-lg-block">Contactenos</span></Link>
+                <Link to="/contactanos" ><span class="d-none d-lg-block">Contactenos</span></Link>
                 
             </div>{/*{/*<!-- End Logo -->*/}   
         {/*{/*<!-- End Header -->*/}
