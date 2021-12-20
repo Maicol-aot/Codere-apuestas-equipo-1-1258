@@ -20,7 +20,7 @@ function App() {
 
   //const [usuarioSesion, setUsuarioSesion] = useState(null);
   
-  const usuarioSesion = localStorage.getItem('usuarioEx'); //este aparece como null
+  const usuarioSesion = localStorage.getItem('admin'); //este aparece como null
   
   //let setUsuarioSesion = true;
 
@@ -36,9 +36,7 @@ function App() {
         )}
 
         {usuarioSesion &&( //si es true renderiza el feed
-          <Route path="/feed" 
-          element={<Feed />}
-          />
+          <Route path="/feed" element={<Feed />}/>
         )}
 
 
@@ -46,7 +44,7 @@ function App() {
 
 
 
-
+        <Route path="/feed" element={<Feed />}/>
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<VistaDashboard />} />
         <Route path="/gestionarEventos" element={< VistaEventos/>} />
