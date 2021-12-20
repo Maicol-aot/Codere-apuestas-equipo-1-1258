@@ -238,7 +238,6 @@ const RegistroForm = () => {
                             <input className="form-control" id="email2" 
                                 type="email" placeholder="Correo electronico" 
                                 name="email" 
-                                title=""
                                 required="true"  
                                 onChange={handleInputChange} 
                             />
