@@ -6,9 +6,11 @@ import { useState } from 'react';
 const CrearEvento = () =>{
 
     const [datos,setDatos] = useState({ // dentro del estado con llaves se crea un objeto a los que se les asiganara un valor dependiendo del value del name del imput
+        id_:"",
         nombreEvento: "",
         nombreLiga: "",
         dateInit: "",
+        timeInit: "",
         limitDate: "",
         dateEnd: "",
         cuota1: "",
@@ -122,7 +124,14 @@ const CrearEvento = () =>{
                             required="true" />
                     </div>
                     <div className="col-sm-3 mb-3">
-                        
+                        <label>Hora de inicio</label>
+                        <input type="time" className="form-control"
+                            id="timeInit"
+                            name="timeInit"
+                            placeholder="Hora de inicio"
+                            onChange={handleInputChange}
+                            required="true" />
+
                     </div>
                     <div className="col-sm-3 mb-3">
                         <label >Cuota "Empate" </label>
