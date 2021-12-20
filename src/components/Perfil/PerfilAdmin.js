@@ -5,10 +5,12 @@ import InfoAdmin from './InfoAdmin';
 
 
 const DatosUsuario = [
-    { nombre: "Victor", primerApellido: "Vigna", segundoApellido:"Roa", fechaNacimiento:"16/09/1996", id:"004", numeroDocumento:"1336986",lugarExpdicion:"Bogotá",fechaExpedicion:"21/09/2014",email:"vicvig@gmail.com",pais:"Colombia",telefono:"3012569856",username:"victorvv",tipouser:"user"}
+    { nombre: "Victor", primerApellido: "Vigna", segundoApellido:"Roa", fechaNacimiento:"16/09/1996", _id:"004", numeroDocumento:"1336986",lugarExpdicion:"Bogotá",fechaExpedicion:"21/09/2014",email:"vicvig@gmail.com",municipio:"Colombia",movil:"3012569856",usrname:"victorvv",rol:"user"}
     
-  ];
+  ]; //meter variable de sesion que me traiga los datos del usuario.
 const PerfilAdmin = () =>{
+
+    
     return(
         <>
             <main id="main" className="main">
