@@ -3,6 +3,7 @@ import Usuario from "./Usuario";
 
 
 const ListaUsuarios = (props)=>{
+    
     const Usuarios =props.Usuarios;
     const ListaUsers = Usuarios.map ( p =>
         <Usuario 

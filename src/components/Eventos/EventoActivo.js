@@ -4,7 +4,7 @@ const EventoActivo = (props) =>{
     return(
         <>
             <tr>
-                <th scope="row">1</th>
+                
                 <td>{props.nombreEventos}</td>
                 <td>{props.id}</td>
                 <td>{props.fechaI} - {props.horaI}</td>

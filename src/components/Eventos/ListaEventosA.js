@@ -7,9 +7,9 @@ const ListaEventosA =(props) =>{
     const ListaActivos = Eventos.map ( p =>
         <EventoActivo 
             nombreEventos = {p.nombreEvento}
-            id = {p.id}
-            fechaI = {p.fechaI}
-            horaI={p.horaI}
+            id = {p.i_d}
+            fechaI = {p.dateInit}
+            horaI={p.timeInit}
         
         />);
 
@@ -28,7 +28,6 @@ const ListaEventosA =(props) =>{
                                     <table className="table datatable">
                                         <thead>
                                             <tr>
-                                                <th scope="col">#</th>
                                                 <th scope="col">Nombre del Evento</th>
                                                 <th scope="col">ID del Evento</th>
                                                 <th scope="col">Fecha de Inicio</th>

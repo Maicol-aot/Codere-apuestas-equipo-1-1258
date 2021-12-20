@@ -1,14 +1,22 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
+const DatosUsuario = [
+    { nombre: "Victor", primerApellido: "Vigna", segundoApellido:"Roa", 
+    fechaNacimiento:"16/09/1996", _id:"004", numeroDocumento:"1336986",
+    lugarExpdicion:"Bogotá",fechaExpedicion:"21/09/2014",
+    email:"vicvig@gmail.com",ciudad:"Barranquilla",
+    movil:"3012569856",usrname:"victorvv",rol:"user"}]
+
+
 const AdminNavbar = () =>{
 
     const cerrarSesion = ()=>{
-        localStorage.clear();
-        alert("Has cerrado la sesion");
+         localStorage.clear();
+         alert("Has cerrado la sesion");
     }
-
     return(
+        
         <header id="header" className="header fixed-top d-flex align-items-center">
             
             <div className="d-flex align-items-center justify-content-between">
@@ -42,13 +50,13 @@ const AdminNavbar = () =>{
 
                         <a className="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                             <img src="assets/img/super_admin.png" alt="Profile" className="rounded-circle" />
-                            <span className="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                            <span className="d-none d-md-block dropdown-toggle ps-2"> {DatosUsuario.usrname}</span>
                         </a>{/*{/*<!-- End Profile Iamge Icon -->*/}
 
                         <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                             <li className="dropdown-header">
-                                <h6>Kevin Anderson</h6>
-                                <span>Admin</span>
+                                <h6>{DatosUsuario.nombre} {DatosUsuario.primerApellido}</h6>
+                                <span>{DatosUsuario.rol}</span>
                             </li>
                             <li>
                                 <hr className="dropdown-divider" />

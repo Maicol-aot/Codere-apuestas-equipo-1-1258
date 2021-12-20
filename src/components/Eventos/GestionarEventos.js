@@ -4,6 +4,7 @@ import ListaEventosF from './ListaEventosF';
 import ListaEventosA from './ListaEventosA';
 import SearchBar from '../General/SearchBar';
 import CrearEvento from '../../forms/CrearEvento';
+import { useEffect,useState } from 'react';
 
 const ListaDatosEventos = [
     { nombreEvento: "Galaxy vs Trompers", id:"15962", fechaI: "11/12/2021" , horaI:'10:25', fechaF: "11/12/2021" , horaF:'10:25'},
@@ -13,8 +14,29 @@ const ListaDatosEventos = [
     { nombreEvento: "Atalanta vs Dogs", id:"50025", fechaI: "06/12/2021",horaI:'20:15', fechaF: "06/12/2021" , horaF:'22:15'}
 
   ];
+  
 
+
+ 
 const GestionarEventos = () =>{
+    const [allEvents, setAllEvents] =  useState([]); 
+
+    useEffect(() =>{
+        obtenerEventos()
+    }, [])
+
+    const obtenerEventos = async () =>{
+        const data = await fetch('http://localhost:9000/listaEventosA')
+        const eventos = await data.json()
+        console.log(eventos)
+        setAllEvents(eventos)
+        
+    }
+
+
+
+
+
     return(
         
         <>
@@ -59,7 +81,7 @@ const GestionarEventos = () =>{
                                             <br/>
                                             <SearchBar/>
                                             <br/>
-                                            <ListaEventosA Eventos ={ListaDatosEventos}/>
+                                            <ListaEventosA Eventos ={allEvents}/>
                                             <Paginator />
 
                                         </div>

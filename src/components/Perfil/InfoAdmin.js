@@ -7,12 +7,12 @@ const InfoAdmin = (props) =>{
         <DatosPerfil 
             nombre = {p.nombre}
             primerApellido ={p.primerApellido}
-            id = {p.id}
-            username = {p.username}
-            tipouser={p.tipouser}
+            _id = {p._id}
+            usrname = {p.usrname}
+            rol={p.rol}
             email ={p.email}
-            pais = {p.pais}
-            telefono = {p.telefono}
+            municipio = {p.municipio}
+            movil = {p.movil}
         />);
     return(
         <>
