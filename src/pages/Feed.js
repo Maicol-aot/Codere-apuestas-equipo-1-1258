@@ -4,6 +4,7 @@ import Footer from '../components/General/Footer';
 import TablaFeed from '../components/General/TablaFeed';
 import DisplayTicketApuestas from '../components/General/DisplayTicketApuestas';
 
+
 function Feed() {
   return (
     <>

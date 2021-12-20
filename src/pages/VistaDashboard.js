@@ -8,6 +8,8 @@ import Footer from "../components/General/Footer";
 
 
 const VistaDashboard = () =>{
+
+
     return(
         <div>
             <link href="/assets/css/Footer.css" rel="stylesheet"/>

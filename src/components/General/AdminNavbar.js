@@ -2,6 +2,12 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const AdminNavbar = () =>{
+
+    const cerrarSesion = ()=>{
+        localStorage.clear();
+        alert("Has cerrado la sesion");
+    }
+
     return(
         <header id="header" className="header fixed-top d-flex align-items-center">
             
@@ -59,10 +65,10 @@ const AdminNavbar = () =>{
                             </li>
 
                             <li>
-                                <a className="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <Link to="/" className="dropdown-item d-flex align-items-center" onClick={cerrarSesion}>
                                     <i className="bi bi-gear"></i>
                                     <span>Cerrar Sesión</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <hr className="dropdown-divider" />

@@ -1,6 +1,12 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const IconoUsuario=()=>{
+
+    const cerrarSesion = ()=>{
+        localStorage.clear();
+        alert("Has cerrado la sesion");
+    }
     return (
         <>
             <link href="/assets/css/NavBar.css" rel="stylesheet"/>
@@ -69,10 +75,10 @@ const IconoUsuario=()=>{
                         </li>
 
                         <li>
-                            <a className="dropdown-item d-flex align-items-center" href="">
+                            <Link to="/login" className="dropdown-item d-flex align-items-center" onClick={cerrarSesion}>
                                 <i className="bi bi-box-arrow-right"></i>
                                 <span>Cerrar sesion</span>
-                            </a>
+                            </Link>
                         </li>
 
                     </ul>

@@ -5,11 +5,18 @@ import {Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 
+
 const LoginForm = () => {
+
     //Error usrname
     const [errorUsr, setErrorUsr] = useState('');
     
+    localStorage.clear();
+
     const navigate = useNavigate();
+
+    
+
 
     const showPassword = () =>{
         let pass = document.getElementById('password');
@@ -20,30 +27,71 @@ const LoginForm = () => {
         }   
     };
 
+
     const validarForm = (event)=>{
-        //Previene que el formulario no se envie
+        localStorage.clear();
+       
         event.preventDefault();
 
-       //Creacion de variables para almacenarlos en un json
+        
         let usr = document.getElementById('usrname').value;
         let passw = document.getElementById('password').value;   
 
 
-        //Creacion de la peticion al backnd para poder autenticar el usuario
         try {
+
+
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({usrname:usr, password:passw})
             };
-            fetch('http://localhost:9000/login', requestOptions).then( (response) => {
+
+
+            fetch('http://localhost:9000/login', requestOptions)
+            .then( (response) => {
+
                 if(response.ok){
                     let codigo = response.status;
+                    //let token = response.json();
+
+                    //console.log("Este es el token: "+token);
+
+                    const usuarioSesion = localStorage.getItem('usuarioEx');
+                    console.log(usuarioSesion);
+
+
                     if (codigo == 200){
-                        console.log("Ingreso a la pagina como un: USUARIO");
-                        return navigate('/feed');
+
+                        console.log("Ingresando a la pagina como un: USUARIO");
+
+                        
+                        localStorage.setItem("usuarioEx", usr);
+                        //localStorage.setItem("tokenAcceso", JSON.stringify({token: token, timestamp: Date.now()}));
+
+                        
+                        const usuarioSesion = localStorage.getItem('usuarioEx');
+                        console.log(usuarioSesion);
+
+
+
+                        return navigate('/feed'); 
+                        
+                        /*try {
+                            
+                             
+                        } catch (error) {
+                            console.log(error);
+                        }*/
+                         
                     }else if (codigo == 201){
+
                         console.log("Ingreso a la pagina como un: Administrador");
+                        localStorage.setItem("admin", usr);
+
+                        const usuarioSesion = localStorage.getItem('admin');
+                        console.log(usuarioSesion);
+
                         return navigate('/dashboard');
                     }
                     console.log("este es el usuario: " + response.rol);
@@ -59,6 +107,8 @@ const LoginForm = () => {
         }
     };
 
+
+    
     return(
         <>
             <LandingPage />
