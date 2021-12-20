@@ -5,18 +5,12 @@ import {Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 
-
 const LoginForm = () => {
 
-    //Error usrname
+    //useState para mostrar los errores en los campos del formulario
     const [errorUsr, setErrorUsr] = useState('');
     
-    localStorage.clear();
-
     const navigate = useNavigate();
-
-    
-
 
     const showPassword = () =>{
         let pass = document.getElementById('password');
@@ -53,9 +47,7 @@ const LoginForm = () => {
 
                 if(response.ok){
                     let codigo = response.status;
-                    //let token = response.json();
-
-                    //console.log("Este es el token: "+token);
+                
 
                     const usuarioSesion = localStorage.getItem('usuarioEx');
                     console.log(usuarioSesion);
@@ -67,30 +59,25 @@ const LoginForm = () => {
 
                         
                         localStorage.setItem("usuarioEx", usr);
-                        //localStorage.setItem("tokenAcceso", JSON.stringify({token: token, timestamp: Date.now()}));
 
-                        
-                        const usuarioSesion = localStorage.getItem('usuarioEx');
-                        console.log(usuarioSesion);
 
+                        //const usuarioSesion = localStorage.getItem('usuarioEx');
+                        //console.log(usuarioSesion);
 
 
                         return navigate('/feed'); 
                         
-                        /*try {
-                            
-                             
-                        } catch (error) {
-                            console.log(error);
-                        }*/
                          
                     }else if (codigo == 201){
 
                         console.log("Ingreso a la pagina como un: Administrador");
+
                         localStorage.setItem("admin", usr);
 
-                        const usuarioSesion = localStorage.getItem('admin');
-                        console.log(usuarioSesion);
+                        //const adminSesion = localStorage.getItem('usuarioEx');
+                        //console.log(adminSesion);
+
+
 
                         return navigate('/dashboard');
                     }

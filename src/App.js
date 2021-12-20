@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 import VistaEventos from './pages/VistaEventos';
 import VistaEvento from './pages/VistaEvento';
@@ -13,48 +13,22 @@ import Login from './pages/Login';
 import LandingPage from './pages/LandingPage'
 import VistaContacto from './pages/VistaContacto.js';
 
-import { useEffect, useState } from 'react';
-
-
 
 function App() {
-
-  //const [usuarioSesion, setUsuarioSesion] = useState(null);
-  
-  const usuarioSesion = localStorage.getItem('admin'); //este aparece como null
-  
-  //let setUsuarioSesion = true;
 
   return (
     <BrowserRouter>
       <Routes>
-
-        {!usuarioSesion &&( //si el parametro es false renderiza el login
-          <Route 
-            path="/login" 
-            element={<Login />} 
-          />
-        )}
-
-        {usuarioSesion &&( //si es true renderiza el feed
-          <Route path="/feed" element={<Feed />}/>
-        )}
-
-
-       { <Route path="*" element={<Navigate to={usuarioSesion? "/feed" : "/login"} />} /> }
-
-
-
-        <Route path="/feed" element={<Feed />}/>
-        <Route exact path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<VistaDashboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route exact path="/" element={<LandingPage />} />
+        <Route path="/feed" element={<Feed />}/> 
         <Route path="/gestionarEventos" element={< VistaEventos/>} />
         <Route path="/evento" element={< VistaEvento/>} />
         <Route path="/gestionarUsuarios" element={<VistaUsuarios />} />
         <Route path="/perfilAdmin"element={<VistaPerfil />}/>
         <Route path="/registro" element={<Registro />} />      
         <Route path="/contactanos" element={<VistaContacto/>}/>
-
       </Routes>
     </BrowserRouter>
   );
