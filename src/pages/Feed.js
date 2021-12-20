@@ -3,8 +3,26 @@ import NavBar from '../components/General/NavBar';
 import Footer from '../components/General/Footer';
 import TablaFeed from '../components/General/TablaFeed';
 import DisplayTicketApuestas from '../components/General/DisplayTicketApuestas';
+import { useEffect, useState } from 'react';
 
-function Feed() {
+const Feed =() => {
+  const [allEvents, setAllEvents] =  useState([]); 
+
+  useEffect(() =>{
+      obtenerEventos()
+  }, [])
+
+  const obtenerEventos = async () =>{
+      const data = await fetch('http://localhost:9000/listaEventosA')
+      const eventos = await data.json()
+      console.log(eventos)
+      setAllEvents(eventos)
+      
+  }
+  
+
+
+
   return (
     <>
       <NavBar />
@@ -25,7 +43,7 @@ function Feed() {
               {/*{/*<!-- Left side columns -->*/}
               <div className="col-lg-8">
                 <div className="row">  
-                  <TablaFeed />
+                  <TablaFeed Eventos ={allEvents} />
                 </div>
               </div>{/*{/*<!-- End Left side columns -->*/}
 

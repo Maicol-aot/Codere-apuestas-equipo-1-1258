@@ -1,48 +1,27 @@
 import React from 'react';
+import Pick from './Pick';
 
-const TablaFeed = () =>{
+const TablaFeed = (props) =>{
+
+    const Eventos =props.Eventos;
+    const ListaFeed = Eventos.map ( p =>
+        <Pick 
+            nombreEventos = {p.nombreEvento}
+            dateInit = {p.dateInit}
+            timeInit={p.timeInit}
+            cuota1 = {p.cuota1}
+            cuota2 = {p.cuota2}
+            cuotaX = {p.cuotaX}
+        
+        />);
+
+
     return (
         <>
             <link href="/assets/css/TablaFeed.css" rel="stylesheet"/>
             <table className="table table-bordered">
                 <tbody>
-                    <tr>
-                        <td>
-                            <h6 className="vs">Equipo1 vs Equipo2</h6>
-                            <p className="nombreLiga">Liga de softball 1</p>
-                            <p className="estado">Abierto</p>
-                            <a href="www.google.com">Mas informacion</a>
-                            <input type="button" className="equipo1"value="Equipo 1"/> 
-                            <input type="button" className="empate"value="X"/> 
-                            <input type="button" className="equipo2"value="Equipo 2"/> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h6 className="vs">Equipo1 vs Equipo2</h6>
-                            <p className="nombreLiga">Liga de softball 1</p>
-                            <p className="estado">Abierto</p>
-                            <a href="www.google.com">Mas informacion</a>
-                            <input type="button" className="equipo1"value="Equipo 1"/> 
-                            <input type="button" className="empate"value="X"/> 
-                            <input type="button" className="equipo2"value="Equipo 2"/> 
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            <h6 className="vs">Equipo1 vs Equipo2</h6>
-                            <p className="nombreLiga">Liga de softball 1</p>
-                            <p className="estado">Abierto</p>
-                            <a href="www.google.com">Mas informacion</a>
-                            <input type="button" className="equipo1"value="Equipo 1"/> 
-                            <input type="button" className="empate"value="X"/> 
-                            <input type="button" className="equipo2"value="Equipo 2"/> 
-                        </td>
-                    </tr>
-            
-                    
-                   
+                    {ListaFeed}
                 </tbody>
             </table>
         </>
