@@ -7,6 +7,9 @@ const Login = () =>{
     const usuarioSesion = localStorage.getItem('usuarioEx');
     if(usuarioSesion != null){
         return <Navigate to="/feed" /> 
+
+
+        
     }else{
    
         return (
