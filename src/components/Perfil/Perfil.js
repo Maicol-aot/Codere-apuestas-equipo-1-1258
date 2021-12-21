@@ -1,15 +1,28 @@
 import React from 'react';
 import CambiarClave from '../../forms/CambiarClave';
 import EditarPerfil from '../../forms/EditarPerfil';
-import InfoAdmin from './InfoAdmin';
+import InfoUsuario from './InfoUsuario';
+import { useEffect,useState } from 'react';
 
 
 const DatosUsuario = [
     { nombre: "Victor", primerApellido: "Vigna", segundoApellido:"Roa", fechaNacimiento:"16/09/1996", _id:"004", numeroDocumento:"1336986",lugarExpdicion:"Bogotá",fechaExpedicion:"21/09/2014",email:"vicvig@gmail.com",municipio:"Colombia",movil:"3012569856",usrname:"victorvv",rol:"user"}
     
   ]; //meter variable de sesion que me traiga los datos del usuario.
-const PerfilAdmin = () =>{
+const Perfil = () =>{
+    const [userData, setUserData] =  useState([]); 
 
+    useEffect(() =>{
+        obtenerUsuario()
+    }, [])
+
+    const obtenerUsuario = async () =>{
+        const data = await fetch('http://localhost:9000/infoUser')
+        const users = await data.json()
+        console.log(users)
+        setUserData(users)
+        
+    }
     
     return(
         <>
@@ -28,7 +41,7 @@ const PerfilAdmin = () =>{
 
                                     <img src="assets/img/super_admin.png" alt="Profile" className="rounded-circle"/>
                                     <h2> kevin algo</h2>
-                                    <h3>Administrador</h3>
+                                    
                                     
                                 </div>
                             </div>
@@ -57,7 +70,8 @@ const PerfilAdmin = () =>{
                                     </ul>
                                     <div className="tab-content pt-2">
 
-                                        <InfoAdmin Datos ={DatosUsuario}/>
+                                        <InfoUsuario Datos ={DatosUsuario}/> 
+                                        {/* intentar cambiar por userData */}
 
                                         <div className="tab-pane fade profile-edit pt-3" id="profile-edit">
 
@@ -95,4 +109,4 @@ const PerfilAdmin = () =>{
     );
 };
 
-export default PerfilAdmin;
+export default Perfil;

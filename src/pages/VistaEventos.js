@@ -8,8 +8,9 @@ import { Navigate } from 'react-router-dom';
 
 const VistaEventos = () =>{
 
-    const usuarioSesion = null;
+    
     const adminSesion = localStorage.getItem('admin');
+    const usuarioSesion = localStorage.getItem('usuarioEx');
 
 
     if(adminSesion != null){
@@ -22,9 +23,11 @@ const VistaEventos = () =>{
                 <Footer />
             </div>
         )
-    }else if(adminSesion == null || usuarioSesion != null || usuarioSesion == null){
+    }else if(usuarioSesion !== null){
         return <Navigate to="/feed" /> 
-    } 
+    }else if(usuarioSesion == null && adminSesion == null){
+        return  <Navigate to="/404" />
+    }
 }
 
 export default VistaEventos;

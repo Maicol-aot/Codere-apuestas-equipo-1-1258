@@ -4,7 +4,7 @@ import VistaEventos from './pages/VistaEventos';
 import VistaEvento from './pages/VistaEvento';
 import VistaUsuarios from './pages/VsitaUsuarios';
 import VistaDashboard from './pages/VistaDashboard';
-import VistaPerfil from './pages/VistaPerfil';
+import VistaPerfilUsuario from './pages/VistaPerfilUsuario';
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"; // V6 -> nuevos cambios
 
 import Feed from './pages/Feed';
@@ -12,6 +12,8 @@ import Registro from './pages/Registro';
 import Login from './pages/Login';
 import LandingPage from './pages/LandingPage'
 import VistaContacto from './pages/VistaContacto.js';
+import VistaPerfilAdmin from './pages/VistaPerfilAdmin';
+import Vista404 from './pages/Vista404';
 
 
 function App() {
@@ -26,9 +28,12 @@ function App() {
         <Route path="/gestionarEventos" element={< VistaEventos/>} />
         <Route path="/evento" element={< VistaEvento/>} />
         <Route path="/gestionarUsuarios" element={<VistaUsuarios />} />
-        <Route path="/perfilAdmin"element={<VistaPerfil />}/>
+        <Route path="/perfilAdmin"element={<VistaPerfilAdmin />}/>
+        <Route path="/perfilUsuario"element={<VistaPerfilUsuario />}/>
         <Route path="/registro" element={<Registro />} />      
         <Route path="/contactanos" element={<VistaContacto/>}/>
+        <Route path="/404" element={<Vista404 />} />  
+
       </Routes>
     </BrowserRouter>
   );

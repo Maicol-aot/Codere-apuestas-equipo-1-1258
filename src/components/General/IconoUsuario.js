@@ -46,10 +46,10 @@ const IconoUsuario=()=>{
                         </li>
 
                         <li>
-                            <a className="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <Link to ="/perfilUsuario" className="dropdown-item d-flex align-items-center" >
                             <i className="bi bi-person"></i>
                             <span>Perfil de Usuario</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <hr className="dropdown-divider"/>
