@@ -1,7 +1,7 @@
 import React from 'react';
 import DatosPerfil from './DatosPerfil';
 
-const InfoAdmin = (props) =>{
+const InfoUsuario = (props) =>{
     const Datos = props.Datos;
     const ListaDatos = Datos.map( p =>
         <DatosPerfil 
@@ -29,4 +29,4 @@ const InfoAdmin = (props) =>{
     );
 };
 
-export default InfoAdmin;
+export default InfoUsuario;

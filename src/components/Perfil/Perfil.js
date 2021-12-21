@@ -1,14 +1,14 @@
 import React from 'react';
 import CambiarClave from '../../forms/CambiarClave';
 import EditarPerfil from '../../forms/EditarPerfil';
-import InfoAdmin from './InfoAdmin';
+import InfoUsuario from './InfoUsuario';
 
 
 const DatosUsuario = [
     { nombre: "Victor", primerApellido: "Vigna", segundoApellido:"Roa", fechaNacimiento:"16/09/1996", _id:"004", numeroDocumento:"1336986",lugarExpdicion:"Bogotá",fechaExpedicion:"21/09/2014",email:"vicvig@gmail.com",municipio:"Colombia",movil:"3012569856",usrname:"victorvv",rol:"user"}
     
   ]; //meter variable de sesion que me traiga los datos del usuario.
-const PerfilAdmin = () =>{
+const Perfil = () =>{
 
     
     return(
@@ -57,7 +57,7 @@ const PerfilAdmin = () =>{
                                     </ul>
                                     <div className="tab-content pt-2">
 
-                                        <InfoAdmin Datos ={DatosUsuario}/>
+                                        <InfoUsuario Datos ={DatosUsuario}/>
 
                                         <div className="tab-pane fade profile-edit pt-3" id="profile-edit">
 
@@ -95,4 +95,4 @@ const PerfilAdmin = () =>{
     );
 };
 
-export default PerfilAdmin;
+export default Perfil;
