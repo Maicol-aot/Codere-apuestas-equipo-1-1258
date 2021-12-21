@@ -12,7 +12,7 @@ const NavBar = () => {
                 <img src="assets/img/SponsorsLogo.png" alt="Codere logo"/>
                 </Link>
                 
-                <Link to="/"><span class="d-none d-lg-block">Contactenos</span></Link>
+                <Link to="/contactanos"><span class="d-none d-lg-block">Contactenos</span></Link>
                 
             </div>{/*{/*<!-- End Logo -->*/}
 

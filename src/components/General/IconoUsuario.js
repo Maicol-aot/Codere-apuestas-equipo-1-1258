@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const IconoUsuario=()=>{
 
+    const usuarioSesion = localStorage.getItem('usuarioEx');
     const cerrarSesion = ()=>{
         localStorage.clear();
         alert("Has cerrado la sesion");
@@ -14,9 +15,20 @@ const IconoUsuario=()=>{
             <ul className="d-flex align-items-center">
                 <li className="nav-item dropdown">
                     <a className="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                        <h6><i className="bi bi-currency-dollar"></i>0</h6>
+                        <h6><i className="bi bi-currency-dollar"></i>0</h6>  
+                        
                     </a>{/*{/*<!-- End Notification Icon -->*/}
+
                 </li>{/*{/*<!-- End Notification Nav -->*/}
+
+                <li className="nav-item dropdown">
+                    <a className="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <h6>{usuarioSesion}</h6>  
+                        
+                    </a>{/*{/*<!-- End Notification Icon -->*/}
+
+                </li>{/*{/*<!-- End Notification Nav -->*/}
+                
 
                 <li className="nav-item dropdown pe-3">
 

@@ -153,6 +153,7 @@ const RegistroForm = () => {
                                 title="Cedula no valida"
                                 name="nDoc" 
                                 onChange={handleInputChange}
+                                required="true"
                             
                             />
 

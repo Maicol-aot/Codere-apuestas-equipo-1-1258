@@ -7,9 +7,12 @@ const DatosUsuario = [
     lugarExpdicion:"Bogotá",fechaExpedicion:"21/09/2014",
     email:"vicvig@gmail.com",ciudad:"Barranquilla",
     movil:"3012569856",usrname:"victorvv",rol:"user"}]
-
+   
 
 const AdminNavbar = () =>{
+    
+    
+    const adminSesion = localStorage.getItem('admin');
 
     const cerrarSesion = ()=>{
          localStorage.clear();
@@ -50,7 +53,7 @@ const AdminNavbar = () =>{
 
                         <a className="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                             <img src="assets/img/super_admin.png" alt="Profile" className="rounded-circle" />
-                            <span className="d-none d-md-block dropdown-toggle ps-2"> {DatosUsuario.usrname}</span>
+                            <span className="d-none d-md-block dropdown-toggle ps-2"> {adminSesion}</span>
                         </a>{/*{/*<!-- End Profile Iamge Icon -->*/}
 
                         <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">

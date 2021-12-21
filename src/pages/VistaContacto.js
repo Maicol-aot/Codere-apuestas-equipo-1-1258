@@ -1,11 +1,12 @@
 import React from 'react';
-import RegistroNavBar from '../components/General/RegistroNavBar';
+import NavBar from '../components/General/NavBar';
 import Footer from "../components/General/Footer";
 
 const  VistaContacto = () =>{
     return(
         <>
-        <RegistroNavBar />
+        <NavBar />
+        <link href="/assets/css/styleMaicol.css" rel="stylesheet"/>
             <main id="main" className="main">
 
                 <div className="pagetitle">
