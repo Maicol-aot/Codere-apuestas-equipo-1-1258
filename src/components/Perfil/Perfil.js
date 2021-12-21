@@ -2,6 +2,7 @@ import React from 'react';
 import CambiarClave from '../../forms/CambiarClave';
 import EditarPerfil from '../../forms/EditarPerfil';
 import InfoUsuario from './InfoUsuario';
+import { useEffect,useState } from 'react';
 
 
 const DatosUsuario = [
@@ -9,7 +10,19 @@ const DatosUsuario = [
     
   ]; //meter variable de sesion que me traiga los datos del usuario.
 const Perfil = () =>{
+    const [userData, setUserData] =  useState([]); 
 
+    useEffect(() =>{
+        obtenerUsuario()
+    }, [])
+
+    const obtenerUsuario = async () =>{
+        const data = await fetch('http://localhost:9000/infoUser')
+        const users = await data.json()
+        console.log(users)
+        setUserData(users)
+        
+    }
     
     return(
         <>
@@ -57,7 +70,8 @@ const Perfil = () =>{
                                     </ul>
                                     <div className="tab-content pt-2">
 
-                                        <InfoUsuario Datos ={DatosUsuario}/>
+                                        <InfoUsuario Datos ={DatosUsuario}/> 
+                                        {/* intentar cambiar por userData */}
 
                                         <div className="tab-pane fade profile-edit pt-3" id="profile-edit">
 
