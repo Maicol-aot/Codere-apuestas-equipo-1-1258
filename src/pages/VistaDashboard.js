@@ -7,8 +7,11 @@ import { Navigate } from 'react-router-dom';
 
 const VistaDashboard = () =>{
 
-    const usuarioSesion = null;
+    
     const adminSesion = localStorage.getItem('admin');
+    const usuarioSesion = localStorage.getItem('usuarioEx');
+    console.log(adminSesion)
+    console.log(usuarioSesion)
 
     if(adminSesion != null){
         return(
@@ -20,8 +23,10 @@ const VistaDashboard = () =>{
                 <Footer />
             </div>
         )
-    }else if(adminSesion == null || usuarioSesion != null || usuarioSesion == null){
+    }else if(usuarioSesion !== null){
         return <Navigate to="/feed" /> 
+    }else if(usuarioSesion == null && adminSesion == null){
+        return  <Navigate to="/404" />
     }
 
 }

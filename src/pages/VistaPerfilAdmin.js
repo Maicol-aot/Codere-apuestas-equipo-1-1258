@@ -8,7 +8,7 @@ import { Navigate } from 'react-router-dom';
 
 const VistaPerfilAdmin = () =>{
 
-    const usuarioSesion = null;
+    const usuarioSesion = localStorage.getItem('usuarioEx');
     const adminSesion = localStorage.getItem('admin');
 
 
@@ -22,9 +22,10 @@ const VistaPerfilAdmin = () =>{
                 <Footer />
             </div>
         )
-    }else if(adminSesion == null || usuarioSesion != null || usuarioSesion == null){
-        return <Navigate to="/login" /> 
-    }
+    }else if(usuarioSesion != null){
+        return <Navigate to="/perfilUsuario" /> 
+    }else if(usuarioSesion == null && adminSesion == null){
+        return  <Navigate to="/404" />}
 }
 
 export default VistaPerfilAdmin;

@@ -1,8 +1,14 @@
 import React from 'react';
 import NavBar from '../components/General/NavBar';
 import Footer from "../components/General/Footer";
+import { Navigate } from 'react-router-dom';
 
 const  VistaContacto = () =>{
+
+
+const adminSesion = localStorage.getItem('admin');
+const usuarioSesion = localStorage.getItem('usuarioEx');
+  if(usuarioSesion !== null){
     return(
         <>
         <NavBar />
@@ -97,6 +103,10 @@ const  VistaContacto = () =>{
        
         </>
     );
+  }else if(adminSesion !==null){
+    return  <Navigate to="/dashboard" />
+  }else if(usuarioSesion == null && adminSesion == null){
+    return  <Navigate to="/404" />}
 };
 
 export default VistaContacto;

@@ -22,13 +22,11 @@ const Feed =() => {
       setAllEvents(eventos)
       
   }
-  
-const usuarioSesion = localStorage.getItem('usuarioEx');
-  if(usuarioSesion == null){
-    return <Navigate to="/login" /> 
-  }else{
-    
 
+const adminSesion = localStorage.getItem('admin');
+const usuarioSesion = localStorage.getItem('usuarioEx');
+  if(usuarioSesion !== null){
+    
 
     return (
         <>
@@ -65,7 +63,10 @@ const usuarioSesion = localStorage.getItem('usuarioEx');
             <Footer />  
           </>
     );
-  }
+  }else if(adminSesion !==null){
+    return  <Navigate to="/dashboard" />
+  }else if(usuarioSesion == null && adminSesion == null){
+    return  <Navigate to="/404" />}
 }
 
 export default Feed;

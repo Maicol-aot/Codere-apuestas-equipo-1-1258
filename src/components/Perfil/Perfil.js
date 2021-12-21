@@ -41,7 +41,7 @@ const Perfil = () =>{
 
                                     <img src="assets/img/super_admin.png" alt="Profile" className="rounded-circle"/>
                                     <h2> kevin algo</h2>
-                                    <h3>Administrador</h3>
+                                    
                                     
                                 </div>
                             </div>
